@@ -1,0 +1,35 @@
+/* ============================================================
+   TechLore（名称仮）デザイントークン
+   正本: Desktop\Claude\DESIGN.md（jidoka_yudai）ダークモード
+   カラー変更はこのファイル1枚で全ページに効く（HP設計正本§8）
+   ============================================================ */
+:root{
+  /* コンクリート3層（純黒禁止） */
+  --bg0:#1E1E1E;
+  --bg1:#2E2E2E;
+  --bg2:#3D3D3D;
+
+  /* テキスト */
+  --ink:#F4F4F2;
+  --sub:#A8A8A4;
+  --faint:#6E6E6A;
+
+  /* レーザーグリーン（CTA・実測数字・基準線に限定） */
+  --laser:#2EA043;
+  --laser-dim:rgba(46,160,67,.55);
+  --laser-faint:rgba(46,160,67,.18);
+
+  /* 罫線 */
+  --line:rgba(244,244,242,.09);
+
+  /* モーション実値（かっこいい系UIデザイン教科書 C1） */
+  --ease:cubic-bezier(.4,.4,0,1);
+  --ease-out:cubic-bezier(.23,1,.32,1);
+
+  /* 書体（Inter禁止） */
+  --mono:"JetBrains Mono",monospace;
+  --sans:"Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;
+
+  /* 角丸（DESIGN.md: 控えめ二極） */
+  --r-sm:4px; --r-md:8px; --r-lg:12px;
+}
