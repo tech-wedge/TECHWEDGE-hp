@@ -17,12 +17,16 @@
 | `construction.html` | 建設業LP（主力・DM営業の着地先）。15業務マップ |
 | `tax.html` | 税理士LP（先行パートナー募集構成） |
 | `training.html` | AI研修LP（助成金・レーザー階段） |
-| `contact.html` | 無料相談（フォームは開通待ち） |
+| `contact.html` | 無料相談（Formspree接続済み） |
 | `company.html` | 運営者情報 |
+| `privacy.html` | プライバシーポリシー（noindex） |
 | `404.html` | 断線演出 |
+| `robots.txt` | 検索エンジンからの発見を抑制中（Disallow: /）。公開解禁時に削除 or 内容変更 |
 | `assets/tokens.css` | **デザイントークン（色・書体・easing）。カラー変更はここ1枚** |
 | `assets/base.css` | 共有コンポーネント全部 |
 | `assets/site.js` | ブランド名定数・モーション（出現/カウンタ/慣性基準線/磁気CTA） |
+| `assets/ogp.png` | OGP画像（1200×630px） |
+| `assets/favicon.svg` / `favicon-32.png` / `apple-touch-icon.png` | favicon一式（基準線モチーフ） |
 
 ## 編集ルール（壊すと悠太チェックで差し戻しになるやつ）
 
@@ -41,6 +45,18 @@
 4. 追加してよいページは正本§7の台帳にあるものだけ。**解禁トリガーが満ちてないページは作らない**
 5. 公開前に正本§11のQAチェックを通す
 
-## デプロイ（ドメイン確定後・正本§11参照）
+## デプロイ（完了・正本§11参照）
 
-Cloudflare Pages想定。`git init` → GitHub非公開リポジトリ → Pages接続 → カスタムドメイン。詳細手順は正本§11。
+Cloudflare Pages。GitHub非公開リポジトリ `baaaayu8888/techlore-hp` → Pages自動デプロイ → カスタムドメイン `tech-wedge.com` 接続済み。git pushで自動反映。
+
+## ⚠ 検索エンジン非公開の状態（2026-07-10 悠太指示・解除まで維持）
+
+修正がまだ続く見込みのため、`robots.txt`（Disallow: /）と全ページの`<meta name="robots" content="noindex, nofollow">`で意図的に検索エンジンから隠している。**サイト自体はtech-wedge.comで稼働中**（URLを知っていれば誰でも閲覧可能）。
+
+本番公開（検索エンジンに解禁）する時にやること:
+1. `robots.txt`を`Allow: /`に変更（またはファイル削除）
+2. 全ページの`<meta name="robots" content="noindex, nofollow">`行を削除（`company.html`等の`privacy.html`/`404.html`は`noindex`のまま維持でよい）
+3. sitemap.xml作成→push
+4. Google Search Console登録・所有権確認【悠太スイッチ】
+
+この解禁は悠太の明示指示があってから実行する。
