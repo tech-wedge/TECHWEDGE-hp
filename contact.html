@@ -49,23 +49,25 @@
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">01</span><h2>ご連絡方法</h2><span class="sec-en">Contact</span></div>
     <div class="notice rv" style="max-width:600px">
-      現在、お問い合わせフォームは準備中です。<br>
-      当面は <a href="https://x.com/jidoka_yudai" target="_blank" rel="noopener">X（@jidoka_yudai）のDM</a> からご連絡ください。<b>2営業日以内に返信します。</b>
+      下記フォームからご連絡ください。<b>2営業日以内に返信します。</b>
     </div>
 
-    <form class="form rv" style="margin-top:44px" onsubmit="return false;">
-      <p class="fine" style="margin-top:0">▼ フォームは公開時に開通します（以下はプレビュー）</p>
+    <form class="form rv" style="margin-top:44px" action="https://formspree.io/f/mgojgopw" method="POST">
       <div>
         <label class="lb">お名前</label>
-        <input type="text" placeholder="例: 中芝 悠太">
+        <input type="text" name="name" placeholder="例: 中芝 悠太" required>
+      </div>
+      <div>
+        <label class="lb">メールアドレス</label>
+        <input type="email" name="email" placeholder="例: yourname@example.com" required>
       </div>
       <div>
         <label class="lb">会社名<small>任意</small></label>
-        <input type="text" placeholder="例: 株式会社○○建設">
+        <input type="text" name="company" placeholder="例: 株式会社○○建設">
       </div>
       <div>
         <label class="lb">業種</label>
-        <select>
+        <select name="industry">
           <option>建設業</option>
           <option>税理士・士業</option>
           <option>その他</option>
@@ -74,18 +76,18 @@
       <div>
         <label class="lb">いま困っていること<small>複数選択OK</small></label>
         <div class="checks">
-          <label class="chk"><input type="checkbox">領収書・経理</label>
-          <label class="chk"><input type="checkbox">見積・請求</label>
-          <label class="chk"><input type="checkbox">書類作成</label>
-          <label class="chk"><input type="checkbox">AI研修・教育</label>
-          <label class="chk"><input type="checkbox">何から始めればいいか分からない</label>
+          <label class="chk"><input type="checkbox" name="issues" value="領収書・経理">領収書・経理</label>
+          <label class="chk"><input type="checkbox" name="issues" value="見積・請求">見積・請求</label>
+          <label class="chk"><input type="checkbox" name="issues" value="書類作成">書類作成</label>
+          <label class="chk"><input type="checkbox" name="issues" value="AI研修・教育">AI研修・教育</label>
+          <label class="chk"><input type="checkbox" name="issues" value="何から始めればいいか分からない">何から始めればいいか分からない</label>
         </div>
       </div>
       <div>
         <label class="lb">自由記入<small>任意</small></label>
-        <textarea rows="4" placeholder="例: 月末の領収書整理に半日かかっています"></textarea>
+        <textarea rows="4" name="message" placeholder="例: 月末の領収書整理に半日かかっています"></textarea>
       </div>
-      <button class="cta" type="button" onclick="window.open('https://x.com/jidoka_yudai','_blank')">Xで相談する →（フォーム開通まで）</button>
+      <button class="cta" type="submit">送信する →</button>
     </form>
   </div>
 </section>
@@ -102,6 +104,7 @@
       <a href="tax.html">税理士の方へ</a>
       <a href="training.html">AI研修</a>
       <a href="company.html">運営者情報</a>
+      <a href="privacy.html">プライバシーポリシー</a>
     </div>
     <span class="note" data-brand-note></span>
   </div>
