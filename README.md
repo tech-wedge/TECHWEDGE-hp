@@ -53,10 +53,12 @@ Cloudflare Pages。GitHub非公開リポジトリ `baaaayu8888/techlore-hp` → 
 
 修正がまだ続く見込みのため、`robots.txt`（Disallow: /）と全ページの`<meta name="robots" content="noindex, nofollow">`で意図的に検索エンジンから隠している。**サイト自体はtech-wedge.comで稼働中**（URLを知っていれば誰でも閲覧可能）。
 
-本番公開（検索エンジンに解禁）する時にやること:
-1. `robots.txt`を`Allow: /`に変更（またはファイル削除）
-2. 全ページの`<meta name="robots" content="noindex, nofollow">`行を削除（`company.html`等の`privacy.html`/`404.html`は`noindex`のまま維持でよい）
-3. sitemap.xml作成→push
-4. Google Search Console登録・所有権確認【悠太スイッチ】
+`sitemap.xml`は作成・push済み（対象6ページ: index/construction/tax/training/contact/company。privacy/404は元々noindex方針のため対象外）。
 
-この解禁は悠太の明示指示があってから実行する。
+本番公開（検索エンジンに解禁）する時にやること:
+1. `robots.txt`の中身を`User-agent: *\nAllow: /`に書き換え
+2. 全ページの`<meta name="robots" content="noindex, nofollow">`行を削除（`privacy.html`/`404.html`は`noindex`のまま維持でよい）
+3. push（sitemap.xmlは作成済みのため追加作業不要）
+4. Google Search Console登録・所有権確認【悠太スイッチ】（DM送信開始前が期限）
+
+この解禁は悠太の明示指示（GOスイッチ）があってから実行する。
