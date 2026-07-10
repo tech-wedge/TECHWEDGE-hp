@@ -1,12 +1,12 @@
 /* ============================================================
-   TechWedge（名称仮）共有JS v2（MAXラウンド）
+   TechWedge 共有JS v2（MAXラウンド）
    ブランド名一元管理・出現/描画・慣性基準線・磁気CTA・カウンタ
    ============================================================ */
 
 /* ─── 組織名はここ1箇所だけ（確定したら書き換え） ─── */
 const BRAND_HEAD = "TECH";
 const BRAND_TAIL = "WEDGE";
-const BRAND_PROVISIONAL = true; // 名称確定でfalse
+const BRAND_PROVISIONAL = false; // 2026-07-08 組織名TechWedge確定（悠太）
 
 document.querySelectorAll("[data-brand]").forEach(el => {
   el.innerHTML = BRAND_HEAD + '<i style="font-style:normal;color:var(--laser)">' + BRAND_TAIL + "</i>";

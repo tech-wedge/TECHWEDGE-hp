@@ -1,4 +1,4 @@
-# TechWedge HP（名称仮）
+# TechWedge HP
 
 3人のAI自動化チーム（悠太・かげ・三富）のコーポレートサイト。静的HTML＋最小JS・フレームワークなし。
 
