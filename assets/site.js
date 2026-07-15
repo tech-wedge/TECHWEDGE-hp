@@ -28,6 +28,7 @@ document.querySelectorAll(".rv,.draw").forEach(el => io.observe(el));
 function countUp(el) {
   const target = parseFloat(el.dataset.count);
   if (REDUCED) { el.childNodes[0].nodeValue = target; return; }
+  el.childNodes[0].nodeValue = 0;
   const dur = 1400, t0 = performance.now();
   (function tick(t) {
     const p = Math.min((t - t0) / dur, 1);
