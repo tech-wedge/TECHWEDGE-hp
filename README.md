@@ -49,16 +49,12 @@
 
 Cloudflare Pages。GitHub非公開リポジトリ `baaaayu8888/techlore-hp` → Pages自動デプロイ → カスタムドメイン `tech-wedge.com` 接続済み。git pushで自動反映。
 
-## ⚠ 検索エンジン非公開の状態（2026-07-10 悠太指示・解除まで維持）
+## ✅ 検索エンジン公開解禁済み（2026-07-16 悠太のGOスイッチで実行）
 
-修正がまだ続く見込みのため、`robots.txt`（Disallow: /）と全ページの`<meta name="robots" content="noindex, nofollow">`で意図的に検索エンジンから隠している。**サイト自体はtech-wedge.comで稼働中**（URLを知っていれば誰でも閲覧可能）。
+2026-07-10〜07-16は修正継続中のため`robots.txt`（Disallow: /）＋全ページnoindexで意図的に検索エンジンから隠していたが、**悠太の明示指示（「解禁していいよ」）を受けて2026-07-16に解禁実行済み**（commit `de87088`）。
 
-`sitemap.xml`は作成・push済み（対象6ページ: index/construction/tax/training/contact/company。privacy/404は元々noindex方針のため対象外）。
+- `robots.txt`を`Allow: /`＋`Sitemap:`行に変更、本番反映確認済み
+- 全6ページ（index/construction/tax/training/contact/company）の`noindex`メタタグを削除、本番反映確認済み
+- `privacy.html`/`404.html`は方針通り`noindex`のまま維持
 
-本番公開（検索エンジンに解禁）する時にやること:
-1. `robots.txt`の中身を`User-agent: *\nAllow: /`に書き換え
-2. 全ページの`<meta name="robots" content="noindex, nofollow">`行を削除（`privacy.html`/`404.html`は`noindex`のまま維持でよい）
-3. push（sitemap.xmlは作成済みのため追加作業不要）
-4. Google Search Console登録・所有権確認【悠太スイッチ】（DM送信開始前が期限）
-
-この解禁は悠太の明示指示（GOスイッチ）があってから実行する。
+**残タスク【悠太スイッチ・未実施】**: Google Search Console登録・所有権確認（DM送信開始前が期限の目安）。`sitemap.xml`は作成済みで登録時にそのまま使える。
