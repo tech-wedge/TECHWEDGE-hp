@@ -17,7 +17,8 @@
 | `construction.html` | 建設業LP（主力・DM営業の着地先）。15業務マップ |
 | `tax.html` | 税理士LP（先行パートナー募集構成） |
 | `training.html` | AI研修LP（助成金・レーザー階段） |
-| `contact.html` | 無料相談（Formspree接続済み） |
+| `cases.html` | 導入事例（2026-07-21新設。1本目=領収書仕分け(myshia)・2本目=メール自動返信(自社ドッグフーディング)。実数は一次ソースから、無いものは作らない） |
+| `contact.html` | 無料相談（GAS接続済み・v4は顧客向け自動返信メール機能付き） |
 | `company.html` | 運営者情報 |
 | `privacy.html` | プライバシーポリシー（noindex） |
 | `404.html` | 断線演出 |
