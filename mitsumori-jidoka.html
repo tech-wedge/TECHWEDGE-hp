@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>建設業の見積書、まだ手作業で作ってませんか？ 自動化の考え方と進め方 | TechWedge</title>
+<meta name="description" content="建設業の見積書作成を自動化する3つの選択肢と、導入前に確認すべきポイントを整理。過去単価の参照・数量計算・体裁整形——パターン化できる工程から自動化を検討する方法を解説します。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://tech-wedge.com/mitsumori-jidoka.html">
+<meta property="og:title" content="建設業の見積書、まだ手作業で作ってませんか？ 自動化の考え方と進め方 | TechWedge">
+<meta property="og:description" content="建設業の見積書作成を自動化する3つの選択肢と、導入前に確認すべきポイントを整理。">
+<meta property="og:image" content="https://tech-wedge.com/assets/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/base.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "建設業の見積書、まだ手作業で作ってませんか？ 自動化の考え方と進め方",
+  "author": {"@type": "Organization", "name": "TechWedge"},
+  "publisher": {"@type": "Organization", "name": "TechWedge", "logo": {"@type": "ImageObject", "url": "https://tech-wedge.com/assets/favicon-32.png"}},
+  "datePublished": "2026-07-21",
+  "dateModified": "2026-07-21",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tech-wedge.com/mitsumori-jidoka.html"}
+}
+</script>
+</head>
+<body>
+
+<div class="datum" id="datum"></div>
+
+<header class="site">
+  <nav class="nav">
+    <a class="brand" href="index.html" data-brand></a>
+    <div class="nav-links">
+      <a href="construction.html">建設業の方へ</a>
+      <a href="tax.html">税理士の方へ</a>
+      <a href="training.html">AI研修</a>
+      <a href="cases.html">導入事例</a>
+      <a href="company.html">運営チーム</a>
+      <a class="nav-cta" href="contact.html">無料相談 →</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero compact">
+  <div class="wrap">
+    <div class="kicker">COLUMN — 建設業の方へ</div>
+    <h1>建設業の見積書、<br><span class="laser-under">まだ手作業で作ってませんか？</span></h1>
+  </div>
+</section>
+
+<!-- ═══ 本文 ═══ -->
+<section class="band">
+  <div class="wrap">
+    <div class="story rv">
+      見積書の作成に、1件あたりどれくらい時間をかけていますか。過去の単価を探し、転記し、体裁を整える——この作業を「当たり前」だと思っている会社ほど、実は自動化の余地が大きい業務です。<br><br>
+      <b>この記事で分かること</b><br>
+      ・建設業の見積書作成が自動化しにくいと言われる理由<br>
+      ・自動化を検討する際の3つの選択肢（表計算の型化／専用SaaS／自社開発）<br>
+      ・導入前に確認すべきポイント
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2>なぜ見積書の自動化は後回しにされがちか</h2></div>
+    <div class="story rv">
+      見積書は案件ごとに条件が異なり、「毎回パターンが違うから自動化できない」と思われがちです。しかし実際には、①過去単価の参照 ②数量×単価の計算 ③体裁の整形——という3つの工程のうち、①と②は多くの現場でパターン化できます。個別性が高いのは最終的な調整部分だけ、というケースが少なくありません。
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2>自動化の3つの選択肢</h2></div>
+    <div class="grid c3">
+      <div class="card rv"><h3 style="margin-top:0">表計算の型化</h3><p class="desc">Excel・スプレッドシートに単価マスタを作り、関数で自動計算する方法。低コストで始められる一方、担当者が異動すると属人化しやすい。</p></div>
+      <div class="card rv"><h3 style="margin-top:0">専用SaaS</h3><p class="desc">建設業向けの見積・原価管理サービスを導入する方法。機能は豊富だが、自社の商習慣に合わせたカスタマイズが難しい場合がある。</p></div>
+      <div class="card rv"><h3 style="margin-top:0">自社フローに合わせた自動化</h3><p class="desc">フォーム入力から過去単価を自動照合し、見積書を生成する仕組みを個別に構築する方法。初期費用はかかるが、自社の商習慣にそのまま合わせられる。</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2>導入前に確認したい3つのポイント</h2></div>
+    <ul class="checklist rv">
+      <li><span><b>単価マスタは誰が更新するか</b> — 自動化しても、更新を怠れば古い金額のまま出てしまいます。更新担当と頻度を決めてから導入するのが安全です。</span></li>
+      <li><span><b>見積から請求までの一気通貫を想定するか</b> — 見積だけでなく請求書への変換まで自動化すると、二重入力が無くなり効果が大きくなります。</span></li>
+      <li><span><b>現場のITリテラシーに合わせた設計か</b> — 高機能でも現場で使われなければ意味がありません。入力項目を絞ったフォーム形式など、現場が迷わない設計を優先すべきです。</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2>私たちの取り組み</h2></div>
+    <div class="story rv">
+      TechWedgeは建設業（内装施工）を実際に経営するメンバーが中心となり、自社の事務作業を自動化する中で得た知見をもとに、見積書・請求書の自動作成を開発中です。現時点では先行モニターを募集しており、正式な効果測定データはまだ公開できる段階にありません。できていないことを、できていると言わない——これが私たちの方針です。<br><br>
+      すでに提供中の<a href="cases.html" style="color:var(--laser)">領収書仕分け自動化</a>では、自社実測で月約3時間の作業が約20分になった実績があります（2026年1月〜6月・400件の実運用データ）。見積・請求まわりの自動化も、同じ考え方（現場の実作業を測って、効くところから自動化する）で進めています。<br><br>
+      まずは自社の見積作成フローのどこに時間がかかっているか、棚卸しから始めてみてください。無料相談では、その棚卸しを一緒に行い、自動化で効く箇所・効かない箇所を正直にお伝えしています。
+    </div>
+    <p class="rv" style="margin-top:24px">関連記事: <a href="nyujo-shorui-koritsuka.html" style="color:var(--laser)">新規入場書類の作成、毎回イチから作っていませんか？</a> ／ <a href="jimu-jidoka-jissoku.html" style="color:var(--laser)">月3時間の領収書仕分けが20分になった実測記録</a></p>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="contact-band">
+  <div class="wrap">
+    <h2>見積作成のどこに時間がかかっているか、<br>無料相談でお聞かせください。</h2>
+    <p>30分の無料相談で、自動化できる箇所とできない箇所を正直にお伝えします。</p>
+    <a class="cta" href="contact.html">無料相談へ →</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="foot">
+    <span class="brand" data-brand></span>
+    <span class="tagline">現場を動かす人に、テクノロジーを。<br>このサイトも、私たちのAIワークフローで制作しました。</span>
+    <div class="links">
+      <a href="index.html">トップ</a>
+      <a href="construction.html">建設業の方へ</a>
+      <a href="tax.html">税理士の方へ</a>
+      <a href="training.html">AI研修</a>
+      <a href="cases.html">導入事例</a>
+      <a href="company.html">運営者情報</a>
+      <a href="contact.html">無料相談</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </div>
+    <span class="note" data-brand-note></span>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

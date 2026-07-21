@@ -25,6 +25,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://tech-wedge.com/jimu-jidoka-jissoku.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tech-wedge.com/mitsumori-jidoka.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tech-wedge.com/nyujo-shorui-koritsuka.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://tech-wedge.com/company.html</loc>
     <priority>0.5</priority>
   </url>
