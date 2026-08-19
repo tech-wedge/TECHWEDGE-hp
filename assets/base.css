@@ -284,6 +284,11 @@ footer.site{border-top:1px solid var(--line);padding:36px 0;background:var(--bg1
 .spec-table .num{font-family:var(--mono);white-space:nowrap}
 .spec-table .strike{text-decoration:line-through;color:var(--faint)}
 .spec-table .laser{color:var(--laser);font-weight:700}
+.badge{display:inline-flex;align-items:center;justify-content:center;min-width:28px;padding:4px 10px;border-radius:var(--r-sm);font-family:var(--mono);font-size:12.5px;font-weight:700}
+.badge-yes{background:var(--laser-faint);color:var(--laser)}
+.badge-no{background:var(--bg2);color:var(--sub)}
+.badge-maybe{background:rgba(217,166,46,.16);color:#D9A62E}
+.spec-table td.blank-row{color:var(--faint);font-style:italic}
 .story{border-left:2px solid var(--laser);padding:6px 0 6px 24px;max-width:660px;color:var(--sub);font-size:14.5px;line-height:2.3}
 .story b{color:var(--ink)}
 
