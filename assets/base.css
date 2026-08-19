@@ -289,6 +289,13 @@ footer.site{border-top:1px solid var(--line);padding:36px 0;background:var(--bg1
 .badge-no{background:var(--bg2);color:var(--sub)}
 .badge-maybe{background:rgba(217,166,46,.16);color:#D9A62E}
 .spec-table td.blank-row{color:var(--faint);font-style:italic}
+.step-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;max-width:900px}
+.step-card{background:var(--bg1);border:1px solid var(--line);border-radius:var(--r-md);padding:26px 22px}
+.step-card .step-no{font-family:var(--mono);font-size:13px;color:var(--laser);letter-spacing:.14em}
+.step-card .step-time{font-family:var(--mono);font-size:28px;font-weight:700;color:var(--laser);margin-top:8px}
+.step-card .step-time small{font-size:14px;color:var(--sub);font-weight:500;margin-left:4px}
+.step-card h4{font-size:16px;font-weight:700;margin-top:10px}
+.step-card p{color:var(--sub);font-size:13.5px;margin-top:8px;line-height:1.9}
 .story{border-left:2px solid var(--laser);padding:6px 0 6px 24px;max-width:660px;color:var(--sub);font-size:14.5px;line-height:2.3}
 .story b{color:var(--ink)}
 
