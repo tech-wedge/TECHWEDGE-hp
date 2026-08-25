@@ -22,7 +22,7 @@
 | `company.html` | 運営者情報 |
 | `privacy.html` | プライバシーポリシー（noindex） |
 | `404.html` | 断線演出 |
-| `robots.txt` | 検索エンジンからの発見を抑制中（Disallow: /）。公開解禁時に削除 or 内容変更 |
+| `robots.txt` | `Allow: /`＋`Sitemap:`＝クロール・インデックス可（2026-07-16解禁済み。詳細は下記「検索エンジン」節） |
 | `assets/tokens.css` | **デザイントークン（色・書体・easing）。カラー変更はここ1枚** |
 | `assets/base.css` | 共有コンポーネント全部 |
 | `assets/site.js` | ブランド名定数・モーション（出現/カウンタ/慣性基準線/磁気CTA） |
@@ -61,9 +61,11 @@
 
 Cloudflare Pages。GitHub非公開リポジトリ `baaaayu8888/techlore-hp` → Pages自動デプロイ → カスタムドメイン `tech-wedge.com` 接続済み。git pushで自動反映。
 
-## ✅ 検索エンジン公開解禁済み（2026-07-16 悠太のGOスイッチで実行）
+## 検索エンジン
 
-2026-07-10〜07-16は修正継続中のため`robots.txt`（Disallow: /）＋全ページnoindexで意図的に検索エンジンから隠していたが、**悠太の明示指示（「解禁していいよ」）を受けて2026-07-16に解禁実行済み**（commit `de87088`）。
+🔴**現在**: `robots.txt` = `Allow: /` ／ noindexなし ＝ **クロール・インデックス可**（2026-08-25実測）
+
+（経緯）2026-07-10〜07-16は修正継続中のため`robots.txt`（Disallow: /）＋全ページnoindexで意図的に検索エンジンから隠していたが、**悠太の明示指示（「解禁していいよ」）を受けて2026-07-16に解禁実行済み**（commit `de87088`）。
 
 - `robots.txt`を`Allow: /`＋`Sitemap:`行に変更、本番反映確認済み
 - 全6ページ（index/construction/tax/training/contact/company）の`noindex`メタタグを削除、本番反映確認済み
