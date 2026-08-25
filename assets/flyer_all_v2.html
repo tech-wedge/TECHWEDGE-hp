@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>TechWedge 全サービス紹介チラシ v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2E2E2E; --sub:#5A5A5A; --laser:#2EA043; --neutral:#F4F4F2; --surface:#FFFFFF;
+    --sans:'Noto Sans JP',sans-serif; --mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  @page{size:A4;margin:0}
+  html,body{width:210mm;height:297mm}
+  html.bw body{filter:grayscale(100%)}
+  body{font-family:var(--sans); color:var(--ink); background:var(--surface); position:relative; overflow:hidden}
+  .page{width:210mm;height:297mm;padding:9mm 15mm;position:relative;display:flex;flex-direction:column}
+  .datum-bar{position:absolute;left:7mm;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,rgba(46,160,67,.3) 8%,rgba(46,160,67,.3) 92%,transparent)}
+
+  /* ══ 上段: キャッチ+ビジュアル (約35%) ══ */
+  .tier-top{flex:0 0 auto}
+  .brandrow{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4mm}
+  .brand{font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:.28em;color:var(--ink)}
+  .brand i{font-style:normal;color:var(--laser)}
+  .greeting{font-size:11px;color:var(--ink);font-weight:700}
+  .bridge{font-size:9.5px;color:var(--sub);line-height:1.7;margin-top:2mm;max-width:175mm}
+  .bridge b{color:var(--ink);font-weight:700}
+
+  h1{font-size:25px;font-weight:900;line-height:1.32;letter-spacing:-.01em;margin-top:5.5mm}
+  h1 .u{border-bottom:2px solid var(--laser);padding-bottom:1px}
+  .subcatch{margin-top:3mm;font-size:12px;font-weight:700;color:var(--ink);line-height:1.6}
+
+  /* ══ FV: 自社実績バッジ(視覚要素) ══ */
+  .fv-proof{display:flex;align-items:center;gap:3mm;margin-top:4mm;padding:2.8mm 5mm;background:var(--neutral);border:1.5px solid var(--laser);border-radius:6px;width:fit-content}
+  .fv-proof .fp-label{font-family:var(--mono);font-size:7px;color:var(--sub);letter-spacing:.03em}
+  .fv-proof .fp-before{font-size:13px;font-weight:700;color:var(--ink)}
+  .fv-proof .fp-arrow{font-size:14px;color:var(--ink);font-weight:900}
+  .fv-proof .fp-after{font-size:19px;font-weight:900;color:#fff;background:var(--laser);padding:0.6mm 3mm;border-radius:3px}
+  html.bw .fv-proof .fp-after{background:#2E2E2E}
+  .fv-proof .fp-note{font-family:var(--mono);font-size:6.5px;color:var(--sub)}
+
+  .hero-ba{
+    margin-top:0;border:2px solid var(--laser);border-radius:7px;background:var(--neutral);
+    padding:6mm 8mm;display:flex;flex-direction:column;
+  }
+  .hero-ba .top-row{display:flex;align-items:center;gap:7mm}
+  .hero-ba .lbl{font-family:var(--mono);font-size:10px;color:var(--sub);letter-spacing:.1em;flex-shrink:0;width:26mm;line-height:1.7}
+  .hero-ba .nums{display:flex;align-items:center;gap:7mm;flex:1}
+  .hero-ba .num-block{text-align:center}
+  .hero-ba .num-block .k{font-family:var(--mono);font-size:9px;color:var(--sub);letter-spacing:.08em}
+  .hero-ba .num-block .v{font-size:20px;font-weight:700;margin-top:1mm;color:var(--ink)}
+  .hero-ba .num-block.after .v{
+    color:var(--ink);font-size:34px;font-weight:900;
+    background:var(--laser);display:inline-block;padding:1mm 4mm;border-radius:4px;margin-top:1.5mm;
+  }
+  html.bw .hero-ba .num-block.after .v{background:#2E2E2E;color:#fff}
+  .hero-ba .arrow{font-size:22px;color:var(--ink);font-weight:900}
+  .hero-ba .src{margin-left:auto;font-family:var(--mono);font-size:7px;color:var(--sub);text-align:right;line-height:1.7;max-width:46mm}
+
+  /* ══ Before/After 工程フロー(視覚的証拠) ══ */
+  .flow-rows{margin-top:3mm;padding-top:2.5mm;border-top:1px dashed #C9C9C4}
+  .flow-row{display:flex;align-items:center;gap:1mm;margin-bottom:1.6mm}
+  .flow-row:last-child{margin-bottom:0}
+  .flow-row .flabel{font-family:var(--mono);font-size:7.5px;color:var(--sub);width:14mm;flex-shrink:0;font-weight:700}
+  .flow-row .fsteps{display:flex;align-items:center;gap:0.8mm;flex:1}
+  .flow-step{background:#fff;border:1px solid #D8D8D4;border-radius:3px;padding:0.8mm 0;text-align:center;flex:1;min-width:0}
+  .flow-step .fn{font-weight:700;font-size:7px;color:var(--ink)}
+  .flow-step .fm{font-family:var(--mono);font-size:6px;color:var(--sub);margin-top:0.3mm}
+  .flow-arrow-sm{color:#C4C4BF;font-size:8px;flex-shrink:0}
+  .flow-row .ftotal{font-family:var(--mono);font-weight:900;font-size:11px;flex-shrink:0;text-align:right;width:15mm;color:var(--ink)}
+  .flow-row.after .flow-step{background:var(--laser);border-color:var(--laser)}
+  .flow-row.after .flow-step .fn,.flow-row.after .flow-step .fm{color:#fff}
+  html.bw .flow-row.after .flow-step{background:#2E2E2E;border-color:#2E2E2E}
+  .flow-row.after .ftotal{color:var(--laser)}
+  html.bw .flow-row.after .ftotal{color:#2E2E2E}
+  .flow-legend{font-size:6.3px;color:var(--sub);margin-top:1.5mm;line-height:1.5}
+
+  /* ══ 02 制作実績(縮小版) ══ */
+  .shot-row.compact{gap:3.5mm}
+  .shot-row.compact .shot-frame{height:20mm}
+  .shot-row.compact .shot-cap{font-size:8px;padding:1.4mm 2mm}
+  .shot-row.compact .shot-browser{padding:1mm 2mm}
+  .shot-row.compact .bubble{font-size:6px;padding:1.2mm 1.6mm;max-width:26mm}
+
+  /* ══ 見出し共通 ══ */
+  .sec-head{display:flex;align-items:baseline;gap:7px;margin-top:4.5mm;margin-bottom:2mm}
+  .sec-num{font-family:var(--mono);font-size:9px;color:var(--laser);letter-spacing:.08em}
+  .sec-head h2{font-size:13px;font-weight:900}
+
+  /* ══ 中段: 実績スクショ ══ */
+  .shot-row{display:flex;gap:4.5mm}
+  .shot-card{flex:1;border:1px solid #D8D8D4;border-radius:5px;overflow:hidden;background:var(--surface);position:relative}
+  .shot-browser{background:#E7E7E4;padding:2mm 3mm;display:flex;gap:1.2mm;align-items:center}
+  .shot-browser .dot{width:2mm;height:2mm;border-radius:50%;background:#C4C4BF}
+  .shot-frame{height:52mm;overflow:hidden;position:relative}
+  .shot-frame img{width:100%;display:block}
+  .shot-cap{padding:2.4mm 2.5mm;font-size:9.5px;font-weight:700;text-align:center}
+  .bubble{
+    position:absolute;bottom:2mm;right:2mm;max-width:34mm;background:var(--ink);color:#F4F4F2;
+    font-size:7.2px;line-height:1.5;padding:2.2mm 2.8mm;border-radius:4px;font-weight:700;z-index:2;
+    box-shadow:0 2px 6px rgba(0,0,0,.25);
+  }
+
+  /* ══ 中段: 困りごと(圧縮1行) ══ */
+  .pain-compact{display:flex;flex-direction:column;gap:1.5mm}
+  .pain-compact div{font-size:10.5px;color:var(--ink);line-height:1.5;padding-left:5mm;position:relative}
+  .pain-compact div::before{content:"—";position:absolute;left:0;color:var(--laser);font-family:var(--mono)}
+
+  /* ══ 中段: サービス4本柱(圧縮1行) ══ */
+  .svc-compact{display:flex;flex-direction:column}
+  .svc-line{display:flex;align-items:baseline;gap:3.5mm;padding:1.8mm 0;border-bottom:1px dashed #E3E3E0;font-size:10.5px}
+  .svc-line:last-child{border-bottom:none}
+  .svc-line .no{font-family:var(--mono);font-weight:700;color:var(--laser);width:7mm;flex-shrink:0;font-size:9.5px}
+  .svc-line .name{font-weight:700;width:38mm;flex-shrink:0}
+  .svc-line .d{color:var(--sub);flex:1}
+  .svc-line .tag{font-family:var(--mono);font-size:7px;color:var(--sub);border:1px solid #C9C9C4;border-radius:3px;padding:1px 5px;flex-shrink:0}
+
+  /* ══ 下段: CTA集約 ══ */
+  .tier-bottom{margin-top:5mm;display:flex;gap:5mm;align-items:stretch}
+  .cta-main{
+    flex:2.2;border:2px solid var(--laser);border-radius:7px;padding:6mm 7mm;background:var(--neutral);
+    display:flex;align-items:center;gap:7mm;
+  }
+  .cta-main img{width:30mm;height:30mm;border-radius:3px;flex-shrink:0;background:#fff;padding:1.5mm;border:1px solid #ddd}
+  .cta-main .txt .h{font-size:15px;font-weight:900;color:var(--ink)}
+  .cta-main .txt .d{font-size:10px;color:var(--sub);margin-top:2mm;line-height:1.7}
+  .cta-main .txt .tel{margin-top:2.5mm;font-family:var(--mono);font-size:13px;color:var(--ink);font-weight:700}
+  .cta-main .txt .tel b{color:var(--laser);font-size:15px}
+  .cta-side{flex:.85;padding:2mm 3mm 2mm 5mm;border-left:1px dashed #D8D8D4;display:flex;flex-direction:column;justify-content:center}
+  .cta-side .t{font-family:var(--mono);font-size:6.5px;letter-spacing:.1em;color:var(--sub)}
+  .cta-side .v{font-size:9px;font-weight:700;margin-top:1.8mm;line-height:1.6;color:var(--sub)}
+  .cta-side .s{font-size:6.5px;color:var(--sub);margin-top:1.8mm;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="datum-bar"></div>
+
+  <div class="tier-top">
+    <div class="brandrow">
+      <span class="brand">TECHWEDGE<i>.</i></span>
+      <span class="greeting">AI AUTOMATION UNIT — OSAKA</span>
+    </div>
+
+    <p class="bridge">表面の<b>myshia</b>を運営する中芝が、建設会社向けのAI導入・研修・事務作業自動化を支援しています。</p>
+
+    <h1>「AIって、実際なにができるの？」<br><span class="u">職人が自社で実践中。</span></h1>
+    <p class="subcatch">AIを使う業務の選定から、社内で継続運用できる状態まで支援します。</p>
+
+    <div class="fv-proof">
+      <span class="fp-label">自社実績（領収書仕分け）</span>
+      <span class="fp-before">月約3時間</span>
+      <span class="fp-arrow">→</span>
+      <span class="fp-after">月20分</span>
+      <span class="fp-note">約88%削減・myshia実運用400件</span>
+    </div>
+  </div>
+
+  <div class="sec-head"><span class="sec-num">01</span><h2>こんな困りごとありませんか</h2></div>
+  <div class="pain-compact">
+    <div>見積書・請求書づくりが、気づけば夜の仕事になっている</div>
+    <div>「AIって聞くけど、うちの現場に使えるのか分からない」</div>
+    <div>事務作業を任せられる人がおらず、社長や奥さんが抱えている</div>
+  </div>
+
+  <div class="sec-head"><span class="sec-num">02</span><h2>できること</h2></div>
+  <div class="svc-compact">
+    <div class="svc-line"><span class="no">01</span><span class="name">AI初期導入支援</span><span class="d">事務作業を一緒に棚卸し→研修→最初の1業務の導入・定着まで伴走</span><span class="tag" style="background:var(--laser);color:#fff;border-color:var(--laser);font-weight:700">主力</span></div>
+    <div class="svc-line"><span class="no">02</span><span class="name">年間AI研修プログラム</span><span class="d">全6回・専門用語なし。社員が自社業務でAIを使える状態を目指します。人材開発支援助成金の対象となる場合があります</span><span class="tag">提供中</span></div>
+    <div class="svc-line"><span class="no">03</span><span class="name">建設業の事務作業自動化</span><span class="d">見積・請求・領収書等、効くところから自動化</span><span class="tag">提供中</span></div>
+  </div>
+
+  <div class="sec-head"><span class="sec-num">03</span><h2>AI初期導入支援の一例 — 領収書仕分けを自社で実践</h2></div>
+  <div class="hero-ba">
+    <div class="flow-rows" style="margin-top:0;padding-top:0;border-top:none">
+      <div class="flow-row">
+        <div class="flabel">BEFORE</div>
+        <div class="fsteps">
+          <div class="flow-step"><div class="fn">①</div><div class="fm">30分</div></div>
+          <div class="flow-arrow-sm">→</div>
+          <div class="flow-step"><div class="fn">②</div><div class="fm">40分</div></div>
+          <div class="flow-arrow-sm">→</div>
+          <div class="flow-step"><div class="fn">③</div><div class="fm">30分</div></div>
+          <div class="flow-arrow-sm">→</div>
+          <div class="flow-step"><div class="fn">④</div><div class="fm">20分</div></div>
+          <div class="flow-arrow-sm">→</div>
+          <div class="flow-step"><div class="fn">⑤</div><div class="fm">20分</div></div>
+          <div class="flow-arrow-sm">→</div>
+          <div class="flow-step"><div class="fn">⑥</div><div class="fm">15分</div></div>
+          <div class="flow-arrow-sm">→</div>
+          <div class="flow-step"><div class="fn">⑦</div><div class="fm">15分</div></div>
+        </div>
+        <div class="ftotal">170分</div>
+      </div>
+      <div class="flow-row after">
+        <div class="flabel">AFTER</div>
+        <div class="fsteps">
+          <div class="flow-step"><div class="fn">①</div><div class="fm">7分</div></div>
+          <div class="flow-arrow-sm">→</div>
+          <div class="flow-step"><div class="fn">②</div><div class="fm">0分</div></div>
+          <div class="flow-arrow-sm">→</div>
+          <div class="flow-step"><div class="fn">③</div><div class="fm">10分</div></div>
+          <div class="flow-arrow-sm">→</div>
+          <div class="flow-step"><div class="fn">④</div><div class="fm">0分</div></div>
+          <div class="flow-arrow-sm">→</div>
+          <div class="flow-step"><div class="fn">⑤</div><div class="fm">3分</div></div>
+        </div>
+        <div class="ftotal">20分</div>
+      </div>
+      <div class="flow-legend">BEFORE：①紙の整理②読み取り③科目判断④事業者切り分け⑤格納⑥受け渡し準備⑦差し戻し対応　／　AFTER：①スキャン②AI処理③確認・承認④受け渡し⑤差し戻し対応</div>
+      <div class="flow-legend" style="margin-top:1mm">出典: 2026年1〜6月・myshia実運用400件（170分≒約3時間→20分・約88%削減）</div>
+    </div>
+  </div>
+
+  <div class="sec-head"><span class="sec-num">04</span><h2>AI・DX支援の実績</h2></div>
+  <p style="font-size:9.5px;color:var(--sub);margin:-1mm 0 2.5mm">事業の土台（HP・業務システム）から、日々のAI活用まで。まとめて整備できます。</p>
+  <div class="shot-row compact">
+    <div class="shot-card">
+      <div class="shot-browser"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      <div class="shot-frame"><img src="results/result_techwedge.png" alt="TechWedge本体サイトのスクリーンショット"></div>
+      <div class="shot-cap">TechWedge 本体サイト</div>
+    </div>
+    <div class="shot-card">
+      <div class="shot-browser"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      <div class="shot-frame"><img src="results/result_akiyamusubu.png" alt="アキヤムスブのスクリーンショット"></div>
+      <div class="shot-cap">アキヤムスブ</div>
+    </div>
+    <div class="shot-card">
+      <div class="shot-browser"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      <div class="shot-frame"><img src="results/result_myshia.png" alt="myshia HPのスクリーンショット"><div class="bubble">表面のmyshiaのHPも、<br>うちの制作です</div></div>
+      <div class="shot-cap">myshia HP</div>
+    </div>
+  </div>
+
+  <div class="tier-bottom">
+    <div class="cta-main">
+      <img src="line-qr.jpg" alt="LINE友だち追加QRコード">
+      <div class="txt">
+        <div class="h">まずは対象業務と料金をLINEで相談</div>
+        <div class="d">スキャンするとLINEの友だち追加が開きます。<br>お名前と「チラシ見た」だけでOKです。</div>
+        <div class="tel">TEL：<b>090-6908-0713</b>（担当：中芝）</div>
+      </div>
+    </div>
+    <div class="cta-side">
+      <div class="t">MORE / 料金</div>
+      <div class="v">tech-wedge.com<br>AI活用の入口は月額制で小さく始められます。<br>年間研修は、要件を満たす中小企業では最大75%の助成対象となる場合があります（要件・審査あり）。</div>
+      <div class="s">支給を保証するものではありません。料金はお問い合わせください。</div>
+      <div class="s" style="margin-top:3mm">TechWedge（運営：中芝悠太）<br>大阪府大東市南楠の里町3-33</div>
+    </div>
+  </div>
+</div>
+<script>if (location.search.includes('bw=1')) document.documentElement.classList.add('bw');</script>
+</body>
+</html>
