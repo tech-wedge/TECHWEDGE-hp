@@ -1,3 +1,6 @@
+<!-- ⭕このHTMLが正本。直接編集してええ。
+     tools/render_flyer.mjs は、このHTMLを読んでPNG/PDFに書き出すだけ。
+     （myshiaのDMは逆で build_dm.py が正本・HTMLは生成物。混同注意） -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -28,9 +31,14 @@
   .bridge{font-size:9.5px;color:var(--sub);line-height:1.7;margin-top:2mm;max-width:175mm}
   .bridge b{color:var(--ink);font-weight:700}
 
-  h1{font-size:25px;font-weight:900;line-height:1.32;letter-spacing:-.01em;margin-top:5.5mm}
-  h1 .u{border-bottom:2px solid var(--laser);padding-bottom:1px}
-  .subcatch{margin-top:3mm;font-size:12px;font-weight:700;color:var(--ink);line-height:1.6}
+  h1{font-size:28px;font-weight:900;line-height:1.4;letter-spacing:-.01em;margin-top:4.5mm}
+  h1 .q{background:linear-gradient(transparent 60%, rgba(46,160,67,.30) 60%);padding:0 2px}
+  .catch-sub{margin-top:2.5mm;font-size:17px;font-weight:900;line-height:1.65;color:var(--ink)}
+  .team-row{display:flex;align-items:center;gap:2.5mm;margin-top:3.2mm}
+  .team-row .tm{border:1.5px solid var(--ink);padding:1.5mm 3.5mm;font-size:11.5px;font-weight:900;border-radius:4px;background:var(--surface)}
+  .team-row .op{font-weight:900;color:var(--laser);font-size:13px}
+  .team-row .tail{font-size:11.5px;font-weight:700;margin-left:1.5mm}
+  .subcatch{margin-top:2.5mm;font-size:12px;font-weight:700;color:var(--ink);line-height:1.6}
 
   /* ══ FV: 自社実績バッジ(視覚要素) ══ */
   .fv-proof{display:flex;align-items:center;gap:3mm;margin-top:4mm;padding:2.8mm 5mm;background:var(--neutral);border:1.5px solid var(--laser);border-radius:6px;width:fit-content}
@@ -146,7 +154,9 @@
 
     <p class="bridge">表面の<b>myshia</b>を運営する中芝が、AIのプロ・エンジニアと組んだ3人体制で、建設会社向けのAI導入・研修・事務作業自動化を支援しています。</p>
 
-    <h1>「AIって、実際なにができるの？」<br><span class="u">職人が自社で実践中。</span></h1>
+    <h1><span class="q">「AIって、実際なにができるの？」</span></h1>
+    <p class="catch-sub">職人が実際にAIをフル活用し、<br>建設現場に特化したノウハウをご提供します。</p>
+    <div class="team-row"><span class="tm">現場の職人</span><span class="op">×</span><span class="tm">AIのプロ</span><span class="op">×</span><span class="tm">エンジニア</span><span class="tail">の3人体制で支援します。</span></div>
     <p class="subcatch">AIを使う業務の選定から、社内で継続運用できる状態まで支援します。</p>
 
     <div class="fv-proof">
@@ -168,7 +178,7 @@
   <div class="sec-head"><span class="sec-num">02</span><h2>できること</h2></div>
   <div class="svc-compact">
     <div class="svc-line"><span class="no">01</span><span class="name">AI初期導入支援</span><span class="d">事務作業を一緒に棚卸し→研修→最初の1業務の導入・定着まで伴走</span><span class="tag" style="background:var(--laser);color:#fff;border-color:var(--laser);font-weight:700">主力</span></div>
-    <div class="svc-line"><span class="no">02</span><span class="name">年間AI研修プログラム</span><span class="d">全6回・専門用語なし。社員が自社業務でAIを使える状態を目指します。人材開発支援助成金の対象となる場合があります</span><span class="tag">提供中</span></div>
+    <div class="svc-line"><span class="no">02</span><span class="name">年間AI研修プログラム</span><span class="d">全6回・専門用語なし。社員が自社業務でAIを使える状態を目指します</span><span class="tag">提供中</span></div>
     <div class="svc-line"><span class="no">03</span><span class="name">建設業の事務作業自動化</span><span class="d">見積・請求・領収書等、効くところから自動化</span><span class="tag">提供中</span></div>
   </div>
 
@@ -245,8 +255,8 @@
     </div>
     <div class="cta-side">
       <div class="t">MORE / 料金</div>
-      <div class="v">tech-wedge.com<br>AI活用の入口は月額制で小さく始められます。<br>年間研修は、要件を満たす中小企業では最大75%の助成対象となる場合があります（要件・審査あり）。</div>
-      <div class="s">支給を保証するものではありません。料金はお問い合わせください。</div>
+      <div class="v">tech-wedge.com<br>料金は、導入費＋月額制です。</div>
+      <div class="s">詳しくはお問い合わせください。</div>
       <div class="s" style="margin-top:3mm">TechWedge（運営：中芝悠太）<br>大阪府大東市南楠の里町3-33</div>
     </div>
   </div>
