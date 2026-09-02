@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" role="img" aria-labelledby="t d">
+  <title id="t">AIを使えるようになるまでの3段階</title>
+  <desc id="d">①AIの使い方が分からない、②AIを使える状態にする（ここでターミナルを開く）、③AIを使える。最初に止まるのは②の段階。</desc>
+  <rect width="800" height="220" fill="#2E2E2E"/>
+  <g font-family="Noto Sans JP, Hiragino Kaku Gothic ProN, sans-serif">
+
+    <g>
+      <rect x="24" y="52" width="212" height="116" rx="8" fill="#3D3D3D" stroke="rgba(244,244,242,.09)"/>
+      <text x="44" y="86" font-family="JetBrains Mono, monospace" font-size="13" fill="#6E6E6A">01</text>
+      <text x="44" y="118" font-size="17" font-weight="700" fill="#F4F4F2">使い方が</text>
+      <text x="44" y="144" font-size="17" font-weight="700" fill="#F4F4F2">分からない</text>
+    </g>
+
+    <path d="M248 110 h40" stroke="#6E6E6A" stroke-width="1.5"/>
+    <path d="M282 104 l8 6 -8 6" fill="none" stroke="#6E6E6A" stroke-width="1.5"/>
+
+    <g>
+      <rect x="300" y="40" width="212" height="140" rx="8" fill="#3D3D3D" stroke="#2EA043" stroke-width="1.5"/>
+      <rect x="300" y="40" width="212" height="3" fill="#2EA043"/>
+      <text x="320" y="78" font-family="JetBrains Mono, monospace" font-size="13" fill="#2EA043">02</text>
+      <text x="320" y="110" font-size="17" font-weight="700" fill="#F4F4F2">使える状態に</text>
+      <text x="320" y="136" font-size="17" font-weight="700" fill="#F4F4F2">するまで</text>
+      <text x="320" y="162" font-family="JetBrains Mono, monospace" font-size="12" fill="#A8A8A4">ここでターミナルを開く</text>
+    </g>
+
+    <path d="M524 110 h40" stroke="#6E6E6A" stroke-width="1.5"/>
+    <path d="M558 104 l8 6 -8 6" fill="none" stroke="#6E6E6A" stroke-width="1.5"/>
+
+    <g>
+      <rect x="576" y="52" width="200" height="116" rx="8" fill="#3D3D3D" stroke="rgba(244,244,242,.09)"/>
+      <text x="596" y="86" font-family="JetBrains Mono, monospace" font-size="13" fill="#6E6E6A">03</text>
+      <text x="596" y="118" font-size="17" font-weight="700" fill="#F4F4F2">使える</text>
+    </g>
+
+    <text x="300" y="205" font-size="13" fill="#A8A8A4">最初に止まるのは、ここ</text>
+    <path d="M406 24 v10" stroke="#2EA043" stroke-width="1.5"/>
+    <path d="M400 30 l6 8 6 -8" fill="none" stroke="#2EA043" stroke-width="1.5"/>
+  </g>
+</svg>
