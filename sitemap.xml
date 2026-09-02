@@ -5,55 +5,59 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://tech-wedge.com/construction.html</loc>
+    <loc>https://tech-wedge.com/construction</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tech-wedge.com/tax.html</loc>
+    <loc>https://tech-wedge.com/tax</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tech-wedge.com/training.html</loc>
+    <loc>https://tech-wedge.com/training</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tech-wedge.com/cases.html</loc>
+    <loc>https://tech-wedge.com/cases</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tech-wedge.com/contact.html</loc>
+    <loc>https://tech-wedge.com/contact</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tech-wedge.com/columns.html</loc>
+    <loc>https://tech-wedge.com/columns</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tech-wedge.com/ai-jimu-koritsuka.html</loc>
+    <loc>https://tech-wedge.com/ai-jimu-koritsuka</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tech-wedge.com/ai-muki-fumuki.html</loc>
+    <loc>https://tech-wedge.com/ai-muki-fumuki</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tech-wedge.com/ai-saisho-1gyoumu.html</loc>
+    <loc>https://tech-wedge.com/ai-saisho-1gyoumu</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tech-wedge.com/jimu-jidoka-jissoku.html</loc>
+    <loc>https://tech-wedge.com/jimu-jidoka-jissoku</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tech-wedge.com/mitsumori-jidoka.html</loc>
+    <loc>https://tech-wedge.com/mitsumori-jidoka</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tech-wedge.com/nyujo-shorui-koritsuka.html</loc>
+    <loc>https://tech-wedge.com/nyujo-shorui-koritsuka</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tech-wedge.com/company.html</loc>
+    <loc>https://tech-wedge.com/web</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tech-wedge.com/company</loc>
     <priority>0.5</priority>
   </url>
 </urlset>
