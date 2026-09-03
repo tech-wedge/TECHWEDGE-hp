@@ -89,3 +89,18 @@ if (rep && !REDUCED) {
     rep.style.opacity = Math.max(0, .045 - scrollY / 12000);
   }, { passive: true });
 }
+
+/* ─── モバイルのハンバーガー（2026-09-03追加） ─── */
+(() => {
+  const nav = document.querySelector(".nav");
+  const btn = document.querySelector(".nav-toggle");
+  if (!nav || !btn) return;
+  btn.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  // 画面が広がったら閉じる（開いたまま残らんように）
+  matchMedia("(min-width:721px)").addEventListener("change", e => {
+    if (e.matches) { nav.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); }
+  });
+})();

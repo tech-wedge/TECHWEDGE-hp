@@ -44,7 +44,27 @@ header.site{
 .nav-links a:hover{color:var(--ink)}
 .nav-links a.now{color:var(--ink);border-bottom:1px solid var(--laser)}
 .nav-cta{color:var(--laser)!important;font-weight:700!important}
-@media(max-width:720px){.nav-links a:not(.nav-cta){display:none}}
+/* ハンバーガー（2026-09-03追加・悠太のスマホ実機指摘）——★nav項目はそのまま・文言は増やさん */
+.nav-toggle{display:none;background:none;border:0;padding:10px;cursor:pointer;min-height:44px;min-width:44px}
+.nav-toggle span{display:block;width:20px;height:2px;background:var(--ink);border-radius:1px;transition:transform .3s var(--ease),opacity .3s var(--ease)}
+.nav-toggle span+span{margin-top:5px}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:720px){
+  .nav{position:relative}
+  .nav-toggle{display:block}
+  .nav-links a:not(.nav-cta){display:none}
+  .nav.open .nav-links{
+    position:absolute;left:0;right:0;top:100%;
+    flex-direction:column;align-items:stretch;gap:0;margin:0;
+    background:var(--bg0);
+    z-index:1;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:6px 24px 14px;
+  }
+  .nav.open .nav-links a{display:flex;padding:2px 0}
+}
 
 /* ─── 見出し・セクション ─── */
 main{padding-top:0}
@@ -104,6 +124,10 @@ h1{margin-top:26px;font-size:clamp(36px,6.4vw,76px);font-weight:900;line-height:
 .grid{display:grid;gap:18px}
 .grid.c3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .grid.c2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+/* 4列グリッド（2026-09-03追加・01Bの導入ステップ）——★モバイルで潰れんように段階的に落とす */
+.grid.c4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.grid.c4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid.c4{grid-template-columns:1fr}}
 .card{
   background:var(--bg1);border:1px solid var(--line);border-radius:var(--r-md);padding:28px 26px;
   position:relative;overflow:hidden;
