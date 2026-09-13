@@ -2,5 +2,7 @@ node_modules/
 exports/
 # 2026-09-13: 直下は公開面（Cloudflare Pages）なので、公開せんファイルはgitに入れん（README 編集ルール12）
 README.md
+package.json
+package-lock.json
 assets/flyer_all_v2.html
 tools/
