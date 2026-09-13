@@ -1,9 +1,0 @@
-{
-  "name": "techlore-hp",
-  "private": true,
-  "type": "module",
-  "description": "tools/配下の書き出しスクリプト用（puppeteer-coreで既存Chromeを直接起動。専用ブラウザのDLは発生しない）",
-  "dependencies": {
-    "puppeteer-core": "^23.0.0"
-  }
-}
