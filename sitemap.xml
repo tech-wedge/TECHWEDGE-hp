@@ -64,4 +64,16 @@
     <loc>https://tech-wedge.com/company</loc>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://tech-wedge.com/jidouka-teishi-kizukanai</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tech-wedge.com/ai-jimu-dounyu-shippai</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tech-wedge.com/hp-access-mikata</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>
