@@ -18,11 +18,18 @@ document.querySelectorAll("[data-brand-note]").forEach(el => {
 const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const FINE_POINTER = matchMedia("(pointer: fine)").matches;
 
-/* ─── 出現アニメ（.rv）＋レーザー描画（.draw） ─── */
-const io = new IntersectionObserver(es => {
-  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); } });
-}, { threshold: .15 });
-document.querySelectorAll(".rv,.draw").forEach(el => io.observe(el));
+/* ─── 出現アニメ（.rv）＋レーザー描画（.draw） ───
+   要素は最初から見えている。動かすのは、読み込んだ時点で画面より下にあった物だけで、
+   画面に入る少し手前で .on を付ける（2026-09-30: 止まった状態で撮ると半分以上が空白だった件の直し） */
+if (!REDUCED) {
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); } });
+  }, { rootMargin: "0px 0px 12% 0px" });
+  document.querySelectorAll(".rv,.draw").forEach(el => {
+    if (el.getBoundingClientRect().top < innerHeight) return; // 最初から画面に入っている物は動かさない
+    io.observe(el);
+  });
+}
 
 /* ─── 数字カウントアップ ─── */
 function countUp(el) {

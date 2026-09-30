@@ -217,10 +217,12 @@ h1{margin-top:26px;font-size:clamp(36px,6.4vw,76px);font-weight:900;line-height:
 .kenshu-price .now small{font-size:14px;color:var(--sub)}
 .kenshu-price .why{font-size:14px;color:var(--sub);margin-top:6px;font-family:var(--mono);letter-spacing:.06em}
 
-/* ─── 出現アニメ ─── */
-.rv{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
-.rv.on{opacity:1;transform:none}
-.rv:nth-child(2){transition-delay:.16s}.rv:nth-child(3){transition-delay:.34s}.rv:nth-child(4){transition-delay:.52s}
+/* ─── 出現アニメ ───
+   初期状態は「見えている」（JS無し・スクロール無し・全体スクショでも全部見える）。
+   JS が画面の少し手前で .on を付けた時だけ、下から少し持ち上がる。透明にはしない（2026-09-30）。 */
+.rv.on{animation:rvIn .7s var(--ease-out) both}
+.rv.on:nth-child(2){animation-delay:.16s}.rv.on:nth-child(3){animation-delay:.34s}.rv.on:nth-child(4){animation-delay:.52s}
+@keyframes rvIn{from{transform:translateY(18px)}to{transform:none}}
 
 /* ─── コンタクト帯・フッター ─── */
 .contact-band{text-align:center;position:relative;overflow:hidden}
@@ -250,8 +252,10 @@ footer.site{border-top:1px solid var(--line);padding:36px 0;background:var(--bg1
 @keyframes marq{to{transform:translateX(-50%)}}
 
 /* ─── スクロール描画（レーザーが線を引く） ─── */
-.draw path,.draw polyline,.draw line{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.5s var(--ease-out) .25s}
-.draw.on path,.draw.on polyline,.draw.on line{stroke-dashoffset:0}
+/* 初期状態は線が描かれている。JS が画面の少し手前で .on を付けた時だけ、線を引き直す（2026-09-30） */
+.draw path,.draw polyline,.draw line{stroke-dasharray:1;stroke-dashoffset:0}
+.draw.on path,.draw.on polyline,.draw.on line{animation:drawIn 1.5s var(--ease-out) .25s both}
+@keyframes drawIn{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
 
 /* ─── 工程表（建設LP専用・ガント風） ─── */
 .gantt{border:1px solid var(--line);border-radius:var(--r-md);padding:10px 26px;background:var(--bg1)}
@@ -369,7 +373,8 @@ footer.site{border-top:1px solid var(--line);padding:36px 0;background:var(--bg1
 
 /* ─── アクセシビリティ: モーション低減 ─── */
 @media (prefers-reduced-motion: reduce){
-  .rv{opacity:1;transform:none;transition:none}
+  .rv,.rv.on{animation:none;transform:none}
+  .draw.on path,.draw.on polyline,.draw.on line{animation:none}
   .hero-repeat .row{animation:none}
   .laser-under::after{animation:none;transform:scaleX(1)}
   .draw path,.draw polyline,.draw line{stroke-dashoffset:0;transition:none}
