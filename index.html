@@ -16,7 +16,12 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<!-- 日本語フォントは、トップで使う文字だけを切り出した1ファイルをサイトから配る（Google Fonts は細かいファイルが届くたびに組み直しが起き、LCP が 6.6→2.4 秒違った・2026-10-01）。
+     作り直し＝Desktop\Claude\tools\techwedge_font_subset.py（トップの文言を足したら撃ち直す）。等幅の JetBrains Mono だけ Google Fonts を描画を止めずに読む -->
+<link rel="preload" href="assets/fonts/NotoSansJP-top.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:"Noto Sans JP";src:url("assets/fonts/NotoSansJP-top.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}</style>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="assets/tokens.css">
 <link rel="stylesheet" href="assets/base.css">
 </head>
@@ -243,6 +248,6 @@
   </div>
 </footer>
 
-<script src="assets/site.js"></script>
+<script src="assets/site.js" defer></script>
 </body>
 </html>
