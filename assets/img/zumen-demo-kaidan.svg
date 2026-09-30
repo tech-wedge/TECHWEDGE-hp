@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1520" height="1040" viewBox="0 0 1520 1040" role="img" aria-labelledby="title description">
+<title id="title">平面図（階段まわり）</title>
+<desc id="description">横方向に上る階段を簡略化した平面図。段鼻を一本ずつ数えやすく表示。 階段A：幅1,200mm、12段。階段B：幅900mm、10段。各段の段鼻に幅いっぱいのノンスリップを1本ずつ設置。デモ用の架空の数字です。</desc>
+<rect width="1520" height="1040" fill="#FAFAF8"/>
+<g font-family="'Noto Sans JP', sans-serif" fill="#2E2E2E">
+<text x="64" y="100" font-size="64" font-weight="700">平面図（階段まわり）</text>
+<text x="1456" y="98" font-size="36" text-anchor="end" fill="#6E6E6A">単位：mm</text>
+<text x="64" y="171" font-size="40">緑の線＝ノンスリップ（各段の段鼻）</text>
+<path d="M64 207H1456" fill="none" stroke="#2E2E2E" stroke-width="2"/>
+<text x='64' y='360' font-size='58' font-weight='700'>階段A</text>
+<text x='64' y='434' font-size='52' font-weight='700'>幅 1,200 mm</text>
+<text x='64' y='526' font-size='80' font-weight='700'>12段</text>
+<g stroke='#2E2E2E' stroke-width='3' fill='none'>
+<path d='M1376 320 H656 V560 H1376'/>
+<line x1='608' y1='320' x2='608' y2='560' />
+<line x1='594' y1='320' x2='626' y2='320' />
+<line x1='594' y1='560' x2='626' y2='560' />
+<line x1='600' y1='328' x2='616' y2='312' />
+<line x1='600' y1='568' x2='616' y2='552' />
+</g>
+<g id='stair-A-nosings' stroke='#2EA043' stroke-width='12' stroke-linecap='butt'>
+<line x1='716' y1='320' x2='716' y2='560' />
+<line x1='776' y1='320' x2='776' y2='560' />
+<line x1='836' y1='320' x2='836' y2='560' />
+<line x1='896' y1='320' x2='896' y2='560' />
+<line x1='956' y1='320' x2='956' y2='560' />
+<line x1='1016' y1='320' x2='1016' y2='560' />
+<line x1='1076' y1='320' x2='1076' y2='560' />
+<line x1='1136' y1='320' x2='1136' y2='560' />
+<line x1='1196' y1='320' x2='1196' y2='560' />
+<line x1='1256' y1='320' x2='1256' y2='560' />
+<line x1='1316' y1='320' x2='1316' y2='560' />
+<line x1='1376' y1='320' x2='1376' y2='560' />
+</g>
+<path d='M656 285 H1376 l-22-12 m22 12-22 12' fill='none' stroke='#2E2E2E' stroke-width='4'/>
+<text x='64' y='722' font-size='58' font-weight='700'>階段B</text>
+<text x='64' y='796' font-size='52' font-weight='700'>幅 900 mm</text>
+<text x='64' y='888' font-size='80' font-weight='700'>10段</text>
+<g stroke='#2E2E2E' stroke-width='3' fill='none'>
+<path d='M1256 682 H656 V862 H1256'/>
+<line x1='608' y1='682' x2='608' y2='862' />
+<line x1='594' y1='682' x2='626' y2='682' />
+<line x1='594' y1='862' x2='626' y2='862' />
+<line x1='600' y1='690' x2='616' y2='674' />
+<line x1='600' y1='870' x2='616' y2='854' />
+</g>
+<g id='stair-B-nosings' stroke='#2EA043' stroke-width='12' stroke-linecap='butt'>
+<line x1='716' y1='682' x2='716' y2='862' />
+<line x1='776' y1='682' x2='776' y2='862' />
+<line x1='836' y1='682' x2='836' y2='862' />
+<line x1='896' y1='682' x2='896' y2='862' />
+<line x1='956' y1='682' x2='956' y2='862' />
+<line x1='1016' y1='682' x2='1016' y2='862' />
+<line x1='1076' y1='682' x2='1076' y2='862' />
+<line x1='1136' y1='682' x2='1136' y2='862' />
+<line x1='1196' y1='682' x2='1196' y2='862' />
+<line x1='1256' y1='682' x2='1256' y2='862' />
+</g>
+<path d='M656 647 H1256 l-22-12 m22 12-22 12' fill='none' stroke='#2E2E2E' stroke-width='4'/>
+<text x="64" y="994" font-size="32" fill="#6E6E6A">デモ用の架空の数字です</text>
+</g>
+</svg>
