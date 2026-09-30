@@ -75,6 +75,13 @@ section{padding:110px 0}
 .sec-head h2{font-size:clamp(26px,4vw,40px);font-weight:900;letter-spacing:-.015em;line-height:1.4}
 .sec-en{margin-left:auto;font-family:var(--mono);font-style:italic;font-size:14px;color:var(--faint);letter-spacing:.2em}
 .sec-lead{color:var(--sub);max-width:640px;margin-bottom:48px;font-size:14.5px}
+/* スマホ: 番号と英字ラベルを見出しの上の行へ。日本語の見出しに横幅を全部渡す（2026-09-30） */
+@media(max-width:720px){
+  .sec-head{flex-wrap:wrap;gap:6px 12px}
+  .sec-head .sec-num{order:1}
+  .sec-head .sec-en{order:2;margin-left:0}
+  .sec-head h2{order:3;flex-basis:100%}
+}
 .band{background:var(--bg1);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 
 /* ─── ヒーロー共通 ─── */
@@ -179,10 +186,11 @@ h1{margin-top:26px;font-size:clamp(36px,6.4vw,76px);font-weight:900;line-height:
 .ba{display:grid;grid-template-columns:1fr 64px 1fr;align-items:stretch;max-width:840px}
 @media(max-width:680px){.ba{grid-template-columns:1fr;gap:14px}}
 .ba-col{border:1px solid var(--line);border-radius:var(--r-md);padding:28px;background:var(--bg0)}
-.ba-col.after{border-color:rgba(46,160,67,.4)}
+/* 数字（170分・20分）は白系の大きな数字。緑は変化を示す矢印だけ（2026-09-30） */
 .ba-col .h{font-family:var(--mono);font-size:14px;letter-spacing:.26em;color:var(--sub)}
-.ba-col.after .h{color:var(--laser)}
-.ba-col .big{font-size:clamp(28px,4vw,40px);font-weight:900;margin-top:10px;letter-spacing:-.02em}
+.ba-col .big{font-size:clamp(28px,4vw,40px);font-weight:900;margin-top:10px;letter-spacing:-.02em;color:var(--ink)}
+.ba-col .big small{font-size:.45em;font-weight:700;color:var(--sub);margin-right:.3em;letter-spacing:0}
+.ba + .src-note{margin-top:12px}
 .ba-col ul{list-style:none;margin-top:16px}
 .ba-col li{font-size:14px;color:var(--sub);padding:7px 0;border-top:1px dashed var(--line);line-height:1.8}
 .ba-arrow{display:flex;align-items:center;justify-content:center;font-family:var(--mono);color:var(--laser);font-size:22px}
