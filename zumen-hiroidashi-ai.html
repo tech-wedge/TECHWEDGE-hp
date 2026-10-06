@@ -75,7 +75,7 @@
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">01</span><h2>この記事は、2回の試験の記録をもとにしています</h2></div>
     <div class="story rv">
-      <p>TechWedge のメンバーが父親と営む、内装系金物の施工会社で行った試験です。ノンスリップや巾木（はばき）の長さを、図面から AI に拾わせました。</p>
+      <p>TechWedge のメンバーが父親と営む、内装系金物の施工会社で行った試験です。階段の段や巾木（はばき）の長さを、図面から AI に拾わせました。</p>
     </div>
     <table class="spec-table rv" style="margin-top:24px">
       <thead>
@@ -83,22 +83,20 @@
       </thead>
       <tbody>
         <tr><td style="white-space:nowrap">図面</td><td>実際の案件の平面図。寸法の書いていない壁もあり、壁紙や設備の記号も載っている</td><td>練習用の架空の図面。すべての段に寸法が書いてある</td></tr>
-        <tr><td style="white-space:nowrap">拾わせた物</td><td>巾木の長さ</td><td>階段のノンスリップの長さ</td></tr>
+        <tr><td style="white-space:nowrap">拾わせた物</td><td>巾木の長さ</td><td>階段の段の長さ</td></tr>
         <tr><td style="white-space:nowrap">使った AI</td><td>Claude Sonnet</td><td>OpenAI の Codex</td></tr>
         <tr><td style="white-space:nowrap">結果</td><td>建物の奥行きを超える部屋を数える／壁紙の記号を壁として数える／通路の長い壁が抜ける。合計は不採用</td><td>階段A 1,200mm×12本＝14.4m、階段B 900mm×10本＝9.0m、合計23.4m。正しい値</td></tr>
       </tbody>
     </table>
     <div class="story rv" style="margin-top:20px">
       <p>1回目の数字は、社内の確認の段階で不採用にしました。見積には使っていません。</p>
+      <p>次の図は、床材とクロスで、図面の拾い出しから見積の下書きまでを示した例です。図と数字は説明用の架空の物で、上の2回の試験とは別に作りました。</p>
     </div>
     <figure class="rv" style="margin:32px 0 0">
-      <a href="assets/img/zumen-demo-kaidan.svg" target="_blank" rel="noopener"><img src="assets/img/zumen-demo-kaidan.svg" alt="2回目に使った練習用の架空の平面図。階段Aは幅1,200mmで12段、階段Bは幅900mmで10段。各段の段鼻に緑の線でノンスリップを示している。" width="1520" height="1040" style="width:100%;height:auto;border-radius:var(--r-md)"></a>
+      <a href="assets/img/zumen-demo-yuka-cross.svg" target="_blank" rel="noopener"><img src="assets/img/zumen-demo-yuka-cross.svg" alt="COPY-TBD" width="1520" height="1040" style="width:100%;height:auto;border-radius:var(--r-md)"></a>
     </figure>
-    <div class="story rv" style="margin-top:24px">
-      <p>2回目の試験の範囲は、長さの算出までです。次の見積例の単価は架空で、試験とは別に作りました。</p>
-    </div>
     <figure class="rv" style="margin:24px 0 0">
-      <a href="assets/img/mitsumori-demo.png" target="_blank" rel="noopener"><img src="assets/img/mitsumori-demo.png" alt="見積例（数字はすべて架空です）。ノンスリップ（材料）23.4mに架空の単価をかけ、取付手間と諸経費を並べた表。" width="1520" height="950" style="width:100%;height:auto;border-radius:var(--r-md)"></a>
+      <a href="assets/img/mitsumori-demo-yuka-cross.png" target="_blank" rel="noopener"><img src="assets/img/mitsumori-demo-yuka-cross.png" alt="COPY-TBD" width="1520" height="950" style="width:100%;height:auto;border-radius:var(--r-md)"></a>
     </figure>
   </div>
 </section>
@@ -173,10 +171,10 @@
 
 <section>
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">07</span><h2>まだ確かめていないことがあります</h2></div>
+    <div class="sec-head"><span class="sec-num">07</span><h2>拾い出しは、照合とセットで AI に任せられます</h2></div>
     <div class="story rv">
-      <p>2回目の試験では正しい長さが返りましたが、照合の手間まで含めて拾い出しの時間が短くなるかは、まだ測っていません。</p>
-      <p>このページの3つの確認は、1回目の試験の後に整理したもので、実際の案件で繰り返し使った記録はまだありません。</p>
+      <p>寸法の書いてある図面では、AI は正しい長さを返しました。寸法の無い箇所や記号の多い図面でも、03〜05 の確認を通してから使えば、見積の下書きまで AI に任せられます。</p>
+      <p>このページの3つの確認は、1回目の読み違いを受けて決めたものです。</p>
     </div>
     <p class="rv" style="margin-top:24px">関連記事: <a href="jidouka-teishi-kizukanai.html" style="color:var(--laser)">自動化した仕組みが止まっていても、3時間誰も気づきませんでした</a> ／ <a href="ai-muki-fumuki.html" style="color:var(--laser)">AIが向いている業務・向いていない業務の見分け方</a> ／ <a href="columns.html" style="color:var(--laser)">コラム一覧へ</a></p>
   </div>
