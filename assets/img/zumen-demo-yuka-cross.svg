@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1520" height="1040" viewBox="0 0 1520 1040" role="img" aria-labelledby="title description">
+<title id="title">平面図（事務所の内装）</title>
+<desc id="description">説明用の架空の図面です。事務室は内法5,400×3,600mm、会議室は内法3,600×2,700mmです。天井高は両室2,400mmです。各室に幅800mmのドアがあります。薄い緑の面は床材（フロアタイル）、緑の太線はクロス（壁）を示します。</desc>
+<rect width="1520" height="1040" fill="#FAFAF8"/>
+<g font-family="'Noto Sans JP','Yu Gothic',Meiryo,sans-serif" fill="#2E2E2E">
+<text x="64" y="103" font-size="56" font-weight="700">平面図（事務所の内装）</text>
+<text x="1456" y="100" font-size="30" text-anchor="end" fill="#626862">単位：mm</text>
+<text x="64" y="170" font-size="32">天井高 2,400（両室）</text>
+<path d="M64 203H1456" stroke="#C8CEC8" stroke-width="2"/>
+<!-- Both rooms use 0.12 px per mm, measured between the inner wall faces. -->
+<g fill="#E0EEDC">
+<path d="M230 300H878V732H230Z"/>
+<path d="M902 300H1334V624H902Z"/>
+</g>
+<!-- Black walls and green finishes stop at the two door openings. -->
+<g stroke="#252B27" stroke-width="8" fill="none" stroke-linejoin="miter">
+<path d="M650 736H226V296H882V736H746"/>
+<path d="M1140 628H898V296H1338V628H1236"/>
+</g>
+<g stroke="#398247" stroke-width="9" fill="none" stroke-linejoin="miter">
+<path d="M650 727.5H234.5V304.5H873.5V727.5H746"/>
+<path d="M1140 619.5H906.5V304.5H1329.5V619.5H1236"/>
+</g>
+<!-- 800 mm door leaves (96 px), with inward swing arcs. -->
+<g fill="none" stroke="#414C44">
+<path d="M650 732V636 M1140 624V528" stroke-width="3"/>
+<path d="M650 636A96 96 0 0 1 746 732 M1140 528A96 96 0 0 1 1236 624" stroke-width="2"/>
+</g>
+<g text-anchor="middle">
+<text x="554" y="490" font-size="28" fill="#626862">A</text>
+<text x="554" y="547" font-size="48" font-weight="700">事務室</text>
+<text x="1118" y="430" font-size="28" fill="#626862">B</text>
+<text x="1118" y="487" font-size="48" font-weight="700">会議室</text>
+</g>
+<!-- Outer dimension and extension lines. -->
+<g fill="none" stroke="#687169" stroke-width="2">
+<path d="M230 282V228 M878 282V228 M230 247H878 M224 253L236 241 M872 253L884 241"/>
+<path d="M902 282V228 M1334 282V228 M902 247H1334 M896 253L908 241 M1328 253L1340 241"/>
+<path d="M212 300H148 M212 732H148 M166 300V732 M160 306L172 294 M160 738L172 726"/>
+<path d="M1352 300H1414 M1352 624H1414 M1396 300V624 M1390 306L1402 294 M1390 630L1402 618"/>
+<path d="M650 750V803 M746 750V803 M650 785H746 M644 791L656 779 M740 791L752 779"/>
+<path d="M1140 642V695 M1236 642V695 M1140 677H1236 M1134 683L1146 671 M1230 683L1242 671"/>
+</g>
+<g font-size="32" text-anchor="middle">
+<text x="554" y="237">5,400</text>
+<text x="1118" y="237">3,600</text>
+<text transform="translate(149 516) rotate(-90)">3,600</text>
+<text transform="translate(1438 462) rotate(-90)">2,700</text>
+<text x="698" y="827">800</text>
+<text x="1188" y="719">800</text>
+</g>
+<path d="M64 864H1456" stroke="#C8CEC8" stroke-width="2"/>
+<rect x="64" y="899" width="54" height="34" rx="2" fill="#E0EEDC" stroke="#B5CBB0"/>
+<text x="140" y="930" font-size="32">床材（フロアタイル）</text>
+<path d="M816 916H880" stroke="#398247" stroke-width="9"/>
+<text x="904" y="930" font-size="32">クロス（壁）</text>
+<text x="64" y="997" font-size="26" fill="#626862">説明用の架空の図面です</text>
+</g>
+</svg>
