@@ -19,6 +19,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/tokens.css">
 <link rel="stylesheet" href="assets/base.css">
+<style>
+/* スマホの幅で概要の表が横にはみ出さないよう、実績の行を折り返す（このページだけ・共有の base.css は触らない） */
+@media (max-width:560px){
+  .spec-table th,.spec-table td{padding:11px 12px}
+  .spec-table td.num{white-space:normal}
+}
+</style>
 </head>
 <body>
 
