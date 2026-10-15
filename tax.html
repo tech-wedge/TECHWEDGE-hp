@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>税理士の方へ — 入力ではなく、チェックを自動化する。 | TechWedge</title>
-<meta name="description" content="記帳代行ツールが「入力」を競う中、私たちは仕訳のチェック・照合を自動化しています。科目違い・月ズレ・二重計上をAIが先回りして検知。実証パートナーの税理士事務所と開発中・先行パートナー募集中です。">
+<meta name="description" content="記帳代行ツールが「入力」を競う中、私たちは仕訳のチェック・照合を自動化しています。科目違い・月ズレ・二重計上をAIが先回りして検知。税理士事務所と一緒に、実際の業務で使う形を作っています。先行パートナー募集中です。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tech-wedge.com/tax">
 <link rel="canonical" href="https://tech-wedge.com/tax">
 <meta property="og:title" content="税理士の方へ — 入力ではなく、チェックを自動化する。 | TechWedge">
-<meta property="og:description" content="記帳代行ツールが「入力」を競う中、私たちは仕訳のチェック・照合を自動化しています。科目違い・月ズレ・二重計上をAIが先回りして検知。実証パートナーの税理士事務所と開発中・先行パートナー募集中です。">
+<meta property="og:description" content="記帳代行ツールが「入力」を競う中、私たちは仕訳のチェック・照合を自動化しています。科目違い・月ズレ・二重計上をAIが先回りして検知。税理士事務所と一緒に、実際の業務で使う形を作っています。先行パートナー募集中です。">
 <meta property="og:image" content="https://tech-wedge.com/assets/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -19,6 +19,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/tokens.css">
 <link rel="stylesheet" href="assets/base.css">
+<style>
+/* スマホの幅で大見出しを2行に収める（このページだけ・言葉は変えない） */
+@media (max-width:560px){
+  .hero h1{font-size:30px;line-height:42px}
+}
+</style>
 </head>
 <body>
 
@@ -60,7 +66,7 @@
     <p class="hero-lead">
       記帳代行ツールが「入力」を競う中、私たちが作っているのは<b>仕訳のチェック・照合の自動化</b>です。<br>
       科目違い・月ズレ・二重計上——確定申告前の差し戻しを生む間違いを、AIが先回りして拾います。<br>
-      現在、実証パートナーの税理士事務所と開発中です。
+      税理士事務所と一緒に、実際の業務で使う形を作っています。
     </p>
     <div class="cta-row">
       <a class="cta" href="contact.html">先行導入の相談をする</a>
@@ -83,8 +89,8 @@
         <p class="desc">税理士事務所の多くは少人数です。大規模事務所向けの高額SaaSではなく、小規模事務所がそのまま使える設計と価格を目指しています。</p>
       </div>
       <div class="card rv">
-        <h3 style="margin-top:0">現場データで鍛えている</h3>
-        <p class="desc">開発元の私たちは建設業（内装系金物の施工）の現場に立っており、自社とグループの実仕訳データで検証しています。机上のサンプルではなく、現実の「汚れたデータ」で鍛えたチェックです。</p>
+        <h3 style="margin-top:0">現場に立つ私たちが作っています</h3>
+        <p class="desc">開発元の私たちは建設業（内装系金物の施工）の現場に立っています。</p>
       </div>
     </div>
   </div>
@@ -96,8 +102,8 @@
     <div class="sec-head"><span class="sec-num">02</span><h2>いまの開発状況</h2><span class="sec-en">Status — honest</span></div>
     <p class="sec-lead">できていないことを、できていると言わないチームです。現在地はここです。</p>
     <ul class="checklist">
-      <li class="ok rv"><span><b>自社・グループの実仕訳での検証</b> — 領収書仕分けの自動化は自社で6ヶ月・400件を実運用済み</span></li>
-      <li class="ok rv"><span><b>実証パートナーの税理士事務所と共同開発中</b> — 実際の顧問先業務に沿った設計</span></li>
+      <li class="ok rv"><span><b>領収書仕分けの自動化</b> — 自社で6ヶ月・400件を実運用済み</span></li>
+      <li class="ok rv"><span><b>税理士事務所と一緒に、実際の業務で使う形を作っています</b> — 実際の顧問先業務に沿った設計</span></li>
       <li class="rv"><span><b>実証データの公開</b> — 検証がまとまり次第、このページで数字を公開します</span></li>
       <li class="rv"><span><b>一般提供</b> — 実証完了後に開始。それまでは先行パートナー枠のみ</span></li>
     </ul>
@@ -111,7 +117,7 @@
     <div class="grid c2">
       <div class="card rv">
         <h3 style="margin-top:0">お渡しできるもの</h3>
-        <p class="desc">・実証期間中の優遇価格（正式価格より大幅に低く設定します）<br>・機能要望の最優先反映——「うちの顧問先のこのパターンを拾ってほしい」が直接開発に入ります<br>・一般提供後も実証パートナー価格を継続</p>
+        <p class="desc">・機能要望の最優先反映——「うちの顧問先のこのパターンを拾ってほしい」が直接開発に入ります</p>
       </div>
       <div class="card rv">
         <h3 style="margin-top:0">お願いしたいこと</h3>

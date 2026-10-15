@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>年間AI研修 — 全6回で、自社業務をひとつ自動化する。 | TechWedge</title>
-<meta name="description" content="全6回・12時間のAI社内研修。「AIを触ったことがない」社員が、最終回には自分の業務をひとつ自動化する——そこまで連れて行く社内研修です。">
+<meta name="description" content="全6回・合計約12時間が目安のAI社内研修。「AIを触ったことがない」社員が、最終回には自分の業務をひとつ自動化する——そこまで連れて行く社内研修です。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tech-wedge.com/training">
 <link rel="canonical" href="https://tech-wedge.com/training">
 <meta property="og:title" content="年間AI研修 — 全6回で、自社業務をひとつ自動化する。 | TechWedge">
-<meta property="og:description" content="全6回・12時間のAI社内研修。「AIを触ったことがない」社員が、最終回には自分の業務をひとつ自動化する——そこまで連れて行く社内研修です。">
+<meta property="og:description" content="全6回・合計約12時間が目安のAI社内研修。「AIを触ったことがない」社員が、最終回には自分の業務をひとつ自動化する——そこまで連れて行く社内研修です。">
 <meta property="og:image" content="https://tech-wedge.com/assets/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -19,6 +19,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/tokens.css">
 <link rel="stylesheet" href="assets/base.css">
+<style>
+/* スマホの幅ではカリキュラムのカードを左でそろえ、階段の線を外す（このページだけ・パソコンの幅は今のまま） */
+@media (max-width:560px){
+  .stair{margin-left:0;max-width:none;padding:20px 22px}
+  .stairline{display:none}
+}
+</style>
 </head>
 <body>
 
@@ -72,19 +79,20 @@
 <!-- ═══ 01 カリキュラム（レーザー階段） ═══ -->
 <section class="band">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">01</span><h2>全6回のカリキュラム</h2><span class="sec-en">Curriculum</span></div>
+    <div class="sec-head"><span class="sec-num">01</span><h2>カリキュラムの例（全6回）</h2><span class="sec-en">Curriculum</span></div>
+    <p class="sec-lead" style="margin-bottom:12px">1回2時間前後（全6回・合計約12時間）が目安です。回数・時間・内容は、会社の業務と人数に合わせて、ご相談しながら組み立てます。</p>
     <p class="sec-lead">下から順に登る階段式。最終回では、受講者自身の業務をひとつ、実際に自動化します。</p>
     <div class="stairwrap">
       <svg class="stairline draw rv" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
         <polyline points="4,98 16,98 16,82 30,82 30,66 44,66 44,50 58,50 58,34 72,34 72,18 90,18"
           fill="none" stroke="#2EA043" stroke-width="0.35" opacity=".55" pathLength="1"/>
       </svg>
-      <div class="stair rv" style="--i:0"><span class="no">STEP 1 — 第1回（半日）</span><div class="t">AIを触ってみる</div><div class="d">ChatGPT・Claudeで業務メール・議事録要約を体験。「思ったより難しくない」まで。</div><span class="fmt">入門</span></div>
-      <div class="stair rv" style="--i:1"><span class="no">STEP 1 — 第2回（半日）</span><div class="t">プロンプトの型</div><div class="d">「役割＋条件＋出力形式」の型を覚えて、自社業務用のプロンプトを3つ作る。</div><span class="fmt">入門</span></div>
-      <div class="stair rv" style="--i:2"><span class="no">STEP 2 — 第3回（半日）</span><div class="t">事務作業を半分に</div><div class="d">見積メモの清書・安全書類の下書き・報告書の定型化。明日から使える実務編。</div><span class="fmt">業務活用</span></div>
-      <div class="stair rv" style="--i:3"><span class="no">STEP 2 — 第4回（半日）</span><div class="t">スプレッドシート×AI</div><div class="d">データ整理・集計の自動化。手作業のコピペ仕事をここで卒業。</div><span class="fmt">業務活用</span></div>
-      <div class="stair rv" style="--i:4"><span class="no">STEP 3 — 第5回（1日）</span><div class="t">業務自動化を作る</div><div class="d">「ボタン1つでメール送信」を一緒に構築。自動化の作り方を体で覚える。</div><span class="fmt">応用</span></div>
-      <div class="stair rv" style="--i:5"><span class="no">STEP 3 — 第6回（1日）</span><div class="t">自分の業務をひとつ自動化する</div><div class="d">受講者の実業務をひとつ選んで自動化。運用・保守の注意点まで含めて仕上げる。</div><span class="fmt">応用</span></div>
+      <div class="stair rv" style="--i:0"><span class="no">STEP 1 — 第1回</span><div class="t">AIを触ってみる</div><div class="d">ChatGPT・Claudeで業務メール・議事録要約を体験。「思ったより難しくない」まで。</div><span class="fmt">入門</span></div>
+      <div class="stair rv" style="--i:1"><span class="no">STEP 1 — 第2回</span><div class="t">プロンプトの型</div><div class="d">「役割＋条件＋出力形式」の型を覚えて、自社業務用のプロンプトを3つ作る。</div><span class="fmt">入門</span></div>
+      <div class="stair rv" style="--i:2"><span class="no">STEP 2 — 第3回</span><div class="t">事務作業を半分に</div><div class="d">見積メモの清書・安全書類の下書き・報告書の定型化。明日から使える実務編。</div><span class="fmt">業務活用</span></div>
+      <div class="stair rv" style="--i:3"><span class="no">STEP 2 — 第4回</span><div class="t">スプレッドシート×AI</div><div class="d">データ整理・集計の自動化。手作業のコピペ仕事をここで卒業。</div><span class="fmt">業務活用</span></div>
+      <div class="stair rv" style="--i:4"><span class="no">STEP 3 — 第5回</span><div class="t">業務自動化を作る</div><div class="d">「ボタン1つでメール送信」を一緒に構築。自動化の作り方を体で覚える。</div><span class="fmt">応用</span></div>
+      <div class="stair rv" style="--i:5"><span class="no">STEP 3 — 第6回</span><div class="t">自分の業務をひとつ自動化する</div><div class="d">受講者の実業務をひとつ選んで自動化。運用・保守の注意点まで含めて仕上げる。</div><span class="fmt">応用</span></div>
     </div>
     <a class="cta" href="contact.html" style="margin-top:28px;padding:12px 28px;font-size:13px">研修について相談する →</a>
   </div>
@@ -97,10 +105,10 @@
     <p class="sec-lead">料金はお問い合わせください。</p>
     <table class="spec-table rv">
       <tr><th>プラン</th><th>内容</th></tr>
-      <tr><td><b>年間パック</b></td><td>全6回（半日×4＋1日×2）</td></tr>
-      <tr><td>Step 1 単品</td><td>入門・半日×2回</td></tr>
-      <tr><td>Step 2 単品</td><td>業務活用・半日×2回</td></tr>
-      <tr><td>Step 3 単品</td><td>応用・1日×2回</td></tr>
+      <tr><td><b>年間パック</b></td><td>全6回（1回2時間前後が目安）</td></tr>
+      <tr><td>Step 1 単品</td><td>入門・2回</td></tr>
+      <tr><td>Step 2 単品</td><td>業務活用・2回</td></tr>
+      <tr><td>Step 3 単品</td><td>応用・2回</td></tr>
     </table>
     <p class="fine">※ 単品を積み上げるより年間パックが割安です。</p>
   </div>
