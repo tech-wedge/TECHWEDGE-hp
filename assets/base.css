@@ -64,6 +64,8 @@ header.site{
     padding:6px 24px 14px;
   }
   .nav.open .nav-links a{display:flex;padding:2px 0}
+  /* 開いた時も閉じるボタンを右端に置く（一覧が absolute になって右へ押す物が無くなるため・便3 2026-10-16） */
+  .nav.open .nav-toggle{margin-left:auto}
 }
 
 /* ─── 見出し・セクション ─── */
@@ -157,8 +159,8 @@ h1{margin-top:26px;font-size:clamp(36px,6.4vw,76px);font-weight:900;line-height:
 .grid.map{grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
 .card.mini{padding:18px 18px 16px}
 .card.mini h3{font-size:14px;margin-top:10px}
-.card.mini .desc{font-size:11.5px;min-height:auto;margin-top:6px;line-height:1.85}
-.card.mini .price{margin-top:10px;font-size:12px}
+.card.mini .desc{font-size:14px;min-height:auto;margin-top:6px;line-height:1.85}
+.card.mini .price{margin-top:10px;font-size:14px}
 .card.mini .price b{font-size:16px}
 .tag.plan{color:var(--faint);border:1px dashed var(--line)}
 
@@ -189,7 +191,7 @@ h1{margin-top:26px;font-size:clamp(36px,6.4vw,76px);font-weight:900;line-height:
 /* 数字（170分・20分）は白系の大きな数字。緑は変化を示す矢印だけ（2026-09-30） */
 .ba-col .h{font-family:var(--mono);font-size:14px;letter-spacing:.26em;color:var(--sub)}
 .ba-col .big{font-size:clamp(28px,4vw,40px);font-weight:900;margin-top:10px;letter-spacing:-.02em;color:var(--ink)}
-.ba-col .big small{font-size:.45em;font-weight:700;color:var(--sub);margin-right:.3em;letter-spacing:0}
+.ba-col .big small{font-size:max(14px,.45em);font-weight:700;color:var(--sub);margin-right:.3em;letter-spacing:0}
 .ba + .src-note{margin-top:12px}
 .ba-col ul{list-style:none;margin-top:16px}
 .ba-col li{font-size:14px;color:var(--sub);padding:7px 0;border-top:1px dashed var(--line);line-height:1.8}
@@ -334,7 +336,7 @@ footer.site{border-top:1px solid var(--line);padding:36px 0;background:var(--bg1
 .gantt-row{display:grid;grid-template-columns:minmax(120px,180px) 1fr;gap:16px;align-items:center;padding:18px 0;border-bottom:1px dashed var(--line)}
 .gantt-row:last-child{border-bottom:none}
 .gantt-label .t{font-weight:700;font-size:14px}
-.gantt-label .d{font-family:var(--mono);font-size:10px;color:var(--faint);letter-spacing:.08em;margin-top:2px}
+.gantt-label .d{font-family:var(--mono);font-size:14px;color:var(--faint);letter-spacing:.08em;margin-top:2px}
 .gantt-track{position:relative;height:36px;background:var(--bg0);border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden}
 .gantt-bar{
   position:absolute;top:0;bottom:0;left:var(--l,0%);width:var(--w,40%);
@@ -355,16 +357,16 @@ footer.site{border-top:1px solid var(--line);padding:36px 0;background:var(--bg1
   max-width:560px;transition:border-color .35s var(--ease),transform .35s var(--ease-out);
 }
 .stair:hover{border-color:rgba(46,160,67,.4);transform:translateY(-2px)}
-.stair .no{font-family:var(--mono);font-size:10px;color:var(--laser);letter-spacing:.2em}
+.stair .no{font-family:var(--mono);font-size:14px;color:var(--laser);letter-spacing:.2em}
 .stair .t{font-weight:700;font-size:15px;margin-top:4px}
-.stair .d{color:var(--sub);font-size:12px;margin-top:4px;line-height:1.9}
-.stair .fmt{position:absolute;top:20px;right:18px;font-family:var(--mono);font-size:9.5px;color:var(--faint);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+.stair .d{color:var(--sub);font-size:14px;margin-top:4px;line-height:1.9}
+.stair .fmt{position:absolute;top:20px;right:18px;font-family:var(--mono);font-size:14px;color:var(--faint);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
 
 /* ─── フォーム ─── */
 .form{display:grid;gap:18px;max-width:600px}
 .form .lb{display:block;font-size:14px;font-weight:700;letter-spacing:.05em;margin-bottom:8px}
 .form .lb small{color:var(--faint);font-weight:400;margin-left:8px;font-size:14px}
-.form input[type=text],.form input[type=email],.form select,.form textarea{
+.form input:not([type=checkbox]):not([type=radio]):not([type=hidden]),.form select,.form textarea{
   width:100%;background:var(--bg1);border:1px solid var(--line);border-radius:var(--r-md);
   padding:13px 15px;color:var(--ink);font-family:var(--sans);font-size:14px;
   transition:border-color .3s var(--ease),box-shadow .3s var(--ease);
@@ -379,9 +381,9 @@ footer.site{border-top:1px solid var(--line);padding:36px 0;background:var(--bg1
 .notice a{color:var(--laser);font-weight:700}
 
 /* ─── 表・ストーリー・組織概要 ─── */
-.spec-table{width:100%;border-collapse:collapse;font-size:13.5px;max-width:720px}
+.spec-table{width:100%;border-collapse:collapse;font-size:14px;max-width:720px}
 .spec-table th,.spec-table td{padding:13px 16px;border:1px solid var(--line);text-align:left}
-.spec-table th{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--sub);background:var(--bg1);font-weight:500;white-space:nowrap}
+.spec-table th{font-family:var(--mono);font-size:14px;letter-spacing:.14em;color:var(--sub);background:var(--bg1);font-weight:500;white-space:nowrap}
 .spec-table .num{font-family:var(--mono);white-space:nowrap}
 .spec-table .strike{text-decoration:line-through;color:var(--faint)}
 .spec-table .laser{color:var(--laser);font-weight:700}
@@ -396,13 +398,13 @@ footer.site{border-top:1px solid var(--line);padding:36px 0;background:var(--bg1
 .step-card .step-time{font-family:var(--mono);font-size:28px;font-weight:700;color:var(--laser);margin-top:8px}
 .step-card .step-time small{font-size:14px;color:var(--sub);font-weight:500;margin-left:4px}
 .step-card h4{font-size:16px;font-weight:700;margin-top:10px}
-.step-card p{color:var(--sub);font-size:13.5px;margin-top:8px;line-height:1.9}
+.step-card p{color:var(--sub);font-size:14px;margin-top:8px;line-height:1.9}
 .story{border-left:2px solid var(--laser);padding:6px 0 6px 24px;max-width:660px;color:var(--sub);font-size:14.5px;line-height:2.3}
 .story b{color:var(--ink)}
 
 /* ─── チェックリスト ─── */
 .checklist{list-style:none;max-width:640px}
-.checklist li{display:flex;gap:14px;padding:13px 0;border-bottom:1px dashed var(--line);font-size:13.5px;color:var(--sub);line-height:1.9}
+.checklist li{display:flex;gap:14px;padding:13px 0;border-bottom:1px dashed var(--line);font-size:14px;color:var(--sub);line-height:1.9}
 .checklist li::before{content:"—";font-family:var(--mono);color:var(--laser);flex-shrink:0}
 .checklist li.ok::before{content:"✓"}
 .checklist li b{color:var(--ink)}
@@ -454,3 +456,12 @@ footer.site{border-top:1px solid var(--line);padding:36px 0;background:var(--bg1
   .cutline::after{animation:none}
   html{scroll-behavior:auto}
 }
+
+/* ─── 便3（2026-10-16）: 押せる所は44px以上（字の下限は上の各部品で14px） ─── */
+/* 単独のリンク（段落にリンク1つだけ）と、カードの題のリンクは、上下の余白で44pxにする */
+/* 余白で押せる箱を広げ、同じ分の負の余白で見た目の高さは前のままにする（好みの判定 10-16「カードが間延び」） */
+p > a:only-child, .card h3 > a{display:inline-block;padding:12px 0;margin:-12px 0}
+/* 文の中のリンク・表の中のリンクは、行の並びを動かさずに押せる範囲だけを広げる */
+main p a, main li a, .story a, .spec-table a{padding-block:12px}
+/* 図のリンクは画像の大きさ全体を押せるようにする */
+figure > a{display:block}

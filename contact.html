@@ -19,6 +19,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/tokens.css">
 <link rel="stylesheet" href="assets/base.css">
+<style>
+/* 最初の部分の囲みを画面の幅に合わせる（約束のカード3枚が画面より広く並び、右が切れていた。カードは LINE の節の後ろへ移した＝便3・このページだけ） */
+.hero > .wrap{width:100%}
+/* スマホでは冒頭の小見出し（飾りのラベル）を1行に収める＝「無料相談」を途中で折り返さない（好みの判定 10-16・ラベルは12px以上の決めの内） */
+@media (max-width:560px){ .hero .kicker{font-size:12px;letter-spacing:2px;white-space:nowrap} }
+/* スマホでは LINE の操作部分を上へ寄せる＝最初の部分の下・LINE の節の上を48px、説明とカードの間を24px に詰める（好みの判定 10-16） */
+@media (max-width:560px){
+  .hero.compact{min-height:auto;padding-bottom:48px}
+  .hero.compact + section{padding-top:48px}
+  .hero.compact + section .sec-lead{margin-bottom:24px}
+}
+/* LINE のカード: 「LINEで相談する」を押せるボタンの形（高さ48px・カードの幅いっぱい）にし、QR と説明はその16px下に並べる。説明は語の途中で折り返さない（好みの判定 10-16 1932） */
+.line-card{max-width:400px;text-decoration:none;color:inherit;display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:center;padding:20px}
+.line-card .line-btn{grid-column:1 / -1;display:flex;align-items:center;justify-content:center;min-height:48px;background:var(--laser);color:#1A1A1A;font-weight:900;font-size:15px;letter-spacing:.05em;border-radius:var(--r-md)}
+.line-card img{width:96px;height:96px;border-radius:8px}
+.line-card .desc{min-height:auto;word-break:auto-phrase}
+@media (max-width:560px){ .line-card{max-width:none} }
+</style>
 </head>
 <body>
 
@@ -28,18 +46,14 @@
   <nav class="nav">
     <a class="brand" href="index.html" data-brand></a>
     <div class="nav-links">
-      
-      
-      
-      <a href="construction.html">初期導入支援</a>
-      <a href="training.html">研修</a>
+      <a href="construction.html" data-copy="tbd-nav-construction">建設業の方へ</a>
+      <a href="tax.html" data-copy="tbd-nav-tax">税理士の方へ</a>
+      <a href="training.html" data-copy="tbd-nav-training">AI研修</a>
+      <a href="web.html" data-copy="tbd-nav-web">HP制作</a>
       <a href="cases.html">導入事例</a>
       <a href="columns.html">コラム</a>
       <a href="company.html">運営者</a>
-      <a class="nav-cta now" href="contact.html">相談 →</a>
-    
-    
-    
+      <a class="nav-cta" href="contact.html">相談 →</a>
     </div>
     <button class="nav-toggle" type="button" aria-label="メニュー" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -55,11 +69,6 @@
     <div class="kicker">FREE CONSULTATION — 無料相談</div>
     <h1>30分だけ、<br><span class="laser-under">事務作業の話を。</span></h1>
     <p class="hero-lead">今の作業の棚卸しから一緒に。ヒアリングして、自動化で効く箇所と効かない箇所をその場でお伝えします。</p>
-    <div class="grid c3" style="margin-top:40px;max-width:840px">
-      <div class="card rv" style="padding:20px 22px"><h3 style="margin-top:0;font-size:15px">① 無料・オンライン可</h3><p class="desc" style="min-height:auto">現場の昼休みでも、夜でも。30分で終わります。</p></div>
-      <div class="card rv" style="padding:20px 22px"><h3 style="margin-top:0;font-size:15px">② 売り込みません</h3><p class="desc" style="min-height:auto">相談したら契約、みたいな空気は出しません。</p></div>
-      <div class="card rv" style="padding:20px 22px"><h3 style="margin-top:0;font-size:15px">③ 正直に言います</h3><p class="desc" style="min-height:auto">自動化できないものは「できない」と言います。</p></div>
-    </div>
   </div>
 </section>
 
@@ -68,13 +77,16 @@
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">01</span><h2>LINEでのご相談</h2><span class="sec-en">LINE</span></div>
     <p class="sec-lead">日中は現場に出ていることが多く、お電話に出られないことがあります。<b style="color:var(--ink)">一番お返事できるのはLINEです。</b>お名前と「HPで見た」の一言だけで大丈夫です。</p>
-    <a href="https://lin.ee/w5M30q7" class="card rv" style="max-width:340px;text-decoration:none;color:inherit;display:flex;gap:20px;align-items:center;padding:22px" aria-label="LINEで相談する（QRコードを読み取ってください）">
-      <img src="assets/line-qr-official.jpg" alt="LINE友だち追加QRコード（TechWedge公式アカウント）" style="width:96px;height:96px;border-radius:8px;flex-shrink:0">
-      <span>
-        <span style="display:block;font-weight:700;font-size:14px;color:var(--laser)">LINEで相談する</span>
-        <span class="desc" style="margin-top:6px;min-height:auto">スマホの方は、この画像を長押しで保存してLINEアプリの「QRコードリーダー」で読み込んでください。</span>
-      </span>
+    <a href="https://lin.ee/w5M30q7" class="card rv line-card" aria-label="LINEで相談する（QRコードを読み取ってください）">
+      <span class="line-btn">LINEで相談する</span>
+      <img src="assets/line-qr-official.svg" alt="LINE友だち追加QRコード（TechWedge公式アカウント）">
+      <span class="desc" data-copy="tbd-line-guide">スマホの方は、この画像を長押しで保存してLINEアプリの「QRコードリーダー」で読み込んでください。</span>
     </a>
+    <div class="grid c3" style="margin-top:44px;max-width:840px">
+      <div class="card rv" style="padding:20px 22px"><h3 style="margin-top:0;font-size:15px">① 無料・オンライン可</h3><p class="desc" style="min-height:auto">現場の昼休みでも、夜でも。30分で終わります。</p></div>
+      <div class="card rv" style="padding:20px 22px"><h3 style="margin-top:0;font-size:15px">② 売り込みません</h3><p class="desc" style="min-height:auto">相談したら契約、みたいな空気は出しません。</p></div>
+      <div class="card rv" style="padding:20px 22px"><h3 style="margin-top:0;font-size:15px">③ 正直に言います</h3><p class="desc" style="min-height:auto">自動化できないものは「できない」と言います。</p></div>
+    </div>
   </div>
 </section>
 
@@ -138,13 +150,14 @@
     <span class="tagline">現場を動かす人に、テクノロジーを。<br>このサイトも、私たちのAIワークフローで制作しました。</span>
     <div class="links">
       <a href="index.html">トップ</a>
-      <a href="construction.html">建設業の方へ</a>
-      <a href="tax.html">税理士の方へ</a>
-      <a href="training.html">AI研修</a>
+      <a href="construction.html" data-copy="tbd-nav-construction">建設業の方へ</a>
+      <a href="tax.html" data-copy="tbd-nav-tax">税理士の方へ</a>
+      <a href="training.html" data-copy="tbd-nav-training">AI研修</a>
+      <a href="web.html" data-copy="tbd-nav-web">HP制作</a>
       <a href="cases.html">導入事例</a>
       <a href="columns.html">コラム</a>
       <a href="company.html">運営者情報</a>
-      <a href="web.html">HP制作</a>
+      <a href="contact.html" data-copy="tbd-contact-button">無料相談</a>
       <a href="privacy.html">プライバシーポリシー</a>
     </div>
     <span class="note" data-brand-note></span>
