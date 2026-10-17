@@ -465,3 +465,6 @@ p > a:only-child, .card h3 > a{display:inline-block;padding:12px 0;margin:-12px 
 main p a, main li a, .story a, .spec-table a{padding-block:12px}
 /* 図のリンクは画像の大きさ全体を押せるようにする */
 figure > a{display:block}
+
+/* 文の最後の行が1〜2文字だけにならないように折り返す（対応していないブラウザでは、今までどおりの折り返しになるだけ）2026-10-18 */
+p,li,h1,h2,h3,h4,dd,dt,td,th,figcaption,.tagline{text-wrap:pretty}
