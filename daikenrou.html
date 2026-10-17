@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ホームページの見本を作る例文 | TechWedge</title>
+<title>ホームページに載せる文章の見本を作る例文 | TechWedge</title>
 <meta name="description" content="講演の体験で使う例文です。3つの欄に入れてコピーし、ChatGPTに貼り付けて送ります。">
 <meta name="robots" content="noindex">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tech-wedge.com/daikenrou">
 <link rel="canonical" href="https://tech-wedge.com/daikenrou">
-<meta property="og:title" content="ホームページの見本を作る例文 | TechWedge">
+<meta property="og:title" content="ホームページに載せる文章の見本を作る例文 | TechWedge">
 <meta property="og:description" content="講演の体験で使う例文です。3つの欄に入れてコピーし、ChatGPTに貼り付けて送ります。">
 <meta property="og:image" content="https://tech-wedge.com/assets/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -64,15 +64,15 @@ section.reibun-sec{padding-top:32px}
 <section class="hero compact reibun-hero">
   <div class="wrap">
     <div class="kicker">講演の体験用</div>
-    <h1>ホームページの見本を作る例文です</h1>
+    <h1>ホームページに<br>載せる文章の<br>見本を作ります</h1>
   </div>
 </section>
 
 <section class="band reibun-sec">
   <div class="wrap">
     <div class="story rv reibun">
-<ol class="reibun-steps"><li>下の3つの欄に入れます<br>（仮の屋号でも大丈夫です）</li><li>「例文をコピーする」を押します</li><li>ChatGPTに貼り付けて、送信します</li></ol>
-<p style="margin-bottom:24px">入れてよいのは、公開してよい情報だけです。お客様の名前や住所、見積の金額は入れないでください。入れた文字は、このページからどこにも送られません。</p>
+<ol class="reibun-steps"><li>下の3つの欄に入れます<br>（仮の屋号でも大丈夫です）</li><li>「例文をコピーする」を押します</li><li>下の「ChatGPTを開く」から開いて、<br>入力欄を長押し→「貼り付け」→送信</li></ol>
+<p style="margin-bottom:24px">入れてよいのは、公開してよい情報だけです。お客様の名前や住所、見積の金額は入れないでください。</p>
 <form class="form" id="reibun-form" onsubmit="return false">
 <div><label class="lb" for="f-yago">会社名（屋号）</label><input type="text" id="f-yago" placeholder="例: 〇〇内装" autocomplete="off"></div>
 <div><label class="lb" for="f-koji">得意な工事</label><input type="text" id="f-koji" placeholder="例: 階段の滑り止め、床の見切り" autocomplete="off"></div>
@@ -82,6 +82,10 @@ section.reibun-sec{padding-top:32px}
 <pre class="reibun-out" id="reibun-out" aria-live="polite"></pre>
 <button class="cta" type="button" id="reibun-copy">例文をコピーする</button>
 <p class="reibun-msg" id="reibun-msg" role="status"></p>
+<p>うまくコピーできないときは、上の例文の箱を長押しして全部を選び、「コピー」を選んでください。</p>
+<!-- OpenAI の文言の出典（取得日 2026-10-18）: chatgpt.com の入力欄の下「ChatGPT を利用することで、当社の利用規約およびプライバシーポリシーに同意したとみなされます。チャット内容は確認され、AI モデルの改善に使用される場合があります。」（ログインしていない画面で確認）／help.openai.com/en/articles/7730893「Signed-out use: …open Settings and turn off Improve the model for everyone.」 -->
+<p class="lb" style="margin-top:28px">ChatGPTに送る前に</p>
+<ul class="reibun-steps"><li>送信すると、入れた文章は ChatGPT を運営する OpenAI 社に渡ります。ChatGPT の画面には、利用すると利用規約とプライバシーポリシーに同意したとみなされること、チャットの内容が AI の改善に使われる場合があることが書かれています。ログインしていなくても同じです。（<a href="https://openai.com/terms" style="color:var(--laser)">利用規約</a>・<a href="https://openai.com/privacy" style="color:var(--laser)">プライバシーポリシー</a>）</li><li>AI の改善に使わせない設定もあります。<br>ログインしていなくても、ChatGPT の設定から変えられます。（<a href="https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt" style="color:var(--laser)">OpenAI の説明</a>）</li><li>出来上がった文章は練習用です。<br>公開する前に、実績・資格・対応地域などが本当か、必ず確かめてください。</li><li>入れた文字を、このページから送ることはありません。文字の表示のために、Google Fonts（文字の形を配る Google のサービス）に接続します。</li></ul>
 <p><a href="https://chatgpt.com/" style="color:var(--laser)">ChatGPTを開く →</a></p>
     </div>
   </div>
@@ -139,6 +143,10 @@ section.reibun-sec{padding-top:32px}
   }
   fields.forEach(function (f) { document.getElementById(f[0]).addEventListener("input", render); });
   document.getElementById("reibun-copy").addEventListener("click", function () {
+    for (var i = 0; i < fields.length; i++) {
+      var el = document.getElementById(fields[i][0]);
+      if (!el.value.trim()) { el.focus(); msg.textContent = "空いている欄があります。仮の内容でよいので入れてください。"; return; }
+    }
     var t = text();
     function done() { msg.textContent = "コピーしました。ChatGPTの入力欄に貼り付けてください。"; }
     function fallback() {
