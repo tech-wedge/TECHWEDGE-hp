@@ -22,7 +22,11 @@
 <link rel="stylesheet" href="assets/tokens.css">
 <link rel="stylesheet" href="assets/base.css">
 <style>
-/* 講演の例文（このページだけ）: 3つの欄→差し込み→コピー */
+/* 講演の例文（このページだけ）: 3つの欄→差し込み→コピー。操作が先に見えるよう、見出しを詰めて罫線と字下げを外す */
+.hero.compact.reibun-hero{min-height:0;padding-top:120px;padding-bottom:48px}
+section.reibun-sec{padding-top:32px}
+.story.reibun{border-left:none;padding:0;max-width:600px;color:var(--ink);font-size:16px;line-height:1.9}
+.reibun-out .w{display:inline-block;max-width:100%}
 .reibun .form{max-width:none}
 .reibun .form input{font-size:16px}
 .reibun-out{white-space:pre-wrap;font-family:var(--sans);font-size:16px;line-height:1.8;color:var(--ink);background:var(--bg0);border:1px solid var(--laser-dim);border-radius:var(--r-md);padding:18px;margin:0}
@@ -57,18 +61,18 @@
 
 <main>
 
-<section class="hero compact">
+<section class="hero compact reibun-hero">
   <div class="wrap">
     <div class="kicker">講演の体験用</div>
     <h1>ホームページの見本を作る例文です</h1>
   </div>
 </section>
 
-<section class="band">
+<section class="band reibun-sec">
   <div class="wrap">
     <div class="story rv reibun">
-<ol class="reibun-steps"><li>下の3つの欄に入れます（仮の屋号でも大丈夫です）</li><li>「例文をコピーする」を押します</li><li>ChatGPTの入力欄に貼り付けて、送信します</li></ol>
-<p>入れてよいのは、公開してよい情報だけです。お客様の名前や住所、見積の金額は入れないでください。入れた文字は、このページからどこにも送られません。</p>
+<ol class="reibun-steps"><li>下の3つの欄に入れます（仮の屋号でも大丈夫です）</li><li>「例文をコピーする」を押します</li><li>ChatGPTに貼り付けて、送信します</li></ol>
+<p style="margin-bottom:24px">入れてよいのは、公開してよい情報だけです。お客様の名前や住所、見積の金額は入れないでください。入れた文字は、このページからどこにも送られません。</p>
 <form class="form" id="reibun-form" onsubmit="return false">
 <div><label class="lb" for="f-yago">会社名（屋号）</label><input type="text" id="f-yago" placeholder="例: 〇〇内装" autocomplete="off"></div>
 <div><label class="lb" for="f-koji">得意な工事</label><input type="text" id="f-koji" placeholder="例: 階段の滑り止め、床の見切り" autocomplete="off"></div>
@@ -122,7 +126,17 @@
       "1. 一番上に出す一言（20字くらい）\n2. 会社の紹介（3行くらい）\n3. 得意な工事の説明\n4. 対応している地域\n5. 見積の相談の呼びかけ\n\n" +
       "プログラムのコードではなく、そのまま読める文章で出してください。";
   }
-  function render() { out.textContent = text(); msg.textContent = ""; }
+  // 表示では、入れた言葉を1つのまとまりにして途中で折り返さない（コピーする文字は text() のまま）
+  function render() {
+    var parts = text().split(/(会社名：|得意な工事：|地域：)(.*)/);
+    out.textContent = "";
+    for (var i = 0; i < parts.length; i++) {
+      if (i % 3 === 2) {
+        var s = document.createElement("span"); s.className = "w"; s.textContent = parts[i]; out.appendChild(s);
+      } else { out.appendChild(document.createTextNode(parts[i])); }
+    }
+    msg.textContent = "";
+  }
   fields.forEach(function (f) { document.getElementById(f[0]).addEventListener("input", render); });
   document.getElementById("reibun-copy").addEventListener("click", function () {
     var t = text();
