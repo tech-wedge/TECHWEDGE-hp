@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ホームページの見本を作る例文 | TechWedge</title>
+<meta name="description" content="講演の体験で使う例文です。3つの欄に入れてコピーし、ChatGPTに貼り付けて送ります。">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tech-wedge.com/daikenrou">
+<link rel="canonical" href="https://tech-wedge.com/daikenrou">
+<meta property="og:title" content="ホームページの見本を作る例文 | TechWedge">
+<meta property="og:description" content="講演の体験で使う例文です。3つの欄に入れてコピーし、ChatGPTに貼り付けて送ります。">
+<meta property="og:image" content="https://tech-wedge.com/assets/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/base.css">
+<style>
+/* 講演の例文（このページだけ）: 3つの欄→差し込み→コピー */
+.reibun .form{max-width:none}
+.reibun .form input{font-size:16px}
+.reibun-out{white-space:pre-wrap;font-family:var(--sans);font-size:16px;line-height:1.8;color:var(--ink);background:var(--bg0);border:1px solid var(--laser-dim);border-radius:var(--r-md);padding:18px;margin:0}
+.reibun .cta{width:100%;margin-top:18px}
+.reibun-msg{min-height:1.6em;margin-top:10px;font-weight:700;color:var(--laser)}
+.reibun-steps{margin:0 0 1.2em;padding-left:1.4em}
+.reibun-steps li{margin:.3em 0}
+</style>
+</head>
+<body>
+
+<div class="datum" id="datum"></div>
+
+<header class="site">
+  <nav class="nav">
+    <a class="brand" href="index.html" data-brand></a>
+    <div class="nav-links">
+      <a href="construction.html" data-copy="tbd-nav-construction">建設業の方へ</a>
+      <a href="tax.html" data-copy="tbd-nav-tax">税理士の方へ</a>
+      <a href="training.html" data-copy="tbd-nav-training">AI研修</a>
+      <a href="web.html" data-copy="tbd-nav-web">HP制作</a>
+      <a href="cases.html">導入事例</a>
+      <a href="columns.html">コラム</a>
+      <a href="company.html">運営者</a>
+      <a class="nav-cta" href="contact.html">相談 →</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="メニュー" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero compact">
+  <div class="wrap">
+    <div class="kicker">講演の体験用</div>
+    <h1>ホームページの見本を作る例文です</h1>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="story rv reibun">
+<ol class="reibun-steps"><li>下の3つの欄に入れます（仮の屋号でも大丈夫です）</li><li>「例文をコピーする」を押します</li><li>ChatGPTの入力欄に貼り付けて、送信します</li></ol>
+<p>入れてよいのは、公開してよい情報だけです。お客様の名前や住所、見積の金額は入れないでください。入れた文字は、このページからどこにも送られません。</p>
+<form class="form" id="reibun-form" onsubmit="return false">
+<div><label class="lb" for="f-yago">会社名（屋号）</label><input type="text" id="f-yago" placeholder="例: 〇〇内装" autocomplete="off"></div>
+<div><label class="lb" for="f-koji">得意な工事</label><input type="text" id="f-koji" placeholder="例: 階段の滑り止め、床の見切り" autocomplete="off"></div>
+<div><label class="lb" for="f-chiiki">地域（市区町村まで）</label><input type="text" id="f-chiiki" placeholder="例: 大阪府〇〇市" autocomplete="off"></div>
+</form>
+<p class="lb" style="margin-top:28px">コピーされる例文</p>
+<pre class="reibun-out" id="reibun-out" aria-live="polite"></pre>
+<button class="cta" type="button" id="reibun-copy">例文をコピーする</button>
+<p class="reibun-msg" id="reibun-msg" role="status"></p>
+<p><a href="https://chatgpt.com/" style="color:var(--laser)">ChatGPTを開く →</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="foot">
+    <span class="brand" data-brand></span>
+    <span class="tagline">現場を動かす人に、テクノロジーを。<br>このサイトも、私たちのAIワークフローで制作しました。</span>
+    <div class="links">
+      <a href="index.html">トップ</a>
+      <a href="construction.html" data-copy="tbd-nav-construction">建設業の方へ</a>
+      <a href="tax.html" data-copy="tbd-nav-tax">税理士の方へ</a>
+      <a href="training.html" data-copy="tbd-nav-training">AI研修</a>
+      <a href="web.html" data-copy="tbd-nav-web">HP制作</a>
+      <a href="cases.html">導入事例</a>
+      <a href="columns.html">コラム</a>
+      <a href="company.html">運営者情報</a>
+      <a href="contact.html" data-copy="tbd-contact-button">無料相談</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </div>
+    <span class="note" data-brand-note></span>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+(function () {
+  var fields = [["f-yago", "【屋号】"], ["f-koji", "【得意な工事】"], ["f-chiiki", "【地域】"]];
+  var out = document.getElementById("reibun-out");
+  var msg = document.getElementById("reibun-msg");
+  function val(i) {
+    var v = document.getElementById(fields[i][0]).value.trim();
+    return v || fields[i][1];
+  }
+  function text() {
+    return "私は建設業の仕事をしています。\n自分の会社のホームページの見本を作ってください。\n\n" +
+      "会社名：" + val(0) + "\n得意な工事：" + val(1) + "\n地域：" + val(2) + "\n\n" +
+      "次の順に、スマホで読みやすい長さで書いてください。\n" +
+      "1. 一番上に出す一言（20字くらい）\n2. 会社の紹介（3行くらい）\n3. 得意な工事の説明\n4. 対応している地域\n5. 見積の相談の呼びかけ\n\n" +
+      "プログラムのコードではなく、そのまま読める文章で出してください。";
+  }
+  function render() { out.textContent = text(); msg.textContent = ""; }
+  fields.forEach(function (f) { document.getElementById(f[0]).addEventListener("input", render); });
+  document.getElementById("reibun-copy").addEventListener("click", function () {
+    var t = text();
+    function done() { msg.textContent = "コピーしました。ChatGPTの入力欄に貼り付けてください。"; }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = t; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, t.length);
+      var ok = false; try { ok = document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      msg.textContent = ok ? "コピーしました。ChatGPTの入力欄に貼り付けてください。" : "コピーできませんでした。上の例文を長押しして選んでください。";
+    }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(t).then(done, fallback);
+    } else { fallback(); }
+  });
+  render();
+})();
+</script>
+</body>
+</html>
