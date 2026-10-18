@@ -468,4 +468,3 @@ figure > a{display:block}
 
 /* 文の最後の行が1〜2文字だけにならないように折り返す（対応していないブラウザでは、今までどおりの折り返しになるだけ）2026-10-18 */
 p,li,dd,dt,td,th,figcaption,.tagline{text-wrap:pretty}
-h1,h2,h3,h4{text-wrap:balance}
