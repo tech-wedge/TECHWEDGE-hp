@@ -468,3 +468,5 @@ figure > a{display:block}
 
 /* 文の最後の行が1〜2文字だけにならないように折り返す（対応していないブラウザでは、今までどおりの折り返しになるだけ）2026-10-18 */
 p,li,dd,dt,td,th,figcaption,.tagline{text-wrap:pretty}
+/* 見出しの言葉のまとまり（文節）を途中で折り返さない（tools/heading_phrase_wrap.mjs が付ける）2026-10-18 */
+.nw{display:inline-block}
