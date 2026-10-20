@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>TechWedge — 現場を動かす人に、テクノロジーを。</title>
-<meta name="description" content="AIを業務で使える形にする会社です。業務の選定から社員研修、導入後の運用までを支援します。自社の領収書の仕分けを月170分から20分に短縮した自社の結果をもとに、建設業・税理士事務所の導入に対応します。">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://tech-wedge.com/">
-<link rel="canonical" href="https://tech-wedge.com/">
-<meta property="og:title" content="TechWedge — 現場を動かす人に、テクノロジーを。">
-<meta property="og:description" content="AIを業務で使える形にする会社です。業務の選定から社員研修、導入後の運用までを支援します。自社の領収書の仕分けを月170分から20分に短縮した自社の結果をもとに、建設業・税理士事務所の導入に対応します。">
-<meta property="og:image" content="https://tech-wedge.com/assets/ogp.png">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- 日本語フォントは、トップで使う文字だけを切り出した1ファイルをサイトから配る（Google Fonts は細かいファイルが届くたびに組み直しが起き、LCP が 6.6→2.4 秒違った・2026-10-01）。
-     作り直し＝Desktop\Claude\tools\techwedge_font_subset.py（トップの文言を足したら撃ち直す）。等幅の JetBrains Mono だけ Google Fonts を描画を止めずに読む -->
-<link rel="preload" href="assets/fonts/NotoSansJP-top.woff2" as="font" type="font/woff2" crossorigin>
-<style>@font-face{font-family:"Noto Sans JP";src:url("assets/fonts/NotoSansJP-top.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}</style>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="assets/tokens.css">
-<link rel="stylesheet" href="assets/base.css">
-<style>
-/* スマホの幅では実績の3項目を縦に並べる（このページだけ・共有の base.css は触らない） */
-@media (max-width:560px){
-  .hero-stats{flex-direction:column}
-  .hstat{border-right:none;border-bottom:1px solid var(--line)}
-  .hstat:last-child{border-bottom:none}
-}
-</style>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AIを業務で使える形にする会社です。業務の選定から社員研修、導入後の運用までを支援します。自社の領収書の仕分けを月170分から20分に短縮した自社の結果をもとに、建設業・税理士事務所の導入に対応します。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tech-wedge.com/">
+    <link rel="canonical" href="https://tech-wedge.com/">
+    <meta property="og:title" content="TechWedge — 現場を動かす人に、テクノロジーを。">
+    <meta property="og:description" content="AIを業務で使える形にする会社です。業務の選定から社員研修、導入後の運用までを支援します。自社の領収書の仕分けを月170分から20分に短縮した自社の結果をもとに、建設業・税理士事務所の導入に対応します。">
+    <meta property="og:image" content="https://tech-wedge.com/assets/ogp.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title>TechWedge — 現場を動かす人に、テクノロジーを。</title>
+    
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="assets/fonts/NotoSansJP-top.woff2" as="font" type="font/woff2" crossorigin>
+    <style>@font-face{font-family:"Noto Sans JP";src:url("assets/fonts/NotoSansJP-top.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}</style>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    </noscript>
+    <link rel="stylesheet" href="assets/tokens.css">
+    <link rel="stylesheet" href="assets/base.css">
+    <style>
+    /* スマホの幅では実績の3項目を縦に並べる（このページだけ・共有の base.css は触らない） */
+    @media (max-width:560px){
+      .hero-stats{flex-direction:column}
+      .hstat{border-right:none;border-bottom:1px solid var(--line)}
+      .hstat:last-child{border-bottom:none}
+    }
+    </style>
+  </head>
 <body>
 
 <div class="datum" id="datum"></div>
@@ -51,7 +54,9 @@
       <a class="nav-cta" href="contact.html">相談 →</a>
     </div>
     <button class="nav-toggle" type="button" aria-label="メニュー" aria-expanded="false">
-      <span></span><span></span><span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </nav>
 </header>
@@ -88,7 +93,15 @@
 <!-- ═══ 01 商品説明 ═══ -->
 <section class="band">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">01</span><h2><span class="nw">研修だけでも、</span><span class="nw">ツールを</span><span class="nw">渡すだけでもありません。</span></h2><span class="sec-en">What we do</span></div>
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <h2>
+        <span class="nw">研修だけでも、</span>
+        <span class="nw">ツールを</span>
+        <span class="nw">渡すだけでもありません。</span>
+      </h2>
+      <span class="sec-en">What we do</span>
+    </div>
     <p class="sec-lead">
       AIの説明を聞いて終わる研修では、現場には残りません。<br>
       一方で、ツールだけ導入しても、使い方が分からなければ止まります。<br>
@@ -101,16 +114,37 @@
 <!-- ═══ 04 実測 ═══ -->
 <section>
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">02</span><h2><span class="nw">自社で</span><span class="nw">実際に</span><span class="nw">回した</span><span class="nw">結果です。</span></h2><span class="sec-en">Field-tested</span></div>
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <h2>
+        <span class="nw">自社で</span>
+        <span class="nw">実際に</span>
+        <span class="nw">回した</span>
+        <span class="nw">結果です。</span>
+      </h2>
+      <span class="sec-en">Field-tested</span>
+    </div>
     <p class="sec-lead">導入事例の一社目は、私たち自身の会社。6ヶ月・400件の領収書を実際に処理した記録があります。</p>
     <figure class="case rv">
-      <div class="case-step"><div class="case-k">領収書の写真</div><img src="assets/case_receipt.png" alt="架空の領収書（見本）" width="500" height="800"></div>
+      <div class="case-step">
+        <div class="case-k">領収書の写真</div>
+        <img src="assets/case_receipt.png" alt="架空の領収書（見本）" width="500" height="800">
+      </div>
       <div class="case-arrow" aria-hidden="true">→</div>
-      <div class="case-step case-mid"><div class="case-k">AIが読み取る</div><p class="case-note">日付・店の名前・品名・金額を読み取り、科目を振り分けます。</p></div>
+      <div class="case-step case-mid">
+        <div class="case-k">AIが読み取る</div>
+        <p class="case-note">日付・店の名前・品名・金額を読み取り、科目を振り分けます。</p>
+      </div>
       <div class="case-arrow" aria-hidden="true">→</div>
-      <div class="case-step case-mid"><div class="case-k">人が見比べる</div><p class="case-note">元の領収書と並べて、日付・金額・店の名前を確かめます。</p></div>
+      <div class="case-step case-mid">
+        <div class="case-k">人が見比べる</div>
+        <p class="case-note">元の領収書と並べて、日付・金額・店の名前を確かめます。</p>
+      </div>
       <div class="case-arrow" aria-hidden="true">→</div>
-      <div class="case-step"><div class="case-k">科目つきの表</div><img src="assets/case_result.png" alt="AIが作った表（日付・店の名前・品名・金額・科目）" width="1200" height="660"></div>
+      <div class="case-step">
+        <div class="case-k">科目つきの表</div>
+        <img src="assets/case_result.png" alt="AIが作った表（日付・店の名前・品名・金額・科目）" width="1200" height="660">
+      </div>
     </figure>
     <div class="ba">
       <div class="ba-col rv">
@@ -124,7 +158,8 @@
       </div>
     </div>
     <p class="src-note">DATA: 2026年1月〜6月 / 自動処理された領収書400件（内装系金物の施工会社・従業員5名以下の実運用）</p>
-    <p style="margin-top:20px"><a href="construction.html#proof" style="color:var(--laser);font-size:14px;font-weight:700;text-decoration:none;display:inline-block;padding:11px 0;min-height:44px;box-sizing:border-box">→ 工程別の内訳まで全部見る（建設業向けページ）</a></p>
+    <p style="margin-top:20px">
+      <a href="construction.html#proof" style="color:var(--laser);font-size:14px;font-weight:700;text-decoration:none;display:inline-block;padding:11px 0;min-height:44px;box-sizing:border-box">→ 工程別の内訳まで全部見る（建設業向けページ）</a></p>
   </div>
 </section>
 
