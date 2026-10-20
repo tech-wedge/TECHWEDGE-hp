@@ -7,3 +7,6 @@ package-lock.json
 assets/flyer_all_v2.html
 tools/
 CLAUDE.md
+node_modules
+dist
+.astro
