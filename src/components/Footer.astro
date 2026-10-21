@@ -1,0 +1,18 @@
+---
+import { sitePages, contactPage } from '../data/site-pages';
+---
+
+<footer class="site">
+  <div class="foot">
+    <span class="brand" data-brand></span>
+    <span class="tagline">現場を動かす人に、テクノロジーを。<br>このサイトも、私たちのAIワークフローで<span style="white-space:nowrap">制作しました。</span></span>
+    <div class="links">
+    {sitePages.map((page) => (
+      <a href={page.href} >{page.label}</a>
+    ))}
+      <a href={contactPage.href}>無料相談</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+    </div>
+    <span class="note" data-brand-note></span>
+  </div>
+</footer>

@@ -1,0 +1,25 @@
+---
+import { sitePages, contactPage, type PageKey } from '../data/site-pages';
+
+interface Props {
+  current?: PageKey;
+}
+
+const { current } = Astro.props;
+---
+<header class="site">
+  <nav class="nav">
+    <a class="brand" href="/" data-brand></a>
+    <div class="nav-links">
+    {sitePages.map((item) => (
+      <a href={item.href} class:list={[{now: current === item.key}]}>{item.label}</a>
+    ))}
+      <a class:list={["nav-cta", { now: current === contactPage.key }]} href={contactPage.href}>相談 →</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="メニュー" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+</header>
