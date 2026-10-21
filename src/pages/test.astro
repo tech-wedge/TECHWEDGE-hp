@@ -3,7 +3,11 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 ---
-<Layout title="テストページ">
+<Layout
+  title="テストページ"
+  description="Astroのレイアウトの動作確認用のページです。"
+  path="/test.html"
+>
   <Header current="tax"/>
   <h1>Astroのレイアウト、動いてる？</h1>
   <p>この文字が、TechWedgeのフォントと色で表示されてたら成功。</p>
