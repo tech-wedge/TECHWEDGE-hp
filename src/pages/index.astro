@@ -1,76 +1,23 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8">
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NRNZJF4D');</script>
-<!-- End Google Tag Manager -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AIを業務で使える形にする会社です。業務の選定から社員研修、導入後の運用までを支援します。自社の領収書の仕分けを月170分から20分に短縮した自社の結果をもとに、建設業・税理士事務所の導入に対応します。">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tech-wedge.com/">
-    <link rel="canonical" href="https://tech-wedge.com/">
-    <meta property="og:title" content="TechWedge — 現場を動かす人に、テクノロジーを。">
-    <meta property="og:description" content="AIを業務で使える形にする会社です。業務の選定から社員研修、導入後の運用までを支援します。自社の領収書の仕分けを月170分から20分に短縮した自社の結果をもとに、建設業・税理士事務所の導入に対応します。">
-    <meta property="og:image" content="https://tech-wedge.com/assets/ogp.png">
-    <meta name="twitter:card" content="summary_large_image">
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<Layout
+  title="TechWedge — 現場を動かす人に、テクノロジーを。"
+  description="AIを業務で使える形にする会社です。業務の選定から社員研修、導入後の運用までを支援します。自社の領収書の仕分けを月170分から20分に短縮した自社の結果をもとに、建設業・税理士事務所の導入に対応します。"
+  path="/"
+>
+  <style is:inline slot="head">
+  /* スマホの幅では実績の3項目を縦に並べる（このページだけ・共有の base.css は触らない） */
+  @media (max-width:560px){
+    .hero-stats{flex-direction:column}
+    .hstat{border-right:none;border-bottom:1px solid var(--line)}
+    .hstat:last-child{border-bottom:none}
+  }
+  </style>
 
-    <title>TechWedge — 現場を動かす人に、テクノロジーを。</title>
-    
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="assets/fonts/NotoSansJP-top.woff2" as="font" type="font/woff2" crossorigin>
-    <style>@font-face{font-family:"Noto Sans JP";src:url("assets/fonts/NotoSansJP-top.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}</style>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-    </noscript>
-    <link rel="stylesheet" href="assets/tokens.css">
-    <link rel="stylesheet" href="assets/base.css">
-    <style>
-    /* スマホの幅では実績の3項目を縦に並べる（このページだけ・共有の base.css は触らない） */
-    @media (max-width:560px){
-      .hero-stats{flex-direction:column}
-      .hstat{border-right:none;border-bottom:1px solid var(--line)}
-      .hstat:last-child{border-bottom:none}
-    }
-    </style>
-  </head>
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRNZJF4D"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-<div class="datum" id="datum"></div>
-
-<header class="site">
-  <nav class="nav">
-    <a class="brand" href="index.html" data-brand></a>
-    <div class="nav-links">
-      <a href="construction.html" data-copy="tbd-nav-construction">建設業の方へ</a>
-      <a href="tax.html" data-copy="tbd-nav-tax">税理士の方へ</a>
-      <a href="training.html" data-copy="tbd-nav-training">AI研修</a>
-      <a href="web.html" data-copy="tbd-nav-web">HP制作</a>
-      <a href="cases.html">導入事例</a>
-      <a href="columns.html">コラム</a>
-      <a href="company.html">運営者</a>
-      <a class="nav-cta" href="contact.html">相談 →</a>
-    </div>
-    <button class="nav-toggle" type="button" aria-label="メニュー" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </nav>
-</header>
+<Header />
 
 <main>
 
@@ -256,26 +203,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </main>
 
-<footer class="site">
-  <div class="foot">
-    <span class="brand" data-brand></span>
-    <span class="tagline">現場を動かす人に、テクノロジーを。<br>このサイトも、私たちのAIワークフローで<span style="white-space:nowrap">制作しました。</span></span>
-    <div class="links">
-      <a href="index.html">トップ</a>
-      <a href="construction.html" data-copy="tbd-nav-construction">建設業の方へ</a>
-      <a href="tax.html" data-copy="tbd-nav-tax">税理士の方へ</a>
-      <a href="training.html" data-copy="tbd-nav-training">AI研修</a>
-      <a href="web.html" data-copy="tbd-nav-web">HP制作</a>
-      <a href="cases.html">導入事例</a>
-      <a href="columns.html">コラム</a>
-      <a href="company.html">運営者情報</a>
-      <a href="contact.html" data-copy="tbd-contact-button">無料相談</a>
-      <a href="privacy.html">プライバシーポリシー</a>
-    </div>
-    <span class="note" data-brand-note></span>
-  </div>
-</footer>
-
-<script src="assets/site.js" defer></script>
-</body>
-</html>
+<Footer />
+</Layout>
