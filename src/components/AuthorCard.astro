@@ -1,0 +1,22 @@
+---
+// コラム記事の末尾に出す著者欄。全記事で同じ中身。
+import { author } from "../data/members";
+
+interface Props {
+  /** 背景を一段明るくする帯にするか（前後の節と縞模様になるように切り替える） */
+  band?: boolean;
+}
+
+const { band = false } = Astro.props;
+---
+<section class:list={[{ band }]}>
+  <div class="wrap">
+    <div class="member rv" style="max-width:480px;margin:0 auto">
+      <div class="avatar">{author.initials}</div>
+      <h3>{author.name}</h3>
+      <div class="role">{author.role}</div>
+      <p>{author.bio}</p>
+      <p style="margin-top:12px"><a href="/company" style="color:var(--laser);font-size:14px;font-weight:700">→ 運営チームについて詳しく</a></p>
+    </div>
+  </div>
+</section>

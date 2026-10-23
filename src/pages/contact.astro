@@ -1,0 +1,115 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { formAction, industries, issues, lineUrl, promises } from "../data/contact";
+---
+<Layout
+  title="無料相談 — 30分だけ、事務作業の話を。 | TechWedge"
+  description="無料・オンライン可・売り込みません。事務作業の棚卸しから一緒に。自動化できないものは「できない」と言います。"
+  path="/contact"
+>
+  <style is:inline slot="head">
+  /* 最初の部分の囲みを画面の幅に合わせる（約束のカード3枚が画面より広く並び、右が切れていた。カードは LINE の節の後ろへ移した＝便3・このページだけ） */
+  .hero > .wrap{width:100%}
+  /* スマホでは冒頭の小見出し（飾りのラベル）を1行に収める＝「無料相談」を途中で折り返さない（好みの判定 10-16・ラベルは12px以上の決めの内） */
+  @media (max-width:560px){ .hero .kicker{font-size:12px;letter-spacing:2px;white-space:nowrap} }
+  /* スマホでは LINE の操作部分を上へ寄せる＝最初の部分の下・LINE の節の上を48px、説明とカードの間を24px に詰める（好みの判定 10-16） */
+  @media (max-width:560px){
+    .hero.compact{min-height:auto;padding-bottom:48px}
+    .hero.compact + section{padding-top:48px}
+    .hero.compact + section .sec-lead{margin-bottom:24px}
+  }
+  /* LINE のカード: 「LINEで相談する」を押せるボタンの形（高さ48px・カードの幅いっぱい）にし、QR と説明はその16px下に並べる。説明は語の途中で折り返さない（好みの判定 10-16 1932） */
+  .line-card{max-width:400px;text-decoration:none;color:inherit;display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:center;padding:20px}
+  .line-card .line-btn{grid-column:1 / -1;display:flex;align-items:center;justify-content:center;min-height:48px;background:var(--laser);color:#1A1A1A;font-weight:900;font-size:15px;letter-spacing:.05em;border-radius:var(--r-md)}
+  .line-card img{width:96px;height:96px;border-radius:8px}
+  .line-card .desc{min-height:auto;word-break:auto-phrase}
+  @media (max-width:560px){ .line-card{max-width:none} }
+  </style>
+
+<Header current="contact" />
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero compact">
+  <div class="wrap">
+    <div class="kicker">FREE CONSULTATION — 無料相談</div>
+    <h1>30分だけ、<br><span class="laser-under">事務作業の話を。</span></h1>
+    <p class="hero-lead">今の作業の棚卸しから一緒に。ヒアリングして、自動化で効く箇所と効かない箇所をその場でお伝えします。</p>
+  </div>
+</section>
+
+<!-- ═══ LINEでのご相談 ═══ -->
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2>LINEでのご相談</h2><span class="sec-en">LINE</span></div>
+    <p class="sec-lead">日中は現場に出ていることが多く、お電話に出られないことがあります。<b style="color:var(--ink)">一番お返事できるのはLINEです。</b>お名前と「HPで見た」の一言だけで大丈夫です。</p>
+    <a href={lineUrl} class="card rv line-card" aria-label="LINEで相談する（QRコードを読み取ってください）">
+      <span class="line-btn">LINEで相談する</span>
+      <img src="/assets/line-qr-official.svg" alt="LINE友だち追加QRコード（TechWedge公式アカウント）">
+      <span class="desc">スマホの方は、この画像を長押しで保存してLINEアプリの「QRコードリーダー」で読み込んでください。</span>
+    </a>
+    <div class="grid" style="margin-top:44px;max-width:840px">
+      {promises.map((promise) => (
+        <div class="card rv" style="padding:20px 22px">
+          <h3 style="margin-top:0;font-size:15px">{promise.title}</h3>
+          <p class="desc" style="min-height:auto">{promise.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 連絡方法 ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2>フォームでのご連絡</h2><span class="sec-en">Contact form</span></div>
+    <div class="notice rv" style="max-width:600px">
+      下記フォームからご連絡ください。<b>2営業日以内に返信します。</b>
+    </div>
+
+    <form class="form rv" style="margin-top:44px" action={formAction} method="POST">
+      <div style="position:absolute;left:-9999px" aria-hidden="true">
+        <label>website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      </div>
+      <div>
+        <label class="lb">お名前</label>
+        <input type="text" name="name" placeholder="例: 中芝 悠太" required>
+      </div>
+      <div>
+        <label class="lb">メールアドレス</label>
+        <input type="email" name="email" placeholder="例: yourname@example.com" required>
+      </div>
+      <div>
+        <label class="lb">会社名<small>任意</small></label>
+        <input type="text" name="company" placeholder="例: 株式会社○○建設">
+      </div>
+      <div>
+        <label class="lb">業種</label>
+        <select name="industry">
+          {industries.map((industry) => <option>{industry}</option>)}
+        </select>
+      </div>
+      <div>
+        <label class="lb">いま困っていること<small>複数選択OK</small></label>
+        <div class="checks">
+          {issues.map((issue) => (
+            <label class="chk"><input type="checkbox" name="issues" value={issue}>{issue}</label>
+          ))}
+        </div>
+      </div>
+      <div>
+        <label class="lb">自由記入<small>任意</small></label>
+        <textarea rows="4" name="message" placeholder="例: 月末の領収書整理に半日かかっています"></textarea>
+      </div>
+      <button class="cta" type="submit">送信する →</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<Footer />
+</Layout>

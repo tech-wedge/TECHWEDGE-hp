@@ -1,0 +1,21 @@
+---
+// 各ページの末尾に置く無料相談の帯。
+// 見出しと本文はページごとに違うので slot で受け取る。
+import { contactPage } from "../data/site-pages";
+
+interface Props {
+  /** 直前の節と同じ背景色になるときに付けて縞模様を保つ */
+  band?: boolean;
+  ctaLabel: string;
+}
+
+const { band = false, ctaLabel } = Astro.props;
+---
+<section class:list={["contact-band", { band }]}>
+  <div class="wrap">
+    <slot name="heading" />
+    <slot />
+    <a class="cta" href={contactPage.href}>{ctaLabel}</a>
+    <slot name="after" />
+  </div>
+</section>

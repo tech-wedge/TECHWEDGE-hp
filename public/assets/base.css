@@ -130,13 +130,7 @@ h1{margin-top:26px;font-size:clamp(36px,6.4vw,76px);font-weight:900;line-height:
 .cta-row{margin-top:40px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
 
 /* ─── カード類 ─── */
-.grid{display:grid;gap:18px}
-.grid.c3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.grid.c2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-/* 4列グリッド（2026-09-03追加・01Bの導入ステップ）——★モバイルで潰れんように段階的に落とす */
-.grid.c4{grid-template-columns:repeat(4,1fr)}
-@media(max-width:900px){.grid.c4{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.grid.c4{grid-template-columns:1fr}}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .card{
   background:var(--bg1);border:1px solid var(--line);border-radius:var(--r-md);padding:28px 26px;
   position:relative;overflow:hidden;
@@ -155,33 +149,13 @@ h1{margin-top:26px;font-size:clamp(36px,6.4vw,76px);font-weight:900;line-height:
 .card .price small{color:var(--faint);font-size:14px;display:block;margin-top:2px}
 .fine{margin-top:22px;font-size:14px;color:var(--faint)}
 
-/* 小カード（サービス全体マップ用） */
-.grid.map{grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+/* 小カード（事務の全体マップ用） */
 .card.mini{padding:18px 18px 16px}
 .card.mini h3{font-size:14px;margin-top:10px}
 .card.mini .desc{font-size:14px;min-height:auto;margin-top:6px;line-height:1.85}
 .card.mini .price{margin-top:10px;font-size:14px}
 .card.mini .price b{font-size:16px}
 .tag.plan{color:var(--faint);border:1px dashed var(--line)}
-
-/* ─── 業種入り口カード（トップの見せ場） ─── */
-.fork{position:relative;padding-top:20px}
-.fork-svg{display:block;width:100%;height:70px}
-.fork-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-@media(max-width:680px){.fork-grid{grid-template-columns:1fr}}
-.fork-card{
-  display:block;text-decoration:none;color:var(--ink);
-  background:var(--bg1);border:1px solid var(--line);border-radius:var(--r-md);
-  padding:34px 30px;position:relative;overflow:hidden;
-  transition:transform .35s var(--ease-out),border-color .35s var(--ease);
-}
-.fork-card:hover{transform:translateY(-5px);border-color:var(--laser-dim)}
-.fork-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--laser);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease-out)}
-.fork-card:hover::before{transform:scaleX(1)}
-.fork-card .ico{font-size:30px}
-.fork-card h3{font-size:20px;font-weight:900;margin-top:14px}
-.fork-card p{color:var(--sub);font-size:14px;margin-top:10px;line-height:2}
-.fork-card .go{margin-top:18px;font-family:var(--mono);font-size:14px;color:var(--laser);letter-spacing:.14em}
 
 /* ─── Before/After ─── */
 .ba-chart{width:100%;max-width:600px;height:auto;margin:0 0 28px}
@@ -286,10 +260,8 @@ h1{margin-top:26px;font-size:clamp(36px,6.4vw,76px);font-weight:900;line-height:
 .kenshu .desc{color:var(--sub);font-size:14px;margin-top:10px;line-height:2}
 .kenshu-price{text-align:center;border-left:1px solid var(--line);padding-left:28px}
 @media(max-width:760px){.kenshu-price{border-left:none;padding-left:0;border-top:1px solid var(--line);padding-top:22px}}
-.kenshu-price .was{font-family:var(--mono);color:var(--faint);font-size:14px;text-decoration:line-through}
 .kenshu-price .now{font-family:var(--mono);font-weight:700;font-size:40px;color:var(--laser);letter-spacing:-.03em;line-height:1.2}
 .kenshu-price .now small{font-size:14px;color:var(--sub)}
-.kenshu-price .why{font-size:14px;color:var(--sub);margin-top:6px;font-family:var(--mono);letter-spacing:.06em}
 
 /* ─── 出現アニメ ───
    初期状態は「見えている」（JS無し・スクロール無し・全体スクショでも全部見える）。
@@ -385,8 +357,6 @@ footer.site{border-top:1px solid var(--line);padding:36px 0;background:var(--bg1
 .spec-table th,.spec-table td{padding:13px 16px;border:1px solid var(--line);text-align:left}
 .spec-table th{font-family:var(--mono);font-size:14px;letter-spacing:.14em;color:var(--sub);background:var(--bg1);font-weight:500;white-space:nowrap}
 .spec-table .num{font-family:var(--mono);white-space:nowrap}
-.spec-table .strike{text-decoration:line-through;color:var(--faint)}
-.spec-table .laser{color:var(--laser);font-weight:700}
 .badge{display:inline-flex;align-items:center;justify-content:center;min-width:28px;padding:4px 10px;border-radius:var(--r-sm);font-family:var(--mono);font-size:12.5px;font-weight:700}
 .badge-yes{background:var(--laser-faint);color:var(--laser)}
 .badge-no{background:var(--bg2);color:var(--sub)}

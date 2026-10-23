@@ -1,0 +1,119 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import ContactBand from "../components/ContactBand.astro";
+---
+<Layout
+title="税理士の方へ — 入力ではなく、チェックを自動化する。 | TechWedge"
+description="記帳代行ツールが「入力」を競う中、私たちは仕訳のチェック・照合を自動化しています。科目違い・月ズレ・二重計上をAIが先回りして検知。税理士事務所と一緒に、実際の業務で使う形を作っています。先行パートナー募集中です。"
+path="/tax"
+ogType="website"
+ogImage="/assets/ogp.png"
+>
+
+
+<Header current="tax" />
+<main>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero compact">
+    <div class="hero-repeat">
+      <span class="row">FOR TAX ACCOUNTANTS — CHECK, NOT INPUT — FOR TAX ACCOUNTANTS — CHECK, NOT INPUT — </span>
+    </div>
+    <div class="wrap">
+      <div class="kicker">FOR TAX ACCOUNTANTS — 税理士の方へ</div>
+      <h1>入力ではなく、<br><span class="laser-under">チェックを自動化する。</span></h1>
+      <p class="hero-lead">
+        記帳代行ツールが「入力」を競う中、私たちが作っているのは<b>仕訳のチェック・照合の自動化</b>です。<br>
+        科目違い・月ズレ・二重計上——確定申告前の差し戻しを生む間違いを、AIが先回りして拾います。<br>
+        税理士事務所と一緒に、実際の業務で使う形を作っています。
+      </p>
+      <div class="cta-row">
+        <a class="cta" href="/contact">先行導入の相談をする</a>
+        <span class="cta-note">オンライン可</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 01 なぜチェックか ═══ -->
+  <section class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">01</span>
+        <h2>入力より、チェックの自動化が手つかずです。</h2>
+        <span class="sec-en">Position</span>
+      </div>
+      <div class="grid">
+        <div class="card rv">
+          <h3 style="margin-top:0">入力型ツールの後工程を担う</h3>
+          <p class="desc">スキャン→データ化のサービスは既に普及しました。でも「その仕訳、合ってるか」の確認は今も人の目です。私たちはそこを自動化します。既存の入力ツールと競合せず、併用できます。</p>
+        </div>
+        <div class="card rv">
+          <h3 style="margin-top:0">小規模事務所のための設計</h3>
+          <p class="desc">税理士事務所の多くは少人数です。大規模事務所向けの高額SaaSではなく、小規模事務所がそのまま使える設計と価格を目指しています。</p>
+        </div>
+        <div class="card rv">
+          <h3 style="margin-top:0">現場に立つ私たちが作っています</h3>
+          <p class="desc">開発元の私たちは建設業（内装系金物の施工）の現場に立っています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 02 開発状況（正直に） ═══ -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">02</span>
+        <h2>いまの開発状況</h2>
+        <span class="sec-en">Status — honest</span>
+      </div>
+      <p class="sec-lead">できていないことを、できていると言わないチームです。現在地はここです。</p>
+      <ul class="checklist">
+        <li class="ok rv"><span><b>領収書仕分けの自動化</b> — 自社で6ヶ月・400件を実運用済み</span></li>
+        <li class="ok rv"><span><b>税理士事務所と一緒に、実際の業務で使う形を作っています</b> — 実際の顧問先業務に沿った設計</span></li>
+        <li class="rv"><span><b>実証データの公開</b> — 検証がまとまり次第、このページで数字を公開します</span></li>
+        <li class="rv"><span><b>一般提供</b> — 実証完了後に開始。それまでは先行パートナー枠のみ</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══ 03 先行パートナー募集 ═══ -->
+  <section class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">03</span>
+        <h2>先行パートナー募集</h2>
+        <span class="sec-en">Early access</span>
+      </div>
+      <div class="grid">
+        <div class="card rv">
+          <h3 style="margin-top:0">お渡しできるもの</h3>
+          <p class="desc">・機能要望の最優先反映——「うちの顧問先のこのパターンを拾ってほしい」が直接開発に入ります</p>
+        </div>
+        <div class="card rv">
+          <h3 style="margin-top:0">お願いしたいこと</h3>
+          <p class="desc">・月1回程度のフィードバック（オンライン30分）<br>・実際の業務での試用と率直な感想<br>・（可能であれば）実証結果の事例化へのご協力</p>
+        </div>
+      </div>
+      <a class="cta" href="/contact" style="margin-top:28px;padding:12px 28px;font-size:14px">先行パートナーに応募する →</a>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <ContactBand ctaLabel="先行導入の相談をする →">
+    <h2 slot="heading">
+      <span class="nw">貴所の</span>
+      <span class="nw">業務</span>
+      <span class="nw">フローについて、</span>
+      <br>
+      <span class="nw">無料相談で</span>
+      <span class="nw">お聞かせください。</span>
+    </h2>
+    <p>30分の無料相談で、貴所の業務フローのどこに効くか（効かないか）を正直にお話しします。</p>
+  </ContactBand>
+
+</main>
+<Footer />
+</Layout>

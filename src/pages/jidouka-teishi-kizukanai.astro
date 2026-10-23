@@ -1,80 +1,23 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NRNZJF4D');</script>
-<!-- End Google Tag Manager -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>自動化した仕組みが止まっていても、3時間誰も気づきませんでした | TechWedge</title>
-<meta name="description" content="自動化した仕組みは、止まったときに知らせが届かなければ、止まったことに気づけません。私たちの会社で、朝の自動処理が3時間止まっていた実例と、止まったことに気づくための3つの点検ルールをまとめます。">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://tech-wedge.com/jidouka-teishi-kizukanai">
-<link rel="canonical" href="https://tech-wedge.com/jidouka-teishi-kizukanai">
-<meta property="og:title" content="自動化した仕組みが止まっていても、3時間誰も気づきませんでした | TechWedge">
-<meta property="og:description" content="自動化は「作った」と「動き続けている」が別の話です。朝の自動処理が3時間止まった実例と、止まったことに気づくための3つの点検ルール。">
-<meta property="og:image" content="https://tech-wedge.com/assets/ogp.png">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/tokens.css">
-<link rel="stylesheet" href="assets/base.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "自動化した仕組みが止まっていても、3時間誰も気づきませんでした",
-  "author": {"@type": "Person", "name": "中芝 悠太"},
-  "publisher": {"@type": "Organization", "name": "TechWedge", "logo": {"@type": "ImageObject", "url": "https://tech-wedge.com/assets/favicon-32.png"}},
-  "datePublished": "2026-09-25",
-  "dateModified": "2026-09-25",
-  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://tech-wedge.com/jidouka-teishi-kizukanai"}
-}
-</script>
-</head>
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NRNZJF4D"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+---
+import ColumnLayout from "../layouts/ColumnLayout.astro";
+import RelatedColumns from "../components/RelatedColumns.astro";
 
-<div class="datum" id="datum"></div>
-
-<header class="site">
-  <nav class="nav">
-    <a class="brand" href="index.html" data-brand></a>
-    <div class="nav-links">
-      <a href="construction.html" data-copy="tbd-nav-construction">建設業の方へ</a>
-      <a href="tax.html" data-copy="tbd-nav-tax">税理士の方へ</a>
-      <a href="training.html" data-copy="tbd-nav-training">AI研修</a>
-      <a href="web.html" data-copy="tbd-nav-web">HP制作</a>
-      <a href="cases.html">導入事例</a>
-      <a href="columns.html" class="now">コラム</a>
-      <a href="company.html">運営者</a>
-      <a class="nav-cta" href="contact.html">相談 →</a>
-    </div>
-    <button class="nav-toggle" type="button" aria-label="メニュー" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-</header>
-
-<main>
-
-<!-- ═══ HERO ═══ -->
-<section class="hero compact">
-  <div class="wrap">
-    <div class="kicker">COLUMN — 自動化の運用</div>
-    <h1>自動化した仕組みが<br>止まっていても、<br><span class="laser-under">3時間誰も気づきませんでした</span></h1>
-  </div>
-</section>
+const timeline = [
+  { time: "6:52〜7:22", event: "朝の処理3本が順に動き始め、どれも最初の操作の直後で止まる" },
+  { time: "8:05・9:13", event: "その後に予定していた別の処理2本が、起動すらしない" },
+  { time: "10:12", event: "別の巡回をしていたAIが「朝の分の成果物が無い」と気づく" },
+];
+---
+<ColumnLayout
+  slug="jidouka-teishi-kizukanai"
+  title="自動化した仕組みが止まっていても、3時間誰も気づきませんでした | TechWedge"
+  description="自動化した仕組みは、止まったときに知らせが届かなければ、止まったことに気づけません。私たちの会社で、朝の自動処理が3時間止まっていた実例と、止まったことに気づくための3つの点検ルールをまとめます。"
+  ogDescription="自動化は「作った」と「動き続けている」が別の話です。朝の自動処理が3時間止まった実例と、止まったことに気づくための3つの点検ルール。"
+  kicker="COLUMN — 自動化の運用"
+  ctaLabel="無料相談へ →"
+  authorBand={false}
+>
+  <h1 slot="h1">自動化した仕組みが<br>止まっていても、<br><span class="laser-under">3時間誰も気づきませんでした</span></h1>
 
 <section class="band">
   <div class="wrap">
@@ -96,9 +39,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <tr><th>時刻</th><th>起きたこと</th></tr>
       </thead>
       <tbody>
-        <tr><td>6:52〜7:22</td><td>朝の処理3本が順に動き始め、どれも最初の操作の直後で止まる</td></tr>
-        <tr><td>8:05・9:13</td><td>その後に予定していた別の処理2本が、起動すらしない</td></tr>
-        <tr><td>10:12</td><td>別の巡回をしていたAIが「朝の分の成果物が無い」と気づく</td></tr>
+        {timeline.map((row) => (
+          <tr><td>{row.time}</td><td>{row.event}</td></tr>
+        ))}
       </tbody>
     </table>
     <div class="story rv" style="margin-top:20px">
@@ -180,54 +123,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>AIに仕事を任せること自体は、思っていたより簡単でした。任せた仕事が「本当に動き続けているか」を見るほうが、ずっと難しいと感じています。自動化の相談を受けるときも、作る話と同じくらい、止まったときの話をするようにしています。</p>
     </div>
     <p class="src-note">本記事に出てくるAIは、Claude Opus 5.5（管理役）とClaude Sonnet 5（実行役）です。許可の設定や操作の中身は、セキュリティに関わるため省いています。</p>
-    <p class="rv" style="margin-top:24px">関連記事: <a href="ai-muki-fumuki.html" style="color:var(--laser)">AIが向いている業務・向いていない業務の見分け方</a> ／ <a href="ai-saisho-1gyoumu.html" style="color:var(--laser)">建設業のAI導入、最初の1業務はどう選ぶ？</a> ／ <a href="ai-jimu-dounyu-shippai.html" style="color:var(--laser)">事務へのAI導入で失敗したのは、使い終わった後の片付けでした</a> ／ <a href="columns.html" style="color:var(--laser)">コラム一覧へ</a></p>
+    <RelatedColumns slug="jidouka-teishi-kizukanai" />
   </div>
 </section>
 
-<!-- ═══ 著者ブロック ═══ -->
-<section>
-  <div class="wrap">
-    <div class="member rv" style="max-width:480px;margin:0 auto">
-      <div class="avatar">NY</div>
-      <h3>中芝 悠太</h3>
-      <div class="role">営業 / 現場代表</div>
-      <p>内装金物の職人として現場に立ちながら、昼は現場・夜はAI。自社の領収書の仕分けの時間を約9割短縮した実体験から、このチームを立ち上げた。現場の話が通じる窓口担当。</p>
-      <p style="margin-top:12px"><a href="company.html" style="color:var(--laser);font-size:14px;font-weight:700">→ 運営チームについて詳しく</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ CTA ═══ -->
-<section class="contact-band">
-  <div class="wrap">
-    <h2><span class="nw">作った</span><span class="nw">自動化が、</span><br><span class="nw">いまも</span><span class="nw">動いているか</span><span class="nw">不安な</span><span class="nw">方へ。</span></h2>
-    <p>無料相談では、いま動いている自動化を一緒に棚卸しし、止まったときに気づける形になっているかを確かめます。整理した結果、最初の1業務から始める研修・初期導入の進め方までお伝えします。まだ導入を決めていなくても構いません。自動化したまま見ていない仕組みを一つ教えてください。</p>
-    <a class="cta" href="contact.html">無料相談へ →</a>
-  </div>
-</section>
-
-</main>
-
-<footer class="site">
-  <div class="foot">
-    <span class="brand" data-brand></span>
-    <span class="tagline">現場を動かす人に、テクノロジーを。<br>このサイトも、私たちのAIワークフローで<span style="white-space:nowrap">制作しました。</span></span>
-    <div class="links">
-      <a href="index.html">トップ</a>
-      <a href="construction.html" data-copy="tbd-nav-construction">建設業の方へ</a>
-      <a href="tax.html" data-copy="tbd-nav-tax">税理士の方へ</a>
-      <a href="training.html" data-copy="tbd-nav-training">AI研修</a>
-      <a href="web.html" data-copy="tbd-nav-web">HP制作</a>
-      <a href="cases.html">導入事例</a>
-      <a href="columns.html">コラム</a>
-      <a href="company.html">運営者情報</a>
-      <a href="contact.html" data-copy="tbd-contact-button">無料相談</a>
-      <a href="privacy.html">プライバシーポリシー</a>
-    </div>
-    <span class="note" data-brand-note></span>
-  </div>
-</footer>
-
-<script src="assets/site.js"></script>
-</body>
-</html>
+  <h2 slot="cta-heading"><span class="nw">作った</span><span class="nw">自動化が、</span><br><span class="nw">いまも</span><span class="nw">動いているか</span><span class="nw">不安な</span><span class="nw">方へ。</span></h2>
+  <p slot="cta-body">無料相談では、いま動いている自動化を一緒に棚卸しし、止まったときに気づける形になっているかを確かめます。整理した結果、最初の1業務から始める研修・初期導入の進め方までお伝えします。まだ導入を決めていなくても構いません。自動化したまま見ていない仕組みを一つ教えてください。</p>
+</ColumnLayout>

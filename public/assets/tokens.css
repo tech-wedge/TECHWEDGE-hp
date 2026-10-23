@@ -31,5 +31,5 @@
   --sans:"Noto Sans JP","Hiragino Kaku Gothic ProN",sans-serif;
 
   /* 角丸（DESIGN.md: 控えめ二極） */
-  --r-sm:4px; --r-md:8px; --r-lg:12px;
+  --r-sm:4px; --r-md:8px;
 }

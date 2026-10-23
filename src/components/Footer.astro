@@ -1,5 +1,5 @@
 ---
-import { sitePages, contactPage } from '../data/site-pages';
+import { sitePages, contactPage, privacyPage } from "../data/site-pages";
 ---
 
 <footer class="site">
@@ -7,11 +7,12 @@ import { sitePages, contactPage } from '../data/site-pages';
     <span class="brand" data-brand></span>
     <span class="tagline">現場を動かす人に、テクノロジーを。<br>このサイトも、私たちのAIワークフローで<span style="white-space:nowrap">制作しました。</span></span>
     <div class="links">
+      <a href="/">トップ</a>
     {sitePages.map((page) => (
-      <a href={page.href} >{page.label}</a>
+      <a href={page.href}>{page.label}</a>
     ))}
       <a href={contactPage.href}>無料相談</a>
-      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href={privacyPage.href}>プライバシーポリシー</a>
     </div>
     <span class="note" data-brand-note></span>
   </div>

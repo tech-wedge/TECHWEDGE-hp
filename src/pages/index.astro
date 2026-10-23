@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import ContactBand from "../components/ContactBand.astro";
+import { members } from "../data/members";
 ---
 <Layout
   title="TechWedge — 現場を動かす人に、テクノロジーを。"
@@ -42,7 +44,7 @@ import Footer from "../components/Footer.astro";
     </div>
     <p class="src-note" style="margin:-8px 0 4px">自社の内装系金物の施工会社（myshia）で6ヶ月運用した実測値です。</p>
     <div class="cta-row">
-      <a class="cta" href="contact.html">AI化できる業務を30分で整理する</a>
+      <a class="cta" href="/contact">AI化できる業務を30分で整理する</a>
       <span class="cta-note">無料・オンライン可 / ITやAIの知識は不要です</span>
     </div>
   </div>
@@ -86,7 +88,7 @@ import Footer from "../components/Footer.astro";
     <figure class="case rv">
       <div class="case-step">
         <div class="case-k">領収書の写真</div>
-        <img src="assets/case_receipt.png" alt="架空の領収書（見本）" width="500" height="800">
+        <img src="/assets/case_receipt.png" alt="架空の領収書（見本）" width="500" height="800">
       </div>
       <div class="case-arrow" aria-hidden="true">→</div>
       <div class="case-step case-mid">
@@ -101,7 +103,7 @@ import Footer from "../components/Footer.astro";
       <div class="case-arrow" aria-hidden="true">→</div>
       <div class="case-step">
         <div class="case-k">科目つきの表</div>
-        <img src="assets/case_result.png" alt="AIが作った表（日付・店の名前・品名・金額・科目）" width="1200" height="660">
+        <img src="/assets/case_result.png" alt="AIが作った表（日付・店の名前・品名・金額・科目）" width="1200" height="660">
       </div>
     </figure>
     <div class="ba">
@@ -117,7 +119,7 @@ import Footer from "../components/Footer.astro";
     </div>
     <p class="src-note">DATA: 2026年1月〜6月 / 自動処理された領収書400件（内装系金物の施工会社・従業員5名以下の実運用）</p>
     <p style="margin-top:20px">
-      <a href="construction.html#proof" style="color:var(--laser);font-size:14px;font-weight:700;text-decoration:none;display:inline-block;padding:11px 0;min-height:44px;box-sizing:border-box">→ 工程別の内訳まで全部見る（建設業向けページ）</a></p>
+      <a href="/construction#proof" style="color:var(--laser);font-size:14px;font-weight:700;text-decoration:none;display:inline-block;padding:11px 0;min-height:44px;box-sizing:border-box">→ 工程別の内訳まで全部見る（建設業向けページ）</a></p>
   </div>
 </section>
 
@@ -127,16 +129,16 @@ import Footer from "../components/Footer.astro";
     <div class="sec-head"><h2>図面の拾い出しも、<span style="display:inline-block">AIに任せられます。</span></h2></div>
     <p class="sec-lead">見積の前の拾い出しも、AIに任せられます。<span style="display:inline-block">床材やクロスの面積を図面から拾い、見積の下書きにします。</span><span style="display:inline-block">結果は元の図面と並べて確かめます。</span></p>
     <figure class="case rv">
-      <div class="case-step"><div class="case-k">図面</div><img src="assets/img/zumen-demo-yuka-cross.svg" alt="説明用の架空の平面図。事務室は5,400×3,600mm、会議室は3,600×2,700mm、天井高は2,400mm。床材とクロスの範囲を色分けしている" width="1520" height="1040"></div>
+      <div class="case-step"><div class="case-k">図面</div><img src="/assets/img/zumen-demo-yuka-cross.svg" alt="説明用の架空の平面図。事務室は5,400×3,600mm、会議室は3,600×2,700mm、天井高は2,400mm。床材とクロスの範囲を色分けしている" width="1520" height="1040"></div>
       <div class="case-arrow" aria-hidden="true">→</div>
       <div class="case-step case-mid"><div class="case-k">AIが拾う</div><p class="case-note"><span style="display:inline-block">床材やクロスの面積を、</span><span style="display:inline-block">図面から出します。</span></p></div>
       <div class="case-arrow" aria-hidden="true">→</div>
       <div class="case-step case-mid"><div class="case-k">人が照らし合わせる</div><p class="case-note"><span style="display:inline-block">建物の外形から</span><span style="display:inline-block">はみ出していないか、</span><span style="display:inline-block">数え落としがないかを</span><span style="display:inline-block">確かめます。</span></p></div>
       <div class="case-arrow" aria-hidden="true">→</div>
-      <div class="case-step"><div class="case-k">見積の下書き</div><img src="assets/img/mitsumori-demo-yuka-cross.png" alt="見積例（数字はすべて架空です）。床材29.16㎡とクロス70.24㎡に架空の単価をかけた表" width="1520" height="950"></div>
+      <div class="case-step"><div class="case-k">見積の下書き</div><img src="/assets/img/mitsumori-demo-yuka-cross.png" alt="見積例（数字はすべて架空です）。床材29.16㎡とクロス70.24㎡に架空の単価をかけた表" width="1520" height="950"></div>
     </figure>
     <p class="src-note">図と見積の数字は、説明用の架空の物です。<span style="display:inline-block">ドアは幅800mm・高さ2,000mmで、</span><span style="display:inline-block">2か所分の面積を差し引いています。</span></p>
-    <p style="margin-top:20px"><a href="zumen-hiroidashi-ai.html" style="color:var(--laser);font-size:14px;font-weight:700;text-decoration:none;display:inline-block;padding:11px 0;min-height:44px;box-sizing:border-box">→ 図面の拾い出しを AI に任せるときに確かめること（コラム）</a></p>
+    <p style="margin-top:20px"><a href="/zumen-hiroidashi-ai" style="color:var(--laser);font-size:14px;font-weight:700;text-decoration:none;display:inline-block;padding:11px 0;min-height:44px;box-sizing:border-box">→ 図面の拾い出しを AI に任せるときに確かめること（コラム）</a></p>
   </div>
 </section>
 
@@ -171,7 +173,7 @@ import Footer from "../components/Footer.astro";
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">05</span><h2>年間AI研修</h2><span class="sec-en">Training</span></div>
     <div class="svc-list">
-      <div class="svc-row rv"><div class="svc-name"><h3><span class="nw">全6回で、</span><span class="nw">自社業務をひとつ</span><span class="nw">自動化する</span><span class="nw">研修。</span></h3></div><p class="desc">「AIを触ってみる」から始めて、最終回では受講者の<span style="white-space:nowrap">実業務をひとつ自動化します。</span></p><div class="svc-price"><span style="display:block">料金はお問い合わせください</span><a class="cta" href="training.html" style="margin-top:16px;padding:15px 28px;font-size:14px">研修の詳細 →</a></div></div>
+      <div class="svc-row rv"><div class="svc-name"><h3><span class="nw">全6回で、</span><span class="nw">自社業務をひとつ</span><span class="nw">自動化する</span><span class="nw">研修。</span></h3></div><p class="desc">「AIを触ってみる」から始めて、最終回では受講者の<span style="white-space:nowrap">実業務をひとつ自動化します。</span></p><div class="svc-price"><span style="display:block">料金はお問い合わせください</span><a class="cta" href="/training" style="margin-top:16px;padding:15px 28px;font-size:14px">研修の詳細 →</a></div></div>
     </div>
   </div>
 </section>
@@ -182,24 +184,27 @@ import Footer from "../components/Footer.astro";
     <div class="sec-head"><span class="sec-num">06</span><h2>現場を知ってる3人です。</h2><span class="sec-en">Team</span></div>
     <p class="sec-lead">業務の相談から導入後の運用まで、中芝・陰山・三富の3名で対応します。現場側と開発側が同じ内容を確認し、既存サービスで対応するか、仕組みを新しく作るかを判断します。</p>
     <div class="crew">
-      <div class="crew-node rv"><div class="avatar">NY</div><h3>中芝 悠太</h3><div class="role">営業 / 施工会社経営</div><p>内装金物の職人として現場に立ちながら、昼は現場・夜はAI。自社の領収書の仕分けの時間を約9割短縮した実体験から、このチームを立ち上げた。</p></div>
-      <div class="crew-link" aria-hidden="true"></div>
-      <div class="crew-node rv"><div class="avatar">KG</div><h3>陰山</h3><div class="role">エンジニア</div><p>導入するAIサービスやシステムの技術面を検討し、設計・開発を担当します。</p></div>
-      <div class="crew-link" aria-hidden="true"></div>
-      <div class="crew-node rv"><div class="avatar">MT</div><h3>三富</h3><div class="role">AIのプロ</div><p>AI処理の実装担当。Claude APIを使った自動化の中身を組む。見積・請求・交通費計算などの自動化基盤の構築を進めています。</p></div>
+      {members.map((member, index) => (
+        <Fragment>
+          {index > 0 && <div class="crew-link" aria-hidden="true"></div>}
+          <div class="crew-node rv">
+            <div class="avatar">{member.initials}</div>
+            <h3>{member.name}</h3>
+            <div class="role">{member.teamRole ?? member.role}</div>
+            <p>{member.teamBio ?? member.bio}</p>
+          </div>
+        </Fragment>
+      ))}
     </div>
-    <p style="margin-top:24px"><a href="company.html" style="color:var(--laser);font-size:14px;font-weight:700;text-decoration:none;display:inline-block;padding:11px 0;min-height:44px;box-sizing:border-box">→ チームの詳しい話</a></p>
+    <p style="margin-top:24px"><a href="/company" style="color:var(--laser);font-size:14px;font-weight:700;text-decoration:none;display:inline-block;padding:11px 0;min-height:44px;box-sizing:border-box">→ チームの詳しい話</a></p>
   </div>
 </section>
 
 <!-- ═══ CTA ═══ -->
-<section class="contact-band">
-  <div class="wrap">
-    <h2>AI化できる業務を、30分で整理しませんか。</h2>
-    <p>相談は無料です。自動化できないものは「できない」と言います。</p>
-    <a class="cta" href="contact.html">AI化できる業務を30分で整理する →</a>
-  </div>
-</section>
+<ContactBand ctaLabel="AI化できる業務を30分で整理する →">
+  <h2 slot="heading">AI化できる業務を、30分で整理しませんか。</h2>
+  <p>相談は無料です。自動化できないものは「できない」と言います。</p>
+</ContactBand>
 
 </main>
 

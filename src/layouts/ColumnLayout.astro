@@ -1,0 +1,73 @@
+---
+// コラム記事の共通の枠。
+// ヘッダー・ヒーロー・著者欄・CTA・フッターはどの記事でも同じ形なので、
+// 各記事は kicker と見出しと本文だけを書けばよい。
+import Layout from "./Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import AuthorCard from "../components/AuthorCard.astro";
+import ContactBand from "../components/ContactBand.astro";
+
+interface Props {
+  /** src/data/columns.ts の slug。URL と関連記事の引き当てに使う */
+  slug: string;
+  title: string;
+  description: string;
+  ogDescription?: string;
+  /** ヒーローの上に出す小見出し（COLUMN — AI入門 など） */
+  kicker: string;
+  ctaLabel: string;
+  /** 著者欄を出すか */
+  author?: boolean;
+  /** 著者欄を帯にするか（前後の節と縞模様になるように） */
+  authorBand?: boolean;
+}
+
+const {
+  slug,
+  title,
+  description,
+  ogDescription,
+  kicker,
+  ctaLabel,
+  author = true,
+  authorBand = true,
+} = Astro.props;
+---
+<Layout
+  title={title}
+  description={description}
+  ogDescription={ogDescription}
+  path={`/${slug}`}
+  ogType="article"
+>
+  <slot name="head" slot="head" />
+
+<Header current="columns" />
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero compact">
+  <div class="wrap">
+    <div class="kicker">{kicker}</div>
+    <slot name="h1" />
+    <slot name="hero-lead" />
+  </div>
+</section>
+
+<slot />
+
+{author && <AuthorCard band={authorBand} />}
+
+<!-- ═══ CTA ═══ -->
+<ContactBand ctaLabel={ctaLabel}>
+  <Fragment slot="heading"><slot name="cta-heading" /></Fragment>
+  <slot name="cta-body" />
+  <Fragment slot="after"><slot name="cta-after" /></Fragment>
+</ContactBand>
+
+</main>
+
+<Footer />
+</Layout>

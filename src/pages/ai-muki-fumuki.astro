@@ -1,0 +1,104 @@
+---
+import ColumnLayout from "../layouts/ColumnLayout.astro";
+import RelatedColumns from "../components/RelatedColumns.astro";
+
+// 3軸の判定表。○＝該当する、×＝基本的に該当しない、△＝場合による
+const axes = [
+  { task: "領収書仕分け（提供中）", pattern: "yes", record: "yes", judgement: "no", verdict: "AIに任せやすい" },
+  { task: "新規入場書類の作成（提供中）", pattern: "yes", record: "yes", judgement: "no", verdict: "AIに任せやすい" },
+  { task: "値引き交渉", pattern: "no", record: "maybe", judgement: "yes", verdict: "AIは材料整理まで、最終判断は人" },
+];
+const badgeMark = { yes: "○", no: "×", maybe: "△" };
+---
+<ColumnLayout
+  slug="ai-muki-fumuki"
+  title="AIが向いている業務・向いていない業務の見分け方 | TechWedge"
+  description="建設業の事務・現場業務を「手順の型」「確認記録」「その場の判断」の3軸で見分ける方法。内装系金物の施工会社の実例をもとに解説します。"
+  ogDescription="建設業の事務・現場業務を3つの軸で見分ける方法。内装系金物の施工会社の実例で解説します。"
+  kicker="COLUMN — AI入門"
+  ctaLabel="無料相談へ →"
+>
+  <h1 slot="h1"><span class="nw">AIが</span><span class="nw">向いている</span><span class="nw">業務・</span><br><span class="laser-under"><span class="nw">向いていない</span><span class="nw">業務の</span><span class="nw">見分け方</span></span></h1>
+
+<section class="band">
+  <div class="wrap">
+    <div class="story rv">
+      「AIを入れたいが、どの仕事から始めればいいか分からない」。そんなときは、候補の業務を「型」「あとから確認できる記録」「その場の判断」の3つに分けて見ると、最初に試す仕事を絞りやすくなります。ただし、実際に始める業務を決めるには、元データの状態や例外の多さも確認が必要です。
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2><span class="nw">判断軸は</span><span class="nw">3つ——</span><span class="nw">「手順の</span><span class="nw">型」</span><span class="nw">「確認記録」「その</span><span class="nw">場の</span><span class="nw">判断」</span></h2></div>
+    <div class="story rv">
+      見分け方は次の3つの軸です。
+    </div>
+    <ul class="checklist rv">
+      <li><span><b>手順の型があるか</b> — 毎回同じルールで処理できるか</span></li>
+      <li><span><b>あとから確認できる記録が要るか</b> — 間違いを見つけられるよう、処理結果や承認内容を残す必要があるか</span></li>
+      <li><span><b>その場の判断が要るか</b> — 状況や人間関係を踏まえて、その都度判断する必要があるか</span></li>
+    </ul>
+    <div class="story rv" style="margin-top:20px">
+      例えば、前回紹介した領収書仕分けをこの3軸に当てはめると、「型がある（勘定科目のルールが決まっている）」「確認記録が要る（税理士への提出・税務上の記録）」「その場の判断は少ない（交渉や状況判断はほぼ発生しない）」となります。
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2>3軸で見る、建設業の事務・現場業務</h2></div>
+    <p class="sec-lead">私たちが現在提供している2つの業務と、人の判断を中心に残す業務を比べてみます。</p>
+    <div style="overflow-x:auto">
+      <table class="spec-table rv">
+        <thead>
+          <tr><th>業務</th><th>手順の型</th><th>確認記録</th><th>その場の判断</th><th>任せ方</th></tr>
+        </thead>
+        <tbody>
+          {axes.map((row) => (
+            <tr>
+              <td>{row.task}</td>
+              <td><span class={`badge badge-${row.pattern}`}>{badgeMark[row.pattern as keyof typeof badgeMark]}</span></td>
+              <td><span class={`badge badge-${row.record}`}>{badgeMark[row.record as keyof typeof badgeMark]}</span></td>
+              <td><span class={`badge badge-${row.judgement}`}>{badgeMark[row.judgement as keyof typeof badgeMark]}</span></td>
+              <td>{row.verdict}</td>
+            </tr>
+          ))}
+          <tr>
+            <td><b>あなたの業務</b>：＿＿＿＿＿</td>
+            <td class="blank-row">　</td>
+            <td class="blank-row">　</td>
+            <td class="blank-row">　</td>
+            <td class="blank-row">当てはめてみてください</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="src-note" style="margin-top:16px">緑バッジ=該当する、グレーバッジ=基本的に該当しない、黄バッジ=場合による。領収書仕分けと新規入場書類の作成は、決まった手順で処理できる部分をAIに任せ、結果の確認を人に残しやすい業務です。私たちは、この2業務をその分担で提供しています。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2>「任せやすい」業務でも、人の確認は残す設計</h2></div>
+    <div class="story rv">
+      一方、値引き交渉は、過去の単価や原価を整理する部分にはAIを使えても、相手との関係や今後の受注まで踏まえた判断は人に残す必要があります。<br><br>
+      AIに任せるのは処理まで。結果の確認と承認は人に残します。領収書仕分けの場合、AIが処理している間は人の作業は発生しませんが、仕分け結果は人が確認し、承認する工程を残しています（月あたり約10分）。
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2>まとめ</h2></div>
+    <div class="story rv">
+      まずは、手順が決まっていて、結果を人が確認できる業務を候補にします。そのうえで、例外の多さや元データの状態、毎月の作業量を確認する。この順番なら、AIに任せる範囲を無理なく決められます。<br><br>
+      次回は、この3軸の中から「最初の1業務」を1つに絞って、始め方をお伝えします。
+    </div>
+    <RelatedColumns slug="ai-muki-fumuki" />
+  </div>
+</section>
+
+  <h2 slot="cta-heading">どの業務から始めるべきか<br>迷っている方へ。</h2>
+  <p slot="cta-body">毎月時間を取られている事務作業を一つ教えてください。無料相談では、その作業を「AIに任せる部分」「人が確認する部分」に分けて整理します。最初の1業務として始める研修・初期導入の進め方もあわせてお伝えします。</p>
+</ColumnLayout>

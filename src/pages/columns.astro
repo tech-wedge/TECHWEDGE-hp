@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { cardTitleOf, columnCategories, columnsIn } from "../data/columns";
+---
+<Layout
+  title="コラム一覧 | TechWedge"
+  description="建設業の事務をAIで効率化するための実例・判断基準・始め方をまとめたコラム一覧。内装系金物の施工会社の実測データをもとに、盛らず正直に解説します。"
+  ogDescription="建設業の事務をAIで効率化するための実例・判断基準・始め方をまとめたコラム一覧。"
+  path="/columns"
+>
+
+<Header current="columns" />
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero compact">
+  <div class="wrap">
+    <div class="kicker">COLUMN — 一覧</div>
+    <h1>建設業の事務を、<br><span class="laser-under">AIでどう効率化するか。</span></h1>
+    <p class="hero-lead">内装系金物の施工会社である私たち自身の実測データをもとに、盛らず正直にお伝えします。</p>
+  </div>
+</section>
+
+<!-- ═══ 分類ごとの記事一覧（src/data/columns.ts が元データ） ═══ -->
+{columnCategories.map((category, index) => (
+  <section class:list={[{ band: index % 2 === 0 }]}>
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">{category.num}</span><h2>{category.title}</h2></div>
+      {category.lead && (index === 0
+        ? <p class="sec-lead">{category.lead}</p>
+        : <p class="desc rv" style="margin-bottom:24px">{category.lead}</p>)}
+      <div class="grid">
+        {columnsIn(category.key).map((column) => (
+          <div class="card rv">
+            {column.badge && <span class="tag on-sale">{column.badge}</span>}
+            <h3><a href={`/${column.slug}`} style="color:inherit">{cardTitleOf(column)}</a></h3>
+            {column.excerpt && <p class="desc">{column.excerpt}</p>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+))}
+
+</main>
+
+<Footer />
+</Layout>

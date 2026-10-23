@@ -6,6 +6,10 @@ interface Props {
   path: string;
   ogType?: "website" | "article";
   ogImage?: string;
+  /** og:description だけ短くしたいページ用。省略すると description をそのまま使う */
+  ogDescription?: string;
+  /** 検索結果に出したくないページ（404・プライバシーポリシーなど） */
+  noindex?: boolean;
 }
 
 const {
@@ -14,9 +18,11 @@ const {
   path,
   ogType = "website",
   ogImage = "/assets/ogp.png",
+  ogDescription = description,
+  noindex = false,
 } = Astro.props;
 
-// "/tax.html" → "https://tech-wedge.com/tax.html" に変換
+// "/tax" → "https://tech-wedge.com/tax" に変換
 const pageUrl = new URL(path, Astro.site).href;
 const ogImageUrl = new URL(ogImage, Astro.site).href;
 ---
@@ -38,11 +44,12 @@ const ogImageUrl = new URL(ogImage, Astro.site).href;
     <!-- 検索・SNS用の情報 -->
     <title>{title}</title>
     <meta name="description" content={description}>
+    {noindex && <meta name="robots" content="noindex">}
     <link rel="canonical" href={pageUrl}>
     <meta property="og:type" content={ogType}>
     <meta property="og:url" content={pageUrl}>
     <meta property="og:title" content={title}>
-    <meta property="og:description" content={description}>
+    <meta property="og:description" content={ogDescription}>
     <meta property="og:image" content={ogImageUrl}>
     <meta name="twitter:card" content="summary_large_image">
 
