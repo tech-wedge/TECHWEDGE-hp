@@ -1,0 +1,114 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ContactBand from "../components/ContactBand.astro";
+import { designSamples, flowSteps, sampleTagLabel, works } from "../data/web";
+---
+<Layout
+  title="HP制作 — あなたの商売の顔になるHPを、まるごと作ります。 | TechWedge"
+  description="中小企業・個人事業のホームページ制作。ヒアリングからデザイン・公開まで全部こちらで段取りします。実績はTechWedge本体・アキヤムスブ・myshiaの3サイト。料金はご相談ください。"
+  path="/web"
+>
+
+<Header current="web" />
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero compact">
+  <div class="wrap">
+    <div class="kicker">WEBSITE PRODUCTION — HP制作</div>
+    <h1>あなたの商売の顔になる<br>HPを、<span class="laser-under">まるごと作ります。</span></h1>
+    <p class="hero-lead">
+      「HPは欲しいけど、何から頼めばいいか分からない」——それでいいです。<br>
+      ヒアリングから公開まで、<b>全部こちらで段取りします。</b>
+    </p>
+    <div class="cta-row">
+      <a class="cta" href="/contact">まずは無料で相談する</a>
+      <span class="cta-note">オンライン可 / 売り込みません</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 01 実績 ═══ -->
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2>実績</h2><span class="sec-en">Track record</span></div>
+    <p class="sec-lead">私たち自身が作って、実際に公開・運用しているサイトです。</p>
+    <div class="grid">
+      {works.map((work) => (
+        <a
+          class="card rv"
+          href={work.href}
+          target={work.external ? "_blank" : undefined}
+          rel={work.external ? "noopener" : undefined}
+          style="text-decoration:none;color:inherit"
+        >
+          <div class="shot"><img src={work.image} alt={work.imageAlt} loading="lazy"></div>
+          <h3>{work.title}</h3>
+          <p class="desc">{work.description}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 02 デザインサンプル集 ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2>デザインサンプル集</h2><span class="sec-en">Design samples</span></div>
+    <p class="sec-lead">業種ごとに、こんな雰囲気で作れます、という引き出しです。<b style="color:var(--ink)">下記は制作見本用の架空の店舗です。実在の店舗ではありません。</b></p>
+    <div class="grid">
+      {designSamples.map((sample) => (
+        <div class="card rv">
+          <span class="tag sample">{sampleTagLabel}</span>
+          <div class="mock-frame" style="margin-top:14px">
+            <img src={sample.image} alt={sample.imageAlt} loading="lazy">
+          </div>
+          <h3>{sample.title}</h3>
+          <p class="desc">{sample.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 03 制作の流れ ═══ -->
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2>制作の流れ</h2><span class="sec-en">Process</span></div>
+    <p class="sec-lead">「何を用意すればいいか分からない」を無くすため、全工程をこちらでリードします。</p>
+    <div class="flow-steps">
+      {flowSteps.map((step) => (
+        <div class="flow-step rv">
+          <div class="no">{step.no}</div>
+          <h3>{step.title}</h3>
+          <p>{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 04 料金 ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2>料金</h2><span class="sec-en">Pricing</span></div>
+    <div class="card rv" style="max-width:520px">
+      <h3 style="margin-top:0">料金はご相談ください</h3>
+      <p class="desc">お見積りは無料です。事業規模や必要なページ数によって内容が変わるため、まずはヒアリングさせてください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<ContactBand ctaLabel="無料相談へ →">
+  <h2 slot="heading">まずは30分、無料相談を。</h2>
+  <p>「こんなHPが欲しい」がまだ漠然としていても大丈夫です。</p>
+</ContactBand>
+
+</main>
+
+<Footer />
+</Layout>

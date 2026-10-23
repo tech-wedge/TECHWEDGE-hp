@@ -1,0 +1,88 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ContactBand from "../components/ContactBand.astro";
+import { curriculum, pricing, stairPoints } from "../data/training";
+---
+<Layout
+  title="年間AI研修 — 全6回で、自社業務をひとつ自動化する。 | TechWedge"
+  description="全6回・合計約12時間が目安のAI社内研修。「AIを触ったことがない」社員が、最終回には自分の業務をひとつ自動化する——そこまで連れて行く社内研修です。"
+  path="/training"
+>
+
+<Header current="training" />
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero compact">
+  <div class="hero-repeat">
+    <span class="row">AI TRAINING — 12 HOURS — AI TRAINING — 12 HOURS — AI TRAINING — 12 HOURS —</span>
+  </div>
+  <div class="wrap">
+    <div class="kicker">AI TRAINING</div>
+    <h1>AI研修で、建設業の<br><span class="laser-under">事務をひとつ自動化する。</span></h1>
+    <p class="hero-lead">
+      「AIを触ったことがない」社員が、最終回には自分の業務をひとつ自動化する——そこまで連れて行く社内研修です。
+    </p>
+    <div class="hero-stats">
+      <div class="hstat"><div class="v">6<small>回</small>/12<small>h</small></div><div class="k">全カリキュラム</div></div>
+    </div>
+    <div class="cta-row">
+      <a class="cta" href="/contact">研修と導入の進め方を聞く</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 01 カリキュラム（レーザー階段） ═══ -->
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2>カリキュラムの例（全6回）</h2><span class="sec-en">Curriculum</span></div>
+    <p class="sec-lead" style="margin-bottom:12px">1回2時間前後（全6回・合計約12時間）が目安です。回数・時間・内容は、会社の業務と人数に合わせて、ご相談しながら組み立てます。</p>
+    <p class="sec-lead">下から順に登る階段式。最終回では、受講者自身の業務をひとつ、実際に自動化します。</p>
+    <div class="stairwrap">
+      <svg class="stairline draw rv" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <polyline points={stairPoints}
+          fill="none" stroke="#2EA043" stroke-width="0.35" opacity=".55" pathLength="1"/>
+      </svg>
+      {curriculum.map((step, index) => (
+        <div class="stair rv" style={`--i:${index}`}>
+          <span class="no">{step.no}</span>
+          <div class="t">{step.title}</div>
+          <div class="d">{step.description}</div>
+          <span class="fmt">{step.format}</span>
+        </div>
+      ))}
+    </div>
+    <a class="cta" href="/contact" style="margin-top:28px;padding:12px 28px;font-size:14px">研修について相談する →</a>
+  </div>
+</section>
+
+<!-- ═══ 02 料金 ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2>料金</h2><span class="sec-en">Pricing</span></div>
+    <p class="sec-lead">料金はお問い合わせください。</p>
+    <table class="spec-table rv">
+      <tr><th>プラン</th><th>内容</th></tr>
+      {pricing.map((row) => (
+        <tr>
+          <td>{row.emphasis ? <b>{row.plan}</b> : row.plan}</td>
+          <td>{row.detail}</td>
+        </tr>
+      ))}
+    </table>
+    <p class="fine">※ 単品を積み上げるより年間パックが割安です。</p>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<ContactBand ctaLabel="研修と導入の進め方を聞く →">
+  <h2 slot="heading">研修の詳細は、無料相談でご案内します。</h2>
+</ContactBand>
+
+</main>
+
+<Footer />
+</Layout>

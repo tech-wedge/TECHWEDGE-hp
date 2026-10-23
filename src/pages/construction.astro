@@ -1,0 +1,181 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import ContactBand from "../components/ContactBand.astro";
+import BeforeAfter from "../components/BeforeAfter.astro";
+import { mapCard, tagLabel } from "../data/construction";
+import { receiptBefore, receiptAfter } from "../data/receipt-case";
+import { cardTitleOf, constructionColumnSlugs, getColumn } from "../data/columns";
+
+const columnCards = constructionColumnSlugs.map(getColumn);
+---
+<Layout
+  title="建設業の方へ — 現場の事務、まるごと自動化。 | TechWedge"
+  description="見積・請求・領収書・安全書類・日報——現場を持つ会社の事務15業務を自動化していく構想。第一弾の領収書仕分けは自社実測で月平均170分→20分。提供中・開発中・構想中を正直に公開しています。"
+  path="/construction"
+>
+
+<Header current="construction" />
+
+<main>
+
+<!-- ═══ HERO: 数字が見出し ═══ -->
+<section class="hero compact">
+  <div class="hero-repeat">
+    <span class="row">FOR CONSTRUCTION — FIELD TESTED — FOR CONSTRUCTION — FIELD TESTED — FOR CONSTRUCTION — FIELD TESTED — </span>
+  </div>
+  <div class="wrap">
+    <div class="kicker">FOR CONSTRUCTION — 建設業の方へ</div>
+    <h1>現場の事務、<br><span class="laser-under">まるごと自動化。</span></h1>
+    <p class="hero-lead">
+      見積・請求・領収書・安全書類・日報——現場を持つ会社の<b>事務15業務を自動化していく構想</b>です。<br>
+      第一弾の「領収書仕分け」は、自社（内装系金物の施工会社・従業員5名以下）の実測で<b>月平均170分が20分</b>になりました。盛った数字ではありません。次はあなたの会社の番です。
+    </p>
+    <div class="hero-stats">
+      <div class="hstat"><div class="v" data-count="15">15<small>業務</small></div><div class="k">自動化マップ</div></div>
+      <div class="hstat"><div class="v">170<small>min</small>→20<small>min</small></div><div class="k">第一弾の実測</div></div>
+      <div class="hstat"><div class="v" data-count="400">400<small>件</small></div><div class="k">実運用データ</div></div>
+    </div>
+    <div class="cta-row">
+      <a class="cta" href="/contact">事務作業を一緒に棚卸しする</a>
+      <span class="cta-note">オンライン可 / 売り込みません</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 01 課題 ═══ -->
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <h2>
+        <span class="nw">本当に</span><span class="nw">人の</span><span class="nw">手が</span><span class="nw">必要な</span><span class="nw">"作業"ですか？</span>
+      </h2>
+      <span class="sec-en">Problem</span>
+    </div>
+    <div class="grid">
+      <div class="card rv">
+        <h3 style="margin-top:0">領収書の山</h3>
+        <p class="desc">月末にまとめて仕分け。科目に迷い、税理士に差し戻され、また探す。</p>
+      </div>
+      <div class="card rv">
+        <h3 style="margin-top:0">見積・請求の手作業</h3>
+        <p class="desc">過去の単価を探して、転記して、体裁を整えて。</p>
+      </div>
+      <div class="card rv">
+        <h3 style="margin-top:0">書類のための残業</h3>
+        <p class="desc">現場が終わってから始まる2つ目の仕事。日報・安全書類・支払管理。</p>
+      </div>
+      <div class="card rv">
+        <h3 style="margin-top:0">AIで何ができるのか判断しにくい</h3>
+        <p class="desc">便利そうなツールは多いものの、自社のどの業務に使えるのか判断しにくく、手作業が続いている。</p>
+      </div>
+    </div>
+    <p class="rv" style="margin-top:44px;font-size:clamp(20px,3vw,28px);font-weight:900;line-height:1.7">その時間を<em style="font-style:normal;color:var(--laser)">減らす</em>ところまでが、私たちの仕事です。</p>
+  </div>
+</section>
+
+<!-- ═══ 02 サービス ═══ -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <h2>事務の全体マップ</h2>
+      <span class="sec-en">Full roadmap</span>
+    </div>
+    <p class="sec-lead">効くところから、ひとつずつ。提供中・開発中・構想中を正直に分けて、全部見せます。
+      <br>
+      <b style="color:var(--ink)">構想中の開発順は「これが欲しい」の声で決まります</b>——遠慮なくご連絡ください。
+    </p>
+
+    <div class="grid">
+      {mapCard.map((card) => (
+        <div class:list={["card", "rv", { mini: card.group !== "featured" }]}>
+          <span class={`tag ${card.tag}`}>{tagLabel[card.tag]}</span>
+          <h3>{card.title}</h3>
+          <p class="desc">{card.description}</p>
+          {card.price && <p class="price"><small set:html={card.price} /></p>}
+        </div>
+      ))}
+    </div>
+
+    <div class="kenshu rv" style="margin-top:18px">
+      <div>
+        <h3><span class="nw">社員に</span><span class="nw">AIを</span><span class="nw">教える</span><span class="nw">研修もあります</span></h3>
+        <p class="desc">全6回・合計約12時間が目安。「AIを触ってみる」から始めて、最終回では受講者の実業務をひとつ自動化します。</p>
+      </div>
+      <div class="kenshu-price">
+        <div class="now" style="font-size:22px">料金はお問い合わせください</div>
+        <a class="cta" href="/training" style="margin-top:14px;padding:12px 28px;font-size:14px">研修の詳細 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 03 実測データ ═══ -->
+<section class="band" id="proof">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2><span class="nw">自社で</span><span class="nw">実際に</span><span class="nw">回した</span><span class="nw">結果です。</span></h2><span class="sec-en">Field-tested</span></div>
+    <p class="sec-lead">導入事例の一社目は、私たち自身の会社。作った本人が毎月使っています。</p>
+    <BeforeAfter before={receiptBefore} after={receiptAfter} />
+    <p class="src-note">DATA: 2026年1月〜6月 / 自動処理された領収書400件（法人332件＋個人事業68件） / 手作業の工程ごとの時間（約170分）と、AI を使った後の時間（約20分）を比べた数字です。AI を使った後の時間は、自社で実際に回した結果です。導入環境により変動します</p>
+
+    <div class="card rv" style="margin-top:40px;max-width:840px">
+      <span class="tag on-sale">導入事例 No.001</span>
+      <h3><span class="nw">株式会社myshia</span><span class="nw">（内装系金物の</span><span class="nw">施工</span><span class="nw">・大阪）</span></h3>
+      <p class="desc">このチームの発起人・中芝が職人として現場に立つ会社。2事業者分の領収書が混在する環境で、カード番号による自動判別を含めて6ヶ月運用。月平均170分かかっていた領収書の仕分けが20分になった。<b style="color:var(--ink)">今後、お客様の事例をここに追加していきます。</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ コラム ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">C</span><h2>コラム</h2><span class="sec-en">Columns</span></div>
+    <div class="grid">
+      {columnCards.map((column) => (
+        <div class="card mini rv"><h3><a href={`/${column.slug}`} style="color:inherit">{cardTitleOf(column)}</a></h3></div>
+      ))}
+    </div>
+    <p class="rv" style="margin-top:24px"><a href="/columns" style="color:var(--laser);font-weight:700">→ コラム一覧をすべて見る</a></p>
+  </div>
+</section>
+
+<!-- ═══ 04 進め方（工程表） ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2>進め方</h2><span class="sec-en">Schedule</span></div>
+    <p class="sec-lead">工程表で示します。売って終わりではなく、動くところまで一緒にやる「伴走」です。</p>
+    <div class="gantt rv">
+      <div class="gantt-row">
+        <div class="gantt-label"><div class="t">無料相談</div><div class="d">DAY 0 — 30分</div></div>
+        <div class="gantt-track"><div class="gantt-bar" style="--l:0%;--w:14%">30min</div></div>
+      </div>
+      <div class="gantt-row">
+        <div class="gantt-label"><div class="t">小さく導入</div><div class="d">WEEK 1-2 — 効く1つから</div></div>
+        <div class="gantt-track"><div class="gantt-bar" style="--l:14%;--w:38%">SETUP — 設定も私たちがやります</div></div>
+      </div>
+      <div class="gantt-row">
+        <div class="gantt-label"><div class="t">数字で確認</div><div class="d">毎月 — 効果測定</div></div>
+        <div class="gantt-track"><div class="gantt-bar" style="--l:52%;--w:48%">RUN — 効いてなければ止めればいい（縛りなし）</div></div>
+      </div>
+    </div>
+    <ul class="checklist" style="margin-top:34px">
+      <li class="ok rv"><span><b>ITの知識は不要です。</b>現場の道具（スマホ・複合機）に合わせて設定します</span></li>
+      <li class="ok rv"><span><b>月額制・縛りなし。</b>導入前後の作業時間を測って、効果を数字で報告します</span></li>
+      <li class="ok rv"><span><b>無理な提案はしません。</b>自動化できないものは「できない」と言います</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<ContactBand band ctaLabel="事務作業を一緒に棚卸しする →">
+  <h2 slot="heading"><span class="nw">現場の</span><span class="nw">事務について、</span><br><span class="nw">無料相談で</span><span class="nw">お聞かせください。</span></h2>
+  <p>30分の無料相談で、自動化できる箇所とできない箇所を正直にお伝えします。</p>
+</ContactBand>
+
+</main>
+
+<Footer />
+</Layout>

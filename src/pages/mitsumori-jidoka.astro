@@ -1,0 +1,80 @@
+---
+import ColumnLayout from "../layouts/ColumnLayout.astro";
+import RelatedColumns from "../components/RelatedColumns.astro";
+
+const options = [
+  { title: "表計算の型化", description: "Excel・スプレッドシートに単価マスタを作り、関数で自動計算する方法。低コストで始められる一方、担当者が異動すると属人化しやすい。" },
+  { title: "専用SaaS", description: "建設業向けの見積・原価管理サービスを導入する方法。機能は豊富だが、自社の商習慣に合わせたカスタマイズが難しい場合がある。" },
+  { title: "自社フローに合わせた自動化", description: "フォーム入力から過去単価を自動照合し、見積書を生成する仕組みを個別に構築する方法。初期費用はかかるが、自社の商習慣にそのまま合わせられる。" },
+];
+---
+<ColumnLayout
+  slug="mitsumori-jidoka"
+  title="建設業の見積書、まだ手作業で作ってませんか？ 自動化の考え方 | TechWedge"
+  description="建設業の見積書作成を自動化する3つの選択肢と、導入前に確認すべきポイントを整理。過去単価の参照・数量計算・体裁整形——パターン化できる工程から自動化を検討する方法を解説します。"
+  ogDescription="建設業の見積書作成を自動化する3つの選択肢と、導入前に確認すべきポイントを整理。"
+  kicker="COLUMN — 建設業の方へ"
+  ctaLabel="無料相談へ →"
+  author={false}
+>
+  <h1 slot="h1">建設業の見積書、<br><span class="laser-under">まだ手作業で作ってませんか？</span></h1>
+
+<!-- ═══ 本文 ═══ -->
+<section class="band">
+  <div class="wrap">
+    <div class="story rv">
+      見積書の作成に、1件あたりどれくらい時間をかけていますか。過去の単価を探し、転記し、体裁を整える——この作業を「当たり前」だと思っている会社ほど、実は自動化の余地が大きい業務です。<br><br>
+      <b>この記事で分かること</b><br>
+      ・建設業の見積書作成が自動化しにくいと言われる理由<br>
+      ・自動化を検討する際の3つの選択肢（表計算の型化／専用SaaS／自社開発）<br>
+      ・導入前に確認すべきポイント
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2>なぜ見積書の自動化は後回しにされがちか</h2></div>
+    <div class="story rv">
+      見積書は案件ごとに条件が異なり、「毎回パターンが違うから自動化できない」と思われがちです。しかし実際には、①過去単価の参照 ②数量×単価の計算 ③体裁の整形——という3つの工程のうち、①と②は多くの現場でパターン化できます。個別性が高いのは最終的な調整部分だけ、というケースが少なくありません。
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2>自動化の3つの選択肢</h2></div>
+    <div class="grid">
+      {options.map((option) => (
+        <div class="card rv"><h3 style="margin-top:0">{option.title}</h3><p class="desc">{option.description}</p></div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2><span class="nw">導入前に</span><span class="nw">確認したい</span><span class="nw">3つの</span><span class="nw">ポイント</span></h2></div>
+    <ul class="checklist rv">
+      <li><span><b>単価マスタは誰が更新するか</b> — 自動化しても、更新を怠れば古い金額のまま出てしまいます。更新担当と頻度を決めてから導入するのが安全です。</span></li>
+      <li><span><b>見積から請求までの一気通貫を想定するか</b> — 見積だけでなく請求書への変換まで自動化すると、二重入力が無くなり効果が大きくなります。</span></li>
+      <li><span><b>現場のITリテラシーに合わせた設計か</b> — 高機能でも現場で使われなければ意味がありません。入力項目を絞ったフォーム形式など、現場が迷わない設計を優先すべきです。</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2>私たちの取り組み</h2></div>
+    <div class="story rv">
+      TechWedgeは建設業（内装系金物の施工）の現場に実際に立つメンバーが中心となり、自社の事務作業を自動化する中で得た知見をもとに、見積書・請求書の自動作成を開発中です。現時点では先行モニターを募集しており、正式な効果測定データはまだ公開できる段階にありません。できていないことを、できていると言わない——これが私たちの方針です。<br><br>
+      すでに提供中の<a href="/cases" style="color:var(--laser)">領収書仕分け自動化</a>では、自社実測で月平均170分の作業が20分になった実績があります（2026年1月〜6月・400件の実運用データ）。見積・請求まわりの自動化も、同じ考え方（現場の実作業を測って、効くところから自動化する）で進めています。<br><br>
+      まずは自社の見積作成フローのどこに時間がかかっているか、棚卸しから始めてみてください。無料相談では、その棚卸しを一緒に行い、自動化で効く箇所・効かない箇所を正直にお伝えしています。
+    </div>
+    <RelatedColumns slug="mitsumori-jidoka" />
+  </div>
+</section>
+
+  <h2 slot="cta-heading"><span class="nw">見積作成のどこに</span><span class="nw">時間がかかっているか、</span><br><span class="nw">無料相談で</span><span class="nw">お聞かせください。</span></h2>
+  <p slot="cta-body">30分の無料相談で、自動化できる箇所とできない箇所を正直にお伝えします。</p>
+</ColumnLayout>

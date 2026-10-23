@@ -1,0 +1,212 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ContactBand from "../components/ContactBand.astro";
+import { members } from "../data/members";
+---
+<Layout
+  title="TechWedge — 現場を動かす人に、テクノロジーを。"
+  description="AIを業務で使える形にする会社です。業務の選定から社員研修、導入後の運用までを支援します。自社の領収書の仕分けを月170分から20分に短縮した自社の結果をもとに、建設業・税理士事務所の導入に対応します。"
+  path="/"
+>
+  <style is:inline slot="head">
+  /* スマホの幅では実績の3項目を縦に並べる（このページだけ・共有の base.css は触らない） */
+  @media (max-width:560px){
+    .hero-stats{flex-direction:column}
+    .hstat{border-right:none;border-bottom:1px solid var(--line)}
+    .hstat:last-child{border-bottom:none}
+  }
+  </style>
+
+<Header />
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="top">
+  <div class="hero-repeat">
+    <span class="row">TECHWEDGE — AI AUTOMATION — TECHWEDGE — AI AUTOMATION — TECHWEDGE — AI AUTOMATION — TECHWEDGE — AI AUTOMATION — </span><br>
+    <span class="row r2">AUTOMATION UNIT — OSAKA — AUTOMATION UNIT — OSAKA — AUTOMATION UNIT — OSAKA — AUTOMATION UNIT — OSAKA — </span><br>
+    <span class="row">TECHWEDGE — AI AUTOMATION — TECHWEDGE — AI AUTOMATION — TECHWEDGE — AI AUTOMATION — TECHWEDGE — AI AUTOMATION — </span>
+  </div>
+  <div class="wrap">
+    <div class="kicker">建設業向け — AI初期導入・研修・業務改善</div>
+    <h1>現場を動かす人に、<span class="laser-under">テクノロジーを。</span></h1>
+    <p class="hero-hook">AIって、実際なにができるの？職人が自社で実践中。</p>
+    <p class="hero-lead">
+      TechWedgeは、日々の業務を確認し、AIに任せる仕事の選定から社員研修、導入後の運用までを支援します。まずは効果を確かめやすい業務から着手し、必要に応じて専用ツールやシステムの開発にも対応します。
+    </p>
+    <div class="hero-stats">
+      <div class="hstat"><div class="v" data-count="88">88<small>%</small></div><div class="k">領収書の仕分けを削減</div></div>
+      <div class="hstat"><div class="v">170<small>min</small>→20<small>min</small></div><div class="k">月次の領収書の仕分け</div></div>
+      <div class="hstat"><div class="v" data-count="400">400<small>件</small></div><div class="k">実運用データ</div></div>
+    </div>
+    <p class="src-note" style="margin:-8px 0 4px">自社の内装系金物の施工会社（myshia）で6ヶ月運用した実測値です。</p>
+    <div class="cta-row">
+      <a class="cta" href="/contact">AI化できる業務を30分で整理する</a>
+      <span class="cta-note">無料・オンライン可 / ITやAIの知識は不要です</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 01 商品説明 ═══ -->
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <h2>
+        <span class="nw">研修だけでも、</span>
+        <span class="nw">ツールを</span>
+        <span class="nw">渡すだけでもありません。</span>
+      </h2>
+      <span class="sec-en">What we do</span>
+    </div>
+    <p class="sec-lead">
+      AIの説明を聞いて終わる研修では、現場には残りません。<br>
+      一方で、ツールだけ導入しても、使い方が分からなければ止まります。<br>
+      TechWedgeは、基礎研修と業務導入をセットで進めます。<br>
+      経営者と担当者が仕組みを理解し、自社で使い続けられる状態を目指します。
+    </p>
+  </div>
+</section>
+
+<!-- ═══ 04 実測 ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <h2>
+        <span class="nw">自社で</span>
+        <span class="nw">実際に</span>
+        <span class="nw">回した</span>
+        <span class="nw">結果です。</span>
+      </h2>
+      <span class="sec-en">Field-tested</span>
+    </div>
+    <p class="sec-lead">導入事例の一社目は、私たち自身の会社。6ヶ月・400件の領収書を実際に処理した記録があります。</p>
+    <figure class="case rv">
+      <div class="case-step">
+        <div class="case-k">領収書の写真</div>
+        <img src="/assets/case_receipt.png" alt="架空の領収書（見本）" width="500" height="800">
+      </div>
+      <div class="case-arrow" aria-hidden="true">→</div>
+      <div class="case-step case-mid">
+        <div class="case-k">AIが読み取る</div>
+        <p class="case-note">日付・店の名前・品名・金額を読み取り、科目を振り分けます。</p>
+      </div>
+      <div class="case-arrow" aria-hidden="true">→</div>
+      <div class="case-step case-mid">
+        <div class="case-k">人が見比べる</div>
+        <p class="case-note">元の領収書と並べて、日付・金額・店の名前を確かめます。</p>
+      </div>
+      <div class="case-arrow" aria-hidden="true">→</div>
+      <div class="case-step">
+        <div class="case-k">科目つきの表</div>
+        <img src="/assets/case_result.png" alt="AIが作った表（日付・店の名前・品名・金額・科目）" width="1200" height="660">
+      </div>
+    </figure>
+    <div class="ba">
+      <div class="ba-col rv">
+        <div class="h">BEFORE — 手作業</div>
+        <div class="big"><small>月平均</small>170分</div>
+      </div>
+      <div class="ba-arrow">→</div>
+      <div class="ba-col after rv">
+        <div class="h">AFTER — 自動化</div>
+        <div class="big"><small>月平均</small>20分</div>
+      </div>
+    </div>
+    <p class="src-note">DATA: 2026年1月〜6月 / 自動処理された領収書400件（内装系金物の施工会社・従業員5名以下の実運用）</p>
+    <p style="margin-top:20px">
+      <a href="/construction#proof" style="color:var(--laser);font-size:14px;font-weight:700;text-decoration:none;display:inline-block;padding:11px 0;min-height:44px;box-sizing:border-box">→ 工程別の内訳まで全部見る（建設業向けページ）</a></p>
+  </div>
+</section>
+
+<!-- ═══ 04B 図面の拾い出し（確定コピー 04B・図の完成待ち・2026-10-06） ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2>図面の拾い出しも、<span style="display:inline-block">AIに任せられます。</span></h2></div>
+    <p class="sec-lead">見積の前の拾い出しも、AIに任せられます。<span style="display:inline-block">床材やクロスの面積を図面から拾い、見積の下書きにします。</span><span style="display:inline-block">結果は元の図面と並べて確かめます。</span></p>
+    <figure class="case rv">
+      <div class="case-step"><div class="case-k">図面</div><img src="/assets/img/zumen-demo-yuka-cross.svg" alt="説明用の架空の平面図。事務室は5,400×3,600mm、会議室は3,600×2,700mm、天井高は2,400mm。床材とクロスの範囲を色分けしている" width="1520" height="1040"></div>
+      <div class="case-arrow" aria-hidden="true">→</div>
+      <div class="case-step case-mid"><div class="case-k">AIが拾う</div><p class="case-note"><span style="display:inline-block">床材やクロスの面積を、</span><span style="display:inline-block">図面から出します。</span></p></div>
+      <div class="case-arrow" aria-hidden="true">→</div>
+      <div class="case-step case-mid"><div class="case-k">人が照らし合わせる</div><p class="case-note"><span style="display:inline-block">建物の外形から</span><span style="display:inline-block">はみ出していないか、</span><span style="display:inline-block">数え落としがないかを</span><span style="display:inline-block">確かめます。</span></p></div>
+      <div class="case-arrow" aria-hidden="true">→</div>
+      <div class="case-step"><div class="case-k">見積の下書き</div><img src="/assets/img/mitsumori-demo-yuka-cross.png" alt="見積例（数字はすべて架空です）。床材29.16㎡とクロス70.24㎡に架空の単価をかけた表" width="1520" height="950"></div>
+    </figure>
+    <p class="src-note">図と見積の数字は、説明用の架空の物です。<span style="display:inline-block">ドアは幅800mm・高さ2,000mmで、</span><span style="display:inline-block">2か所分の面積を差し引いています。</span></p>
+    <p style="margin-top:20px"><a href="/zumen-hiroidashi-ai" style="color:var(--laser);font-size:14px;font-weight:700;text-decoration:none;display:inline-block;padding:11px 0;min-height:44px;box-sizing:border-box">→ 図面の拾い出しを AI に任せるときに確かめること（コラム）</a></p>
+  </div>
+</section>
+
+<!-- ═══ 01b 支援の流れ（4段階） ═══ -->
+<section id="flow">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2>最初の1業務を、4段階で導入します。</h2><span class="sec-en">Flow</span></div>
+    <ol class="proc">
+      <li class="proc-step rv"><span class="tag">STEP 1</span><h3>業務を棚卸しする</h3><p class="desc">紙・Excel・LINEに分かれた事務作業を確認し、AI化しやすい業務を選びます。</p></li>
+      <li class="proc-step rv"><span class="tag">STEP 2</span><h3>AIの基本を知る</h3><p class="desc">経営者と担当者向けに、必要な範囲だけ研修します。専門用語は使いません。</p></li>
+      <li class="proc-step rv"><span class="tag">STEP 3</span><h3>実際の業務に導入する</h3><p class="desc">自社の書類や手順を使い、最初の1業務を現場で動く形にします。</p></li>
+      <li class="proc-step rv"><span class="tag">STEP 4</span><h3>使い続けられる形に整える</h3><p class="desc">担当者の確認方法、運用ルール、修正方法まで整理します。</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══ 02 AI導入サポート ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2>AI導入サポート</h2><span class="sec-en">For any industry</span></div>
+    <p class="sec-lead">業種を問わない汎用メニュー。「AIに興味はあるが、何から始めればいいか分からない」への答えです。</p>
+    <div class="svc-list">
+      <div class="svc-row rv"><div class="svc-name"><span class="tag on-sale">提供中</span><h3>チャットAI活用コンサル</h3></div><p class="desc">ChatGPT・Claudeの業務活用を月1回オンラインでレクチャー。メール文面・議事録・見積メモなど、あなたの実務に即したプロンプトの型を作ります。</p><p class="svc-price">料金はお問い合わせください</p></div>
+      <div class="svc-row rv"><div class="svc-name"><span class="tag on-sale">提供中</span><h3>コードAI導入サポート</h3></div><p class="desc">Claude Code等を使った自社業務の自動化を伴走構築。スプレッドシート連携・定型処理の自動化を月2回のオンラインMTGで一緒に進めます。</p><p class="svc-price">料金はお問い合わせください</p></div>
+      <div class="svc-row rv"><div class="svc-name"><span class="tag on-sale">提供中</span><h3>AI環境セットアップ代行</h3></div><p class="desc">環境構築・初期設定・あなた専用の初期プロンプト設計までを代行。1〜2時間のハンズオン付きで、その日から使える状態で納品します。</p><p class="svc-price">料金はお問い合わせください</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 03 研修 ═══ -->
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">05</span><h2>年間AI研修</h2><span class="sec-en">Training</span></div>
+    <div class="svc-list">
+      <div class="svc-row rv"><div class="svc-name"><h3><span class="nw">全6回で、</span><span class="nw">自社業務をひとつ</span><span class="nw">自動化する</span><span class="nw">研修。</span></h3></div><p class="desc">「AIを触ってみる」から始めて、最終回では受講者の<span style="white-space:nowrap">実業務をひとつ自動化します。</span></p><div class="svc-price"><span style="display:block">料金はお問い合わせください</span><a class="cta" href="/training" style="margin-top:16px;padding:15px 28px;font-size:14px">研修の詳細 →</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 05 チーム ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">06</span><h2>現場を知ってる3人です。</h2><span class="sec-en">Team</span></div>
+    <p class="sec-lead">業務の相談から導入後の運用まで、中芝・陰山・三富の3名で対応します。現場側と開発側が同じ内容を確認し、既存サービスで対応するか、仕組みを新しく作るかを判断します。</p>
+    <div class="crew">
+      {members.map((member, index) => (
+        <Fragment>
+          {index > 0 && <div class="crew-link" aria-hidden="true"></div>}
+          <div class="crew-node rv">
+            <div class="avatar">{member.initials}</div>
+            <h3>{member.name}</h3>
+            <div class="role">{member.teamRole ?? member.role}</div>
+            <p>{member.teamBio ?? member.bio}</p>
+          </div>
+        </Fragment>
+      ))}
+    </div>
+    <p style="margin-top:24px"><a href="/company" style="color:var(--laser);font-size:14px;font-weight:700;text-decoration:none;display:inline-block;padding:11px 0;min-height:44px;box-sizing:border-box">→ チームの詳しい話</a></p>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<ContactBand ctaLabel="AI化できる業務を30分で整理する →">
+  <h2 slot="heading">AI化できる業務を、30分で整理しませんか。</h2>
+  <p>相談は無料です。自動化できないものは「できない」と言います。</p>
+</ContactBand>
+
+</main>
+
+<Footer />
+</Layout>

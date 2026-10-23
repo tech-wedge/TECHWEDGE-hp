@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { intro, sections } from "../data/kaji-privacy";
+---
+<Layout
+  title="家事ラクリスト プライバシーポリシー | TechWedge"
+  description="家事ラクリスト（Android アプリ）が扱う情報と、その扱い方の説明です。"
+  path="/kaji-privacy"
+  noindex
+>
+  <style is:inline slot="head">
+  /* 家事ラクリストのポリシー（このページだけ）: 段落と箇条の間をあける */
+  .story.kaji p{margin:0 0 1.2em}
+  .story.kaji ul{margin:0 0 1.2em;padding-left:1.4em}
+  .story.kaji li{margin:.3em 0}
+  </style>
+
+<Header />
+
+<main>
+
+<section class="hero compact">
+  <div class="wrap">
+    <div class="kicker">PRIVACY POLICY</div>
+    <h1>ゆる〜く家事ラクリスト-疲れたら休もう主婦の味方の家事リスト プライバシーポリシー</h1>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="story rv kaji" set:html={intro} />
+  </div>
+</section>
+
+{/* 1〜7の節。帯の色は1つおきに切り替える */}
+{sections.map((section, index) => (
+  <section class:list={[{ band: index % 2 === 1 }]}>
+    <div class="wrap">
+      <div class="sec-head"><h2>{section.title}</h2></div>
+      <div class="story rv kaji" set:html={section.body} />
+    </div>
+  </section>
+))}
+
+</main>
+
+<Footer />
+</Layout>

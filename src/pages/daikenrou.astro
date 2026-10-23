@@ -1,0 +1,141 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { fields } from "../data/daikenrou";
+---
+<Layout
+  title="ホームページに載せる文章の見本を作る例文 | TechWedge"
+  description="講演の体験で使う例文です。3つの欄に入れてコピーし、ChatGPTに貼り付けて送ります。"
+  path="/daikenrou"
+  noindex
+>
+  <style is:inline slot="head">
+  /* 講演の例文（このページだけ）: 3つの欄→差し込み→コピー。操作が先に見えるよう、見出しを詰めて罫線と字下げを外す */
+  .hero.compact.reibun-hero{min-height:0;padding-top:120px;padding-bottom:48px}
+  section.reibun-sec{padding-top:32px}
+  .story.reibun{border-left:none;padding:0;max-width:600px;color:var(--ink);font-size:16px;line-height:1.9}
+  .reibun-out .w{display:inline-block;max-width:100%}
+  .reibun .form{max-width:none}
+  .reibun .form input{font-size:16px}
+  .reibun-out{white-space:pre-wrap;font-family:var(--sans);font-size:16px;line-height:1.8;color:var(--ink);background:var(--bg0);border:1px solid var(--laser-dim);border-radius:var(--r-md);padding:18px;margin:0}
+  .reibun .cta{width:100%;margin-top:18px}
+  .reibun-msg{min-height:1.6em;margin-top:10px;font-weight:700;color:var(--laser)}
+  .reibun-steps{margin:0 0 1.2em;padding-left:1.4em}
+  .reibun-steps li{margin:.3em 0}
+  .reibun-head{font-size:18px;font-weight:700;margin:28px 0 12px}
+  .reibun-notes{margin:0 0 1.2em;padding-left:1.4em}
+  .reibun-notes li{margin:0 0 16px}
+  .reibun-notes .para{display:block;margin-top:12px}
+  .reibun-notes .links{display:block;margin-top:8px}
+  .reibun-notes .links a{white-space:nowrap}
+  </style>
+
+<Header current="columns" />
+
+<main>
+
+<section class="hero compact reibun-hero">
+  <div class="wrap">
+    <div class="kicker">講演の体験用</div>
+    <h1>ホームページに<br>載せる文章の<br>見本を作ります</h1>
+  </div>
+</section>
+
+<section class="band reibun-sec">
+  <div class="wrap">
+    <div class="story rv reibun">
+<ol class="reibun-steps"><li>下の3つの欄に入れます<br>（仮の屋号でも大丈夫です）</li><li>「例文をコピーする」を押します</li><li>下の「ChatGPTを開く」から開いて、<br>入力欄を長押し→「貼り付け」→送信</li></ol>
+<p style="margin-bottom:24px">入れてよいのは、公開してよい情報だけです。お客様の名前や住所、見積の金額は入れないでください。</p>
+<form class="form" id="reibun-form" onsubmit="return false">
+{fields.map((field) => (
+  <div>
+    <label class="lb" for={field.id}>{field.label}</label>
+    <input type="text" id={field.id} placeholder={field.placeholder} autocomplete="off">
+  </div>
+))}
+</form>
+<p class="lb" style="margin-top:28px">コピーされる例文</p>
+<pre class="reibun-out" id="reibun-out" aria-live="polite"></pre>
+<button class="cta" type="button" id="reibun-copy">例文をコピーする</button>
+<p class="reibun-msg" id="reibun-msg" role="status"></p>
+<p>うまくコピーできないときは、上の例文の箱を長押しして全部を選び、「コピー」を選んでください。</p>
+<!-- OpenAI の文言の出典（取得日 2026-10-18）: chatgpt.com の入力欄の下「ChatGPT を利用することで、当社の利用規約およびプライバシーポリシーに同意したとみなされます。チャット内容は確認され、AI モデルの改善に使用される場合があります。」（ログインしていない画面で確認）／help.openai.com/en/articles/7730893「Signed-out use: …open Settings and turn off Improve the model for everyone.」 -->
+<p class="reibun-head">ChatGPTに送る前に</p>
+<ul class="reibun-notes"><li>送信すると、入れた文章は ChatGPT を運営する OpenAI 社に渡ります。ChatGPT の画面には、利用すると利用規約とプライバシーポリシーに同意したとみなされること、チャットの内容が AI の改善に使われる場合があることが書かれています。<span class="para">ログインしていなくても同じです。</span><span class="links"><a href="https://openai.com/terms" style="color:var(--laser)">利用規約</a>　<a href="https://openai.com/privacy" style="color:var(--laser)">プライバシーポリシー</a></span></li><li>AI の改善に使わせない設定もあります。<br>ログインしていなくても、ChatGPT の設定から変えられます。<span class="links"><a href="https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt" style="color:var(--laser)">OpenAI の説明</a></span></li><li>出来上がった文章は練習用です。<br>公開する前に、実績・資格・対応地域などが本当か、必ず確かめてください。</li><li>入れた文字を、このページから送ることはありません。文字の表示のために、Google Fonts（文字の形を配る Google のサービス）に接続します。</li></ul>
+<p><a href="https://chatgpt.com/" style="color:var(--laser)">ChatGPTを開く →</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<Footer />
+</Layout>
+
+<script>
+  // 入力欄の定義と例文の組み立ては src/data/daikenrou.ts と共有している
+  import { buildPrompt, fields, promptLabels } from "../data/daikenrou";
+
+  const out = document.getElementById("reibun-out")!;
+  const msg = document.getElementById("reibun-msg")!;
+  const inputs = fields.map((f) => document.getElementById(f.id) as HTMLInputElement);
+
+  /** 空欄のときは【屋号】のような見出しを代わりに入れる */
+  const values = () => inputs.map((el, i) => el.value.trim() || fields[i].slot);
+
+  // 表示では、入れた言葉を1つのまとまりにして途中で折り返さない（コピーする文字は buildPrompt のまま）
+  function render() {
+    const parts = buildPrompt(values()).split(
+      new RegExp(`(${promptLabels.join("|")})(.*)`)
+    );
+    out.textContent = "";
+    parts.forEach((part, i) => {
+      if (i % 3 === 2) {
+        const span = document.createElement("span");
+        span.className = "w";
+        span.textContent = part;
+        out.appendChild(span);
+      } else {
+        out.appendChild(document.createTextNode(part));
+      }
+    });
+    msg.textContent = "";
+  }
+
+  inputs.forEach((el) => el.addEventListener("input", render));
+
+  document.getElementById("reibun-copy")!.addEventListener("click", async () => {
+    const empty = inputs.find((el) => !el.value.trim());
+    if (empty) {
+      empty.focus();
+      msg.textContent = "空いている欄があります。仮の内容でよいので入れてください。";
+      return;
+    }
+    const text = buildPrompt(values());
+    const done = () => { msg.textContent = "コピーしました。ChatGPTの入力欄に貼り付けてください。"; };
+    function fallback() {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, text.length);
+      let ok = false;
+      try { ok = document.execCommand("copy"); } catch {}
+      document.body.removeChild(ta);
+      msg.textContent = ok
+        ? "コピーしました。ChatGPTの入力欄に貼り付けてください。"
+        : "コピーできませんでした。上の例文を長押しして選んでください。";
+    }
+    if (navigator.clipboard && window.isSecureContext) {
+      try { await navigator.clipboard.writeText(text); done(); } catch { fallback(); }
+    } else {
+      fallback();
+    }
+  });
+
+  render();
+</script>

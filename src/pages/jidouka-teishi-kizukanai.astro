@@ -1,0 +1,132 @@
+---
+import ColumnLayout from "../layouts/ColumnLayout.astro";
+import RelatedColumns from "../components/RelatedColumns.astro";
+
+const timeline = [
+  { time: "6:52〜7:22", event: "朝の処理3本が順に動き始め、どれも最初の操作の直後で止まる" },
+  { time: "8:05・9:13", event: "その後に予定していた別の処理2本が、起動すらしない" },
+  { time: "10:12", event: "別の巡回をしていたAIが「朝の分の成果物が無い」と気づく" },
+];
+---
+<ColumnLayout
+  slug="jidouka-teishi-kizukanai"
+  title="自動化した仕組みが止まっていても、3時間誰も気づきませんでした | TechWedge"
+  description="自動化した仕組みは、止まったときに知らせが届かなければ、止まったことに気づけません。私たちの会社で、朝の自動処理が3時間止まっていた実例と、止まったことに気づくための3つの点検ルールをまとめます。"
+  ogDescription="自動化は「作った」と「動き続けている」が別の話です。朝の自動処理が3時間止まった実例と、止まったことに気づくための3つの点検ルール。"
+  kicker="COLUMN — 自動化の運用"
+  ctaLabel="無料相談へ →"
+  authorBand={false}
+>
+  <h1 slot="h1">自動化した仕組みが<br>止まっていても、<br><span class="laser-under">3時間誰も気づきませんでした</span></h1>
+
+<section class="band">
+  <div class="wrap">
+    <div class="story rv">
+      請求書の自動送信、表計算のマクロ、毎朝のデータ集計。事務を自動化すると、そのうち「動いているか」を誰も見なくなります。この記事は、私たちの会社で朝の自動処理が3時間止まっていたのに誰も気づかなかった実例と、そこから整理した3つの点検ルールをまとめたものです。自社で自動化したものを1つ思い浮かべながら読んでください。
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2>朝の自動処理が、3本とも止まっていました</h2></div>
+    <div class="story rv">
+      <p>私たちは内装系金物の施工会社です。自社の事務や、Webサイトの運用の一部をAIに任せています。事務所のパソコン1台の中で、毎朝決まった時刻に自動で動く処理がいくつかあります。通販の注文が来ていないかの確認、サイトのアクセスの集計、データが書き換えられていないかの点検です。</p>
+      <p>2026年9月24日の朝、そのうち3本が止まっていました。</p>
+    </div>
+    <table class="spec-table rv" style="margin-top:24px">
+      <thead>
+        <tr><th>時刻</th><th>起きたこと</th></tr>
+      </thead>
+      <tbody>
+        {timeline.map((row) => (
+          <tr><td>{row.time}</td><td>{row.event}</td></tr>
+        ))}
+      </tbody>
+    </table>
+    <div class="story rv" style="margin-top:20px">
+      <p>止まってから気づくまで、約3時間です。その間、私も含めて、人は誰も気づいていませんでした。</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2>エラーにならない止まり方で、知らせが来ませんでした</h2></div>
+    <div class="story rv">
+      <p>処理がエラーで落ちたときは、知らせが届くように作ってありました。今回の止まり方は、それとは違っていました。</p>
+      <p>AIには、初めての形の操作をするときに「この操作を許可しますか」と人に確認を求める設定をしています。勝手に危ない操作をさせないためです。3本とも、その確認の画面を出したまま待っていました。朝なので、押す人はいません。</p>
+      <p><b>誰も押さない確認ボタンの前で、AIは3時間、行儀よく待っていました。</b>状態は「実行中」のままで、エラーではありません。エラーではないので、知らせも飛びませんでした。</p>
+      <p>許可する操作は、前もって登録してありました。ところがAIは、同じ意味の操作でも、日によって少しだけ書き方を変えることがあります。登録は「一字一句同じかどうか」で照らし合わせていたため、その少しの違いで確認待ちになりました。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2>「自動化した」と「動き続けている」は、別の話でした</h2></div>
+    <div class="story rv">
+      <p>この3本は、作った日も、次の日も動いていました。だから私たちは「自動化できている」と思っていました。</p>
+      <p>足りなかったのは、<b>止まったときに、それが人に届く経路</b>です。エラーで落ちる場合の知らせは作っていましたが、「待ったまま動かない」場合の知らせはありませんでした。鳴らない警報器は、付いていないのと変わりません。</p>
+      <p>これは、AIに限った話ではないと考えています。表計算のマクロが途中で止まっている。自動送信の予約が、設定の変更で外れている。どれも、止まったこと自体は画面の中で静かに起きます。誰かが結果を見に行くまで、止まったことは分かりません。</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2>止まったことに気づくための、3つの点検ルール</h2></div>
+    <p class="sec-lead">1と2はその日のうちに実施しました。3は以前から決めていたルールで、今回の件で意味がよく分かりました。どれも、自動化したものなら何にでも当てはめられます。</p>
+    <div class="step-cards">
+      <div class="step-card rv">
+        <div class="step-no">RULE 1</div>
+        <h4><span class="nw">止まったことが</span><span class="nw">人に</span><span class="nw">届く</span><span class="nw">経路を</span><span class="nw">作る</span></h4>
+        <p>処理そのものとは別に、「朝の成果物が決まった時刻にあるか」だけを5分ごとに見る小さな仕組みを足しました。AIの応答を待たずに、成果物があるかだけを確かめる仕組みです。成果物が無ければ、スマートフォンに知らせが飛びます。</p>
+      </div>
+      <div class="step-card rv">
+        <div class="step-no">RULE 2</div>
+        <h4><span class="nw">作ったら、わざと1回鳴らして</span><span class="nw">確かめる</span></h4>
+        <p>知らせの仕組みを作った直後に、実際の業務には影響しない形で成果物が無い状態を作り、知らせが実際に届くことを確かめました（件名に「テスト」と入れています）。一度も鳴らしたことのない警報器は、鳴るかどうか分かりません。</p>
+      </div>
+      <div class="step-card rv">
+        <div class="step-no">RULE 3</div>
+        <h4>「最後に動いた日」を書いておく</h4>
+        <p>自動化したものの一覧に、最後に実際に動いた日を書いておきます。書けないものは、動いているか誰も測っていない、ということです。</p>
+      </div>
+    </div>
+    <div class="story rv" style="margin-top:24px">
+      <p>3つのルールとは別に、確認待ちで止まった原因そのものも直しました。許可の登録を「一字一句同じ」から「この形なら可」に広げ、AIへの手順書には「この1行をそのまま打つ。前後に何も足さない」と書き足しています。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">05</span><h2>あなたの会社の自動化にも、3つを当ててみてください</h2></div>
+    <p class="sec-lead">自社で自動化しているものを1つ選んで、次の3問に答えてみてください。</p>
+    <ul class="checklist rv">
+      <li><span><b>止まったら、誰に・どこに知らせが来ますか。</b> — 「エラーのとき」だけでなく、「結果が出てこないとき」にも知らせが来るかを確かめます</span></li>
+      <li><span><b>わざと止めて、知らせが届くのを見たことがありますか。</b> — 作った日に一度も鳴らしていない知らせは、動く証拠になりません</span></li>
+      <li><span><b>最後に正しく動いたのは、いつですか。</b> — すぐに答えられなければ、その仕組みは誰も見ていない状態です</span></li>
+    </ul>
+    <div class="story rv" style="margin-top:20px">
+      <p>建設業の現場にも、似た話があります。安全点検表も、書かれていないことに気づく仕組みが無ければ、記入漏れがそのまま残ります。紙が悪いのではなく、気づく仕組みが無いのが原因です。自動化も同じで、作ったあとに「止まっていることに気づく仕組み」まで用意して、はじめて手が離せます。</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">06</span><h2>正直に書いておくこと</h2></div>
+    <div class="story rv">
+      <p>今回止まった処理の中には、通販の注文の確認も入っていました。注文が入っていれば、朝から10時過ぎまで誰も対応できていなかったことになります。私たちの規模では、その遅れはそのまま信用に関わります。</p>
+      <p>AIに仕事を任せること自体は、思っていたより簡単でした。任せた仕事が「本当に動き続けているか」を見るほうが、ずっと難しいと感じています。自動化の相談を受けるときも、作る話と同じくらい、止まったときの話をするようにしています。</p>
+    </div>
+    <p class="src-note">本記事に出てくるAIは、Claude Opus 5.5（管理役）とClaude Sonnet 5（実行役）です。許可の設定や操作の中身は、セキュリティに関わるため省いています。</p>
+    <RelatedColumns slug="jidouka-teishi-kizukanai" />
+  </div>
+</section>
+
+  <h2 slot="cta-heading"><span class="nw">作った</span><span class="nw">自動化が、</span><br><span class="nw">いまも</span><span class="nw">動いているか</span><span class="nw">不安な</span><span class="nw">方へ。</span></h2>
+  <p slot="cta-body">無料相談では、いま動いている自動化を一緒に棚卸しし、止まったときに気づける形になっているかを確かめます。整理した結果、最初の1業務から始める研修・初期導入の進め方までお伝えします。まだ導入を決めていなくても構いません。自動化したまま見ていない仕組みを一つ教えてください。</p>
+</ColumnLayout>

@@ -1,0 +1,123 @@
+---
+import ColumnLayout from "../layouts/ColumnLayout.astro";
+import RelatedColumns from "../components/RelatedColumns.astro";
+
+// 05 の表：Search Console で見る3つの数字
+const metrics = [
+  { what: "検索された言葉", learn: "会社名で来ているのか、新しいお客さんの言葉で来ているのか", example: "キャンプ場のサイトは上位が施設の名前だった" },
+  { what: "クリック0回のページの数", learn: "検索結果に表示されたページのうち、一度もクリックされていない割合", example: "表示された施設ページの85%がクリック0回" },
+  { what: "表示回数と順位", learn: "次に中身を書き足すページの候補", example: "空き家の相談サイトは「火災保険 空き家」が31位" },
+];
+---
+<ColumnLayout
+  slug="hp-access-mikata"
+  title="ホームページのアクセスは、どこを見ればいいのか。4つのサイトを測って分かったこと | TechWedge"
+  description="ホームページのアクセス数は、合計だけ見ても次の手が決まりません。私たちが運用する4つのサイトの数字を並べて分かった、アクセスの見方3つ（どんな言葉で来ているか・見られていないページ・小さな芽）を、実際の数字でまとめます。"
+  ogDescription="アクセスの合計より先に見る3つの数字。4つのサイトを測ったら、検索に表示された施設ページの85%が一度もクリックされていませんでした。"
+  kicker="COLUMN — ホームページの数字"
+  ctaLabel="無料相談へ →"
+  authorBand={false}
+>
+  <h1 slot="h1"><span class="nw">ホームページの</span><span class="nw">アクセスは、</span><br><span class="laser-under"><span class="nw">どこを</span><span class="nw">見ればいいのか</span></span></h1>
+  <p class="hero-lead" slot="hero-lead">4つのサイトの数字を並べたら、合計より先に見る数字が3つありました。</p>
+
+<section class="band">
+  <div class="wrap">
+    <div class="story rv">
+      ホームページは作った。アクセス数も、たまに見ている。でも、その数字を見て何をすればいいかは分からない——そんな会社向けに、私たちが運用している4つのサイトの数字を並べて分かった「アクセスの見方」を3つお伝えします。合計の数字より先に見るべきものがありました。
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2>私たちも、作ったあとの数字を見ていませんでした</h2></div>
+    <div class="story rv">
+      <p>私たちは内装系金物の施工会社です。本業のサイトのほかに、キャンプ場を探すサイト、空き家の相談サイト、そしてこの建設業向けのサイトを運用しています。4つとも、AIと一緒に作りました。</p>
+      <p>作るところまでは速く進みました。キャンプ場のサイトは、施設のページだけで2,000件を超えます。ただ、作ったあとに何が起きているかを、2026年9月24日まで同じ物差しで見ていませんでした。</p>
+      <p>本業のサイトは、直近30日のページの閲覧が90回で、そのうち20回が問い合わせのページでした。問い合わせのページも20回見られていました。ただ、どんな言葉で検索して来たかは、測る設定をしていなかったので分かりませんでした。この日の夜に、その設定を入れました。</p>
+      <p>数字を並べてみると、思い込みと違う点が3つありました。</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2>見方1：どんな言葉で来ているかを見る</h2></div>
+    <div class="story rv">
+      <p>いちばん伸びていたのはキャンプ場のサイトです。Googleの検索からのクリックは、直近4週間で798回でした。その前の4週間の642回から、156回増えています。</p>
+      <p>ところが、検索された言葉を見ると、上位は施設の名前でした。その施設をすでに知っている人が、名前で検索して来ています。「長野県 キャンプ場」のような、まだ行き先を決めていない人の言葉では、ほとんど来ていませんでした。</p>
+      <p><b>上位の検索語は、施設の名前でした。</b>地域名などの言葉から来る人は少ない状態です。名前を知っている人の数には上限があるので、この言葉だけでは伸び方にも限りがあります。</p>
+      <p>建設会社のサイトなら、会社名で検索するのは、もともと会社を知っている人です。新しいお客さんが来ているかは、「地域名＋工事の種類」のような言葉で来ているかを見ると分かります。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2><span class="nw">見方2：</span><span class="nw">検索から</span><span class="nw">一度も</span><span class="nw">クリックされていない</span><span class="nw">ページを</span><span class="nw">数える</span></h2></div>
+    <svg class="ba-chart rv" viewBox="0 0 600 140" role="img" aria-label="検索結果に表示された施設ページ1,492本のうち、クリックされたのは228本、1回もクリックされなかったのは1,264本">
+      <text x="0" y="20" fill="var(--sub)" font-size="14" font-family="var(--sans)">クリック0回 — 1,264本（85%）</text>
+      <rect x="0" y="30" width="406" height="28" rx="4" fill="var(--sub)"/>
+      <text x="416" y="50" fill="var(--sub)" font-size="14" font-family="var(--mono)">1,264</text>
+      <text x="0" y="94" fill="var(--laser)" font-size="14" font-family="var(--sans)" font-weight="700">1回以上クリック — 228本</text>
+      <rect x="0" y="104" width="73" height="28" rx="4" fill="var(--laser)"/>
+      <text x="83" y="124" fill="var(--laser)" font-size="14" font-family="var(--mono)" font-weight="700">228</text>
+    </svg>
+    <div class="story rv">
+      <p>キャンプ場のサイトで、直近4週間に検索結果へ表示された施設ページは1,492本ありました。そのうち1,264本、85%は、一度もクリックされていませんでした。コラムも、表示された451本のうち289本がクリック0回でした。</p>
+      <p>検索に一度も表示されていないページも調べました。そこから30本を抜き出して確かめると、14本はGoogleに存在自体を知られていませんでした。</p>
+      <p>原因の1つは、ページどうしのつながりでした。施設ページには「近くのキャンプ場」へのリンクを付けていましたが、候補を並べる順番を決めないまま件数で切っていたため、2,308件のうち941件の施設ページは、ほかの施設ページから1本もリンクされていませんでした。Googleは、リンクをたどってページを見つけます。ほかの施設ページからたどれないページは、Googleに見つけてもらう道が限られます。</p>
+      <p>もう1つは、サイトの全ページの一覧をGoogleに届ける「サイトマップ」です。中身は正しかったのに、Googleが最後に読んだのは7月22日で、約2か月止まっていました。</p>
+      <p>作ったページが多いほど、見られていないページも増えます。<b>使わない部材を物置の奥に積み上げているのと同じで、積んだ本人は在庫があると思い込んでいました。</b></p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2>見方3：小さなサイトは、1つの「芽」を探す</h2></div>
+    <div class="story rv">
+      <p>空き家の相談サイトは、直近4週間で検索結果に101回表示され、クリックは1回でした。数字だけ見れば、ほぼゼロです。</p>
+      <p>ただ、表示された言葉を見ると「火災保険 空き家」で17回表示され、順位は31位でした。このサイトは20位以内に入った言葉が1つもありません。その中で、この言葉だけが30位台まで来ています。ここが芽です。</p>
+      <p>小さなサイトは、全部の言葉を追うと力が分散します。表示回数と順位を見て、いちばん上に来ている言葉を1つ選び、その1本のページの中身を先に書き足す、と私たちは決めました。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">05</span><h2><span class="nw">あなたの</span><span class="nw">サイトで</span><span class="nw">見る</span><span class="nw">3つの</span><span class="nw">数字</span></h2></div>
+    <p class="sec-lead">Googleの無料の道具「Search Console（サーチコンソール）」にサイトを登録すると、3つとも見られます。</p>
+    <table class="spec-table rv">
+      <thead>
+        <tr><th>見るもの</th><th>何が分かるか</th><th>私たちのサイトの例</th></tr>
+      </thead>
+      <tbody>
+        {metrics.map((row) => (
+          <tr><td>{row.what}</td><td>{row.learn}</td><td>{row.example}</td></tr>
+        ))}
+      </tbody>
+    </table>
+    <div class="story rv" style="margin-top:20px">
+      <p>まだ登録していない場合は、まず登録から始めてください。私たちの本業のサイトも、登録したのは9月24日です。数字がたまるまでには時間がかかるので、早く始めるほど、次の手を早く決められます。</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">06</span><h2><span class="nw">数字を</span><span class="nw">見て、やることが</span><span class="nw">変わりました</span></h2></div>
+    <div class="story rv">
+      <p>数字を取る前は、「もっとページを増やそう」と考えていました。取ったあとは、「作ったページをGoogleに見つけてもらう方が先」に変わりました。</p>
+      <p>サイトマップは送り直しました。施設ページのつながりは、近い順に並べてからリンクする形に、9月25日に直しました。直す前は、ほかの施設ページから1本もリンクされていない施設ページが941件ありましたが、直した後は8件になりました。空き家の相談サイトは、手広く書くのをやめて、「空き家の火災保険」の1本の中身を書き足します。本業のサイトは、検索の言葉の数字がたまってから、施工事例の1本の中身を書き足します。</p>
+      <p>どれも、アクセスの合計だけを見ていたら出てこなかった判断です。サイトを作ったあとの数字の見方と、次の1本の決め方は、無料相談でも一緒に整理できます。</p>
+    </div>
+    <p class="src-note">アクセスの数字は2026年9月24日時点の実測です（検索はGoogle Search Consoleの直近28日、ページの閲覧はCloudflare Web Analyticsの直近30日）。施設リンクを直した後の件数（8件）は、9月25日時点の実測です。分析にはClaude Opus 5.5、集計の道具づくりにはClaude Sonnet 5を使っています。</p>
+    <RelatedColumns slug="hp-access-mikata" />
+  </div>
+</section>
+
+  <h2 slot="cta-heading"><span class="nw">サイトの</span><span class="nw">数字を</span><span class="nw">見ても、</span><br><span class="nw">次に</span><span class="nw">何をすればいいか</span><span class="nw">分からない</span><span class="nw">方へ。</span></h2>
+  <p slot="cta-body">無料相談では、いまのサイトの数字を一緒に見て、次に中身を書き足す1本と、測る設定が足りているかを確かめます。まだ何も決めていなくても構いません。フォームの自由記入の欄に「アクセスの相談」と書いて、気になっている数字を一つ教えてください。</p>
+</ColumnLayout>

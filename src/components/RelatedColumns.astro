@@ -1,0 +1,16 @@
+---
+// コラム記事の末尾に出す「関連記事: A ／ B ／ コラム一覧へ」の一行。
+// 並べる記事は src/data/columns.ts の related で決まる。
+import { getColumn } from "../data/columns";
+
+interface Props {
+  /** 表示中の記事の slug */
+  slug: string;
+}
+
+const { slug } = Astro.props;
+const related = getColumn(slug).related.map(getColumn);
+---
+<p class="rv" style="margin-top:24px">関連記事: {related.map((column) => (
+  <Fragment><a href={`/${column.slug}`} style="color:var(--laser)">{column.title}</a> ／ </Fragment>
+))}<a href="/columns" style="color:var(--laser)">コラム一覧へ</a></p>

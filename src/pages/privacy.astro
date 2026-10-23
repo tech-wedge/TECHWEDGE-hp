@@ -1,0 +1,160 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+// 利用する外部サービス（04 の表）
+const thirdParties = [
+  { service: "Google Apps Script / Google Drive", operator: "Google LLC", use: "自動化処理・データ保管・お問い合わせフォームの受信" },
+  { service: "Claude API", operator: "Anthropic, PBC", use: "AI処理補助" },
+  { service: "マネーフォワード クラウド", operator: "株式会社マネーフォワード", use: "会計連携" },
+  { service: "Google アナリティクス / Google タグマネージャー", operator: "Google LLC", use: "当サイトのアクセス解析・改善" },
+];
+---
+<Layout
+  title="プライバシーポリシー | TechWedge"
+  description="TechWedgeが取得する個人情報の取り扱いについて。"
+  path="/privacy"
+  noindex
+>
+
+<Header current="privacy" />
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero compact">
+  <div class="wrap">
+    <div class="kicker">PRIVACY POLICY — プライバシーポリシー</div>
+    <h1>
+      <span class="nw">個人情報の</span>
+      <span class="nw">取り扱いを</span>
+      <br>
+      <span class="laser-under">
+        <span class="nw">説明します。</span>
+      </span>
+    </h1>
+  </div>
+</section>
+
+<!-- ═══ 01 本文 ═══ -->
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <h2>基本方針</h2>
+      <span class="sec-en">Policy</span>
+    </div>
+    <div class="story rv">
+      TechWedge（以下「当方」）は、本サイトおよび提供するサービスにおいて取得する個人情報について、個人情報の保護に関する法律を遵守し、以下のとおり取り扱います。<br><br>
+      最終更新日：2026年7月10日
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 02 事業者情報 ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <h2>事業者情報</h2>
+      <span class="sec-en">Operator</span>
+    </div>
+    <table class="spec-table rv">
+      <tr>
+        <th>名称</th>
+        <td>TechWedge</td>
+      </tr>
+      <tr>
+        <th>代表者</th>
+        <td>中芝 悠太</td>
+      </tr>
+      <tr>
+        <th>連絡先</th>
+        <td><a href="/contact" style="color:var(--laser)">無料相談フォーム</a>よりお問い合わせください</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- ═══ 03 取得する情報・利用目的 ═══ -->
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <h2>取得する情報と利用目的</h2>
+      <span class="sec-en">Collection &amp; Use</span>
+    </div>
+    <ul class="checklist">
+      <li class="ok rv">
+        <span>
+          <b>お問い合わせ時</b>
+          : 氏名・メールアドレス・会社名・業種・お問い合わせ内容——お問い合わせ対応のためにのみ使用します
+        </span>
+      </li>
+      <li class="ok rv">
+        <span>
+          <b>サービス利用時</b>
+          : 業務効率化ツールの提供にあたり、顧客から提供を受けるデータ（取引先情報・財務データ等）——サービスの提供・保守・改善のためにのみ使用します
+        </span>
+      </li>
+    </ul>
+    <p class="fine">上記以外の目的で利用する場合は、事前に本人の同意を得ます。法令に基づく場合を除き、本人の同意なく第三者に提供・開示しません。</p>
+  </div>
+</section>
+
+<!-- ═══ 04 利用する外部サービス ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">04</span>
+      <h2>利用する外部サービス</h2>
+      <span class="sec-en">Third-party tools</span>
+    </div>
+    <p class="sec-lead">サービス提供にあたり、以下の外部サービスを利用します。データが送信される場合があります。</p>
+    <table class="spec-table rv">
+      <tr>
+        <th>サービス</th>
+        <th>事業者</th>
+        <th>用途</th>
+      </tr>
+      {thirdParties.map((row) => (
+        <tr>
+          <td>{row.service}</td>
+          <td>{row.operator}</td>
+          <td>{row.use}</td>
+        </tr>
+      ))}
+    </table>
+    <p class="sec-lead">当サイトでは、サイトの利用状況を把握し改善に役立てるため、Google アナリティクスを利用しています。Google アナリティクスはCookieを使用して匿名のトラフィックデータを収集しており、個人を特定する情報は含まれません。Cookieはブラウザの設定で無効にでき、<a href="https://tools.google.com/dlpage/gaoptout?hl=ja" target="_blank" rel="noopener">Google アナリティクス オプトアウト アドオン</a>を利用して収集を停止することもできます。詳しくは<a href="https://marketingplatform.google.com/about/analytics/terms/jp/" target="_blank" rel="noopener">Google アナリティクス利用規約</a>および<a href="https://policies.google.com/technologies/partner-sites?hl=ja" target="_blank" rel="noopener">Googleのポリシー</a>をご覧ください。</p>
+  </div>
+</section>
+
+<!-- ═══ 05 開示・訂正・削除 ═══ -->
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">05</span>
+      <h2>開示・訂正・削除のご請求</h2>
+      <span class="sec-en">Your rights</span>
+    </div>
+    <p class="sec-lead">保有する個人データの開示・訂正・追加・削除・利用停止をご希望の場合は、本人確認の上、合理的な期間内に対応します。<a href="/contact" style="color:var(--laser)">無料相談フォーム</a>よりご連絡ください。</p>
+  </div>
+</section>
+
+<!-- ═══ 06 改定 ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">06</span>
+      <h2>ポリシーの変更</h2>
+      <span class="sec-en">Changes</span>
+    </div>
+    <p class="sec-lead">本ポリシーは法令の改正・サービス変更に応じて改定する場合があります。重要な変更がある場合は、本サイトにてお知らせします。</p>
+  </div>
+</section>
+
+</main>
+
+<Footer />
+</Layout>

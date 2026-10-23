@@ -1,0 +1,94 @@
+---
+import ColumnLayout from "../layouts/ColumnLayout.astro";
+import RelatedColumns from "../components/RelatedColumns.astro";
+
+const steps = [
+  {
+    no: "STEP 1",
+    time: "5",
+    title: "棚卸し",
+    description: "先月を振り返り、毎週または毎月繰り返した事務作業を5つ書き出します。例えば、日報の整理、写真の分類、会議メモ、領収書仕分けなどです。",
+  },
+  {
+    no: "STEP 2",
+    time: "10",
+    title: "採点",
+    description: "5つの業務について、「手順が決まっている」「処理結果をあとから確認できる」「その場で人が判断する場面が少ない」の3項目を○△×で採点します。",
+  },
+  {
+    no: "STEP 3",
+    time: "5",
+    title: "候補を1つ決める",
+    description: "○が最も多い業務を1つ選び、「今どれくらい時間がかかっているか」をメモします。この数字が、試したあとの効果を比べる基準になります。",
+  },
+];
+---
+<ColumnLayout
+  slug="ai-saisho-1gyoumu"
+  title="建設業のAI導入、最初の1業務はどう選ぶ？今日できる3ステップ | TechWedge"
+  description="AIを何から始めればいいか分からない建設会社向けに、最初に試す1業務を選ぶ手順を3ステップでまとめました。紙とペンがあれば今日から整理できます。"
+  ogDescription="最初に試す1業務を選ぶ手順を3ステップでまとめました。紙とペンがあれば今日から整理できます。"
+  kicker="COLUMN — AI入門"
+  ctaLabel="無料相談へ →"
+>
+  <h1 slot="h1">建設業のAI導入、<br><span class="laser-under">最初の1業務はどう選ぶ？</span></h1>
+
+<section class="band">
+  <div class="wrap">
+    <div class="story rv">
+      AIを使ってみたい。でも、日報、写真整理、請求処理など、候補が多くて何から手を付けるべきか分からない——そんな建設会社向けに、最初に試す1業務を選ぶ手順を3ステップでまとめます。紙とペンがあれば、今日から整理できます。
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2>「全部」を狙わない理由</h2></div>
+    <div class="story rv">
+      最初から複数の業務を変えると、作業時間が減った理由や、逆に手間が増えた原因を切り分けにくくなります。まず1業務で試せば、「月に何時間減ったか」「確認作業が増えていないか」を比べやすくなります。<br><br>
+      最初の候補にしやすいのは、①手順がある程度決まっている ②処理結果をあとから確認できる ③担当者の経験や、その場の判断に頼る場面が少ない——この3条件がそろう業務です。そろうほど、小さく試して効果を比べやすくなります。
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2><span class="nw">私たちの</span><span class="nw">場合——</span><span class="nw">領収書仕分けがこの3条件に</span><span class="nw">当てはまった</span></h2></div>
+    <div class="story rv">
+      私たちの会社（内装系金物の施工）では、領収書仕分けがこの3条件に当てはまりました。2026年1月から6月までに扱った領収書は、合計400件です。同じ仕分け作業を比較したところ、1か月あたりの所要時間は平均170分から20分になりました。
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2>あなたの会社の最初の1業務を選ぶ3ステップ</h2></div>
+    <p class="sec-lead">紙かメモを用意して、次の順番で候補を絞ってみてください。</p>
+    <div class="step-cards">
+      {steps.map((step) => (
+        <div class="step-card rv">
+          <div class="step-no">{step.no}</div>
+          <div class="step-time">{step.time}<small>分</small></div>
+          <h4>{step.title}</h4>
+          <p>{step.description}</p>
+        </div>
+      ))}
+    </div>
+    <p class="src-note" style="margin-top:20px">3項目すべてが○になる業務がなくても問題ありません。まずは○が2つあり、×がない業務を候補にします。判断に迷う場合は、担当者しか処理できない業務より、手順を他の人に説明しやすい業務を優先してください。</p>
+    <p class="rv" style="margin-top:16px;color:var(--sub);font-size:14px">判断基準をさらに詳しく知りたい方は、前回・前々回の記事もあわせてご覧ください。</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2>まとめ</h2></div>
+    <div class="story rv">
+      最初から会社全体を変える必要はありません。まずは毎週繰り返している事務作業を5つ書き出し、3つの条件で比べてみてください。最初の候補と、現在かかっている時間が分かれば、小さく試す準備は整います。
+    </div>
+    <RelatedColumns slug="ai-saisho-1gyoumu" />
+  </div>
+</section>
+
+  <h2 slot="cta-heading"><span class="nw">候補が</span><span class="nw">複数残った</span><span class="nw">方、</span><br><span class="nw">自社だけでは</span><span class="nw">見分けにくい</span><span class="nw">方へ。</span></h2>
+  <p slot="cta-body">無料相談では、候補に挙げた業務を一緒に整理し、最初に試す1つと、効果を比べる数字の測り方をお伝えします。整理した結果、最初の1業務から始める研修・初期導入の進め方までお伝えします。まだ導入を決めていなくても構いません。毎月時間を取られている事務作業を一つ教えてください。</p>
+</ColumnLayout>

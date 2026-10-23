@@ -1,0 +1,115 @@
+---
+import ColumnLayout from "../layouts/ColumnLayout.astro";
+import RelatedColumns from "../components/RelatedColumns.astro";
+---
+<ColumnLayout
+  slug="ai-jimu-dounyu-shippai"
+  title="事務へのAI導入で失敗したのは、使い終わった後の片付けでした | TechWedge"
+  description="AIを事務に導入するとき、「動かす手順」は決めても「使い終わった後に片付ける手順」は抜けがちです。私たちの会社でパソコンの空きメモリが0.9GBまで減った実例と、その日に決めた片付けのルールをまとめます。"
+  ogDescription="AI導入の失敗は、動かした後に起きました。空きメモリ0.9GBの実例と、その日に決めた2つのルール、導入前に確かめたい3つの問い。"
+  kicker="COLUMN — AI導入の失敗"
+  ctaLabel="無料相談へ →"
+  authorBand={false}
+>
+  <h1 slot="h1">事務へのAI導入で<br>失敗したのは、<br><span class="laser-under">使い終わった後の<br>片付けでした</span></h1>
+
+<section class="band">
+  <div class="wrap">
+    <div class="story rv">
+      AI導入の失敗としてよく聞くのは「入れたのに使われない」ですが、使い始めたあとにも別の失敗があります。AIを事務に入れるとき、多くの会社は「どう動かすか」を決めます。「使い終わったものをどう片付けるか」まで決める会社は、あまり多くありません。私たちも決めていませんでした。この記事では、その結果パソコンがほとんど動かなくなった実例と、その日に決めた片付けのルールをお伝えします。これからAIを入れる方にも、すでに使っている方にも当てはまる話です。
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2>パソコンが重く、空きメモリは0.9GBでした</h2></div>
+    <div class="story rv">
+      <p>私たちは内装系金物の施工会社です。自社の事務や、Webサイトの運用の一部をAIに任せています。クラウドの大きなサーバーではなく、事務所の普通のパソコン1台（メモリ約16GB）の中で、いくつものAIの作業を同時に動かしています。</p>
+      <p>2026年9月24日の午前、そのパソコンが極端に重くなりました。ほかのソフトも応答しなくなりました。空きメモリを測ると、15.7GBのうち0.9GBしか残っていませんでした。</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2>原因は、試したあとに閉じていなかったソフトでした</h2></div>
+    <div class="story rv">
+      <p>空きを使い切った原因の1つは、AIが確認のために立ち上げたソフトでした。</p>
+      <p>その朝、サイトの不具合の原因を調べるために、担当のAIが「この状態で正しく表示されるか」を6回試していました。1回試すごとに確認用のソフトを1組立ち上げ、6組とも立ち上げたまま次の作業に移っていました。朝6時53分から8時6分までに立ち上げた6組が、昼前まで残っていたことになります。1組のソフトは、4〜5個の部品に分かれて動きます。</p>
+      <p>そこへ、Webサイトの公開用のデータを作る重い処理が2本、同時に動いていました。これで空きメモリが0.9GBまで減りました。</p>
+      <p>人間の新人が現場でやる失敗と同じです。<b>インパクトドライバーを現場に置きっぱなしにして、翌朝みんなで探す。</b>あれと同じことを、AIがパソコンの中でやっていました。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2>閉じたら、空きは0.9GBから1.84GBになりました</h2></div>
+    <svg class="ba-chart rv" viewBox="0 0 600 140" role="img" aria-label="空きメモリ。片付ける前0.9GB、確認用のソフト6組を止めた後1.84GB">
+      <text x="0" y="20" fill="var(--sub)" font-size="14" font-family="var(--sans)">片付ける前 — 空き 0.9GB</text>
+      <rect x="0" y="30" width="190" height="28" rx="4" fill="var(--sub)"/>
+      <text x="200" y="50" fill="var(--sub)" font-size="14" font-family="var(--mono)">0.9GB</text>
+      <text x="0" y="94" fill="var(--laser)" font-size="14" font-family="var(--sans)" font-weight="700">6組を止めた後 — 空き 1.84GB</text>
+      <rect x="0" y="104" width="389" height="28" rx="4" fill="var(--laser)"/>
+      <text x="399" y="124" fill="var(--laser)" font-size="14" font-family="var(--mono)" font-weight="700">1.84GB</text>
+    </svg>
+    <div class="story rv">
+      <p>確認用のソフト6組を止めると、空きメモリは0.9GBから1.84GBに戻りました。やったのは、使い終わったものを閉じただけです。</p>
+      <p>それでも1.84GBは十分な余裕ではありません。ほかにも動いている作業があったため、重い処理は1本ずつ順番に流すように切り替えました。</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2>「片付ける手順」がありませんでした</h2></div>
+    <div class="story rv">
+      <p>振り返ると、「確認のためにソフトを立ち上げる」ところまでは、AIの作業の流れに入っていました。「確認が終わったら止める」は、決まりにしていませんでした。</p>
+      <p>動かす手順は、書かないと仕事が進まないので、まず抜けません。片付ける手順は、書かなくてもその日の仕事は進みます。困るのは次の日か、今回のように数時間後です。だから抜けます。</p>
+      <p>道具を片付けないのは、人の性格の問題ではないと考えています。<b>片付けないことの損が、その場では見えない</b>のが原因です。今回は、空きメモリ0.9GBという数字が出たので、その損がはっきり見えました。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">05</span><h2><span class="nw">その日に</span><span class="nw">決めた、</span><span class="nw">片付けの</span><span class="nw">ルール</span></h2></div>
+    <p class="sec-lead">AIに守らせる決まりに、次の2つを足しました。</p>
+    <div class="step-cards">
+      <div class="step-card rv">
+        <div class="step-no">RULE 1</div>
+        <h4>確認用に立ち上げたものは、確認が終わったらその場で止める</h4>
+        <p>「後でまとめて止める」は採りません。後で、は来ないからです。</p>
+      </div>
+      <div class="step-card rv">
+        <div class="step-no">RULE 2</div>
+        <h4><span class="nw">重い</span><span class="nw">処理は、</span><span class="nw">パソコン全体で</span><span class="nw">同時に1本まで</span></h4>
+        <p>私たちの場合は、Webサイトの公開用のデータを作る処理がこれに当たります。</p>
+        <p>急ぎの作業が重なっても、順番に流します。同時に流して全部止まるより、1本ずつのほうが早く終わります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">06</span><h2>AIを事務に入れるなら、最初に決めておきたい3つ</h2></div>
+    <p class="sec-lead">AIを使うかどうかに関係なく、事務に新しい仕組みを入れるときに役立つ問いです。</p>
+    <ul class="checklist rv">
+      <li><span><b>試しに作ったものは、いつ・誰が片付けますか。</b> — お試しの表計算、テスト用のアカウント、試しに立ち上げたソフト。「試す」手順と一緒に「片付ける」手順を書きます</span></li>
+      <li><span><b>同時にいくつまで動かしますか。</b> — 重い作業を同時に動かせる数を決めておくと、全部が遅くなる事態を避けられます</span></li>
+      <li><span><b>余裕を、数字で見ていますか。</b> — Windowsなら「タスク マネージャー」でメモリの使用率が見られます。「なんとなく重い」を数字にすると、何を片付ければいいかが分かります</span></li>
+    </ul>
+    <div class="story rv" style="margin-top:20px">
+      <p>今回は、片付けを決まりに入れていなかったので、確認用のソフトが残りました。AIに仕事を任せるときは、最初の1業務を選ぶのと同じくらい、終わったあとの手順を決めておくことが要ると感じています。</p>
+      <p>最初に任せる業務の選び方は、<a href="/ai-saisho-1gyoumu" style="color:var(--laser)">建設業のAI導入、最初の1業務はどう選ぶ？</a>に3ステップでまとめています。</p>
+    </div>
+    <p class="src-note">本記事に出てくるAIは、Claude Opus 5.5（管理役）とClaude Sonnet 5（実行役）です。数字は当日の実測（メモリの空き・動いていたソフトの一覧）から書いています。</p>
+    <RelatedColumns slug="ai-jimu-dounyu-shippai" />
+  </div>
+</section>
+
+  <h2 slot="cta-heading">AIを入れる前に、<br>始め方と終わらせ方を決めたい方へ。</h2>
+  <p slot="cta-body">無料相談では、AIに任せる候補の業務を一緒に整理し、動かす手順と片付ける手順の両方を確かめます。整理した結果、最初の1業務から始める研修・初期導入の進め方までお伝えします。まだ導入を決めていなくても構いません。毎月時間を取られている事務作業を一つ教えてください。</p>
+</ColumnLayout>
