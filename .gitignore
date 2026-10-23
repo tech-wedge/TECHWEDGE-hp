@@ -1,10 +1,9 @@
 node_modules/
 exports/
-# 2026-09-13: 直下は公開面（Cloudflare Pages）なので、公開せんファイルはgitに入れん（README 編集ルール12）
+# 2026-09-13: 公開しないファイルはgitに入れない（README 編集ルール12）
+# 2026-10-23: Astro化により公開されるのは dist/ のみになったため、package.json と package-lock.json は管理対象に変更
 README.md
-package.json
-package-lock.json
-assets/flyer_all_v2.html
+public/assets/flyer_all_v2.html
 tools/
 CLAUDE.md
 node_modules
