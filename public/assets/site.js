@@ -160,8 +160,13 @@ if (rep && !REDUCED) {
 
   imgs.forEach(img => {
     img.style.cursor = "zoom-in";
-    img.tabIndex = 0;
-    img.addEventListener("click", e => { e.preventDefault(); open(img); });
-    img.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); open(img); } });
+    const link = img.closest("a"); // 図面のコラムは画像そのものへのリンクの中＝リンクで Enter を押した時も、別のタブでなく拡大にする
+    if (link) {
+      link.addEventListener("click", e => { e.preventDefault(); open(img); });
+    } else {
+      img.tabIndex = 0;
+      img.addEventListener("click", e => { e.preventDefault(); open(img); });
+      img.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); open(img); } });
+    }
   });
 })();
