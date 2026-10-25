@@ -20,11 +20,11 @@ export const mapCard: MapCardType[] = [
     price: "料金はお問い合わせください"
   },
   {
-    tag: "dev",
+    tag: "on-sale",
     group: "featured",
     title: "見積書・請求書の自動作成",
-    description: "フォーム入力から過去単価を自動照合して見積書を生成。確定後は請求書への変換・送信まで一気通貫。先行モニター募集中（初期費用優遇）。",
-    price: "近日公開<small>先行モニター受付中</small>"
+    description: "フォーム入力から過去単価を自動照合して見積書を生成。確定後は請求書への変換・送信まで一気通貫。",
+    price: "料金はお問い合わせください"
   },
   {
     tag: "on-sale",
@@ -34,7 +34,7 @@ export const mapCard: MapCardType[] = [
     price: "料金はお問い合わせください"
   },
   {
-    tag: "dev",
+    tag: "on-sale",
     group: "now",
     title: "交通費の自動計算",
     description: "フォーム選択式。見積書の自動作成に組み込み済み。",
