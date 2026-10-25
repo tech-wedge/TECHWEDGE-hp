@@ -90,7 +90,7 @@ const columnCards = constructionColumnSlugs.map(getColumn);
     </p>
 
     <div class="grid">
-      {mapCard.map((card) => (
+      {mapCard.filter((card) => card.tag !== "plan").map((card) => (
         <div class:list={["card", "rv", { mini: card.group !== "featured" }]}>
           <span class={`tag ${card.tag}`}>{tagLabel[card.tag]}</span>
           <h3>{card.title}</h3>
@@ -99,6 +99,21 @@ const columnCards = constructionColumnSlugs.map(getColumn);
         </div>
       ))}
     </div>
+
+    <!-- 構想中のカードは、押すと開く形で畳む（便4・代行の決め 2026-10-26＝最初に見えるのを提供中・開発中だけにする） -->
+    <details class="plan-more" style="margin-top:18px">
+      <summary style="cursor:pointer;color:var(--laser);font-size:14px;font-weight:700;display:inline-block;padding:11px 0;min-height:44px;box-sizing:border-box">構想中の{mapCard.filter((card) => card.tag === "plan").length}つを見る</summary>
+      <div class="grid" style="margin-top:12px">
+        {mapCard.filter((card) => card.tag === "plan").map((card) => (
+          <div class:list={["card", { mini: card.group !== "featured" }]}>
+            <span class={`tag ${card.tag}`}>{tagLabel[card.tag]}</span>
+            <h3>{card.title}</h3>
+            <p class="desc">{card.description}</p>
+            {card.price && <p class="price"><small set:html={card.price} /></p>}
+          </div>
+        ))}
+      </div>
+    </details>
 
     <div class="kenshu rv" style="margin-top:18px">
       <div>
