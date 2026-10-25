@@ -111,3 +111,56 @@ if (rep && !REDUCED) {
     if (e.matches) { nav.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); }
   });
 })();
+
+/* ─── 画像を押すと同じページの上で大きく見せる（2026-10-25追加・悠太「クリックしたら拡大表示されなわからん」） ───
+   対象は main の中の figure の画像と、HP制作の見本（.mock-frame）の画像だけ。
+   ほかのページへ飛ぶリンクの中の画像（HP制作の実績など）と、QR は対象にしない。
+   閉じ方は × ・暗い所を押す・Esc の3つ。スマホは指で広げて拡大できる。 */
+(() => {
+  const imgs = [...document.querySelectorAll("main figure img, main .mock-frame img")].filter(img => {
+    const a = img.closest("a");
+    return !a || a.href === img.src; // 画像そのものへのリンク（図面のコラム）だけは、別のタブの代わりにここで開く
+  });
+  if (!imgs.length) return;
+
+  const box = document.createElement("div");
+  box.setAttribute("role", "dialog");
+  box.setAttribute("aria-modal", "true");
+  box.setAttribute("aria-label", "画像の拡大");
+  box.hidden = true;
+  box.style.cssText = "position:fixed;inset:0;z-index:1000;background:rgba(46,46,46,.92);display:flex;align-items:center;justify-content:center;padding:56px 12px 12px;overflow:auto;touch-action:pinch-zoom";
+  const big = document.createElement("img");
+  big.style.cssText = "max-width:100%;max-height:100%;background:#fff;border-radius:4px;box-shadow:0 8px 32px rgba(0,0,0,.35)";
+  const close = document.createElement("button");
+  close.type = "button";
+  close.setAttribute("aria-label", "閉じる");
+  close.textContent = "×";
+  close.style.cssText = "position:fixed;top:10px;right:12px;width:44px;height:44px;border-radius:50%;border:none;background:#fff;color:#2E2E2E;font-size:28px;line-height:44px;cursor:pointer";
+  box.append(big, close);
+  document.body.append(box);
+
+  let opener = null;
+  const open = img => {
+    opener = img;
+    big.src = img.currentSrc || img.src;
+    big.alt = img.alt;
+    box.hidden = false;
+    document.documentElement.style.overflow = "hidden";
+    close.focus();
+  };
+  const shut = () => {
+    box.hidden = true;
+    big.removeAttribute("src");
+    document.documentElement.style.overflow = "";
+    if (opener) opener.focus();
+  };
+  box.addEventListener("click", e => { if (e.target !== big) shut(); });
+  addEventListener("keydown", e => { if (e.key === "Escape" && !box.hidden) shut(); });
+
+  imgs.forEach(img => {
+    img.style.cursor = "zoom-in";
+    img.tabIndex = 0;
+    img.addEventListener("click", e => { e.preventDefault(); open(img); });
+    img.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); open(img); } });
+  });
+})();
