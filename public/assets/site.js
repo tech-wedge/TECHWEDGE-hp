@@ -127,8 +127,8 @@ if (rep && !REDUCED) {
   box.setAttribute("role", "dialog");
   box.setAttribute("aria-modal", "true");
   box.setAttribute("aria-label", "画像の拡大");
-  box.hidden = true;
-  box.style.cssText = "position:fixed;inset:0;z-index:1000;background:rgba(46,46,46,.92);display:flex;align-items:center;justify-content:center;padding:56px 12px 12px;overflow:auto;touch-action:pinch-zoom";
+  // 隠すのは display で行う（hidden 属性は、ここで書く display:flex に負けて幕が出たままになるため）
+  box.style.cssText = "position:fixed;inset:0;z-index:1000;background:rgba(46,46,46,.92);display:none;align-items:center;justify-content:center;padding:56px 12px 12px;overflow:auto;touch-action:pinch-zoom";
   const big = document.createElement("img");
   big.style.cssText = "max-width:100%;max-height:100%;background:#fff;border-radius:4px;box-shadow:0 8px 32px rgba(0,0,0,.35)";
   const close = document.createElement("button");
@@ -144,18 +144,19 @@ if (rep && !REDUCED) {
     opener = img;
     big.src = img.currentSrc || img.src;
     big.alt = img.alt;
-    box.hidden = false;
+    box.style.display = "flex";
     document.documentElement.style.overflow = "hidden";
     close.focus();
   };
+  const isOpen = () => box.style.display !== "none";
   const shut = () => {
-    box.hidden = true;
+    box.style.display = "none";
     big.removeAttribute("src");
     document.documentElement.style.overflow = "";
     if (opener) opener.focus();
   };
   box.addEventListener("click", e => { if (e.target !== big) shut(); });
-  addEventListener("keydown", e => { if (e.key === "Escape" && !box.hidden) shut(); });
+  addEventListener("keydown", e => { if (e.key === "Escape" && isOpen()) shut(); });
 
   imgs.forEach(img => {
     img.style.cursor = "zoom-in";
