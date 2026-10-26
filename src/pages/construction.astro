@@ -15,6 +15,11 @@ const columnCards = constructionColumnSlugs.map(getColumn);
   description="見積・請求・領収書・安全書類・日報——現場を持つ会社の事務15業務を自動化していく構想。第一弾の領収書仕分けは自社実測で月平均170分→20分。提供中・開発中・構想中を正直に公開しています。"
   path="/construction"
 >
+  <style is:inline slot="head">
+  /* 全体マップの「構想中の9つ」を開いた時は「閉じる」と出す（このページだけ・共有の base.css は触らない） */
+  details.plan-more[open] .plan-closed{display:none}
+  details.plan-more:not([open]) .plan-open{display:none}
+  </style>
 
 <Header current="construction" />
 
@@ -102,7 +107,7 @@ const columnCards = constructionColumnSlugs.map(getColumn);
 
     <!-- 構想中のカードは、押すと開く形で畳む（便4・代行の決め 2026-10-26＝最初に見えるのを提供中・開発中だけにする） -->
     <details class="plan-more" style="margin-top:18px">
-      <summary style="cursor:pointer;color:var(--laser);font-size:14px;font-weight:700;display:inline-block;padding:11px 0;min-height:44px;box-sizing:border-box">構想中の{mapCard.filter((card) => card.tag === "plan").length}つを見る</summary>
+      <summary style="cursor:pointer;color:var(--laser);font-size:14px;font-weight:700;display:inline-block;padding:11px 0;min-height:44px;box-sizing:border-box"><span class="plan-closed">構想中の{mapCard.filter((card) => card.tag === "plan").length}つを見る</span><span class="plan-open">構想中の{mapCard.filter((card) => card.tag === "plan").length}つを閉じる</span></summary>
       <div class="grid" style="margin-top:12px">
         {mapCard.filter((card) => card.tag === "plan").map((card) => (
           <div class:list={["card", { mini: card.group !== "featured" }]}>
