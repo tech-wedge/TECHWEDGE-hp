@@ -1,0 +1,54 @@
+name: 📝 文言・画像の差し替え
+description: テキストの修正、画像の入れ替えなど中身の更新
+title: "[更新] "
+labels: ["content"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: 対象ページのURL
+      placeholder: https://example.com/company
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: ページ内のどこ？
+      placeholder: 会社概要の表の「所在地」の行
+    validations:
+      required: true
+
+  - type: textarea
+    id: before
+    attributes:
+      label: 変更前
+      description: 今の文言、または差し替える画像の説明
+      placeholder: 大阪府大阪市北区〇〇1-2-3
+    validations:
+      required: true
+
+  - type: textarea
+    id: after
+    attributes:
+      label: 変更後
+      description: 新しい文言。画像ならここにドラッグ＆ドロップで貼ってな
+      placeholder: 大阪府大阪市中央区△△4-5-6
+    validations:
+      required: true
+
+  - type: input
+    id: deadline
+    attributes:
+      label: 公開してほしい日
+      description: 特になければ空欄でOK
+      placeholder: 2026-11-01
+    validations:
+      required: false
+
+  - type: textarea
+    id: note
+    attributes:
+      label: 補足
+    validations:
+      required: false

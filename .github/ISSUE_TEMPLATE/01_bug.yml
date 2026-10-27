@@ -1,0 +1,91 @@
+name: 🐛 バグ報告
+description: 表示崩れ・リンク切れ・動かないなど、おかしいところの報告
+title: "[バグ] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        見つけてくれてありがとう！分かる範囲で書いてな。
+
+  - type: input
+    id: page
+    attributes:
+      label: 起きているページのURL
+      placeholder: https://example.com/about
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: 何が起きてる？
+      description: 一言でOK
+      placeholder: スマホで見るとお問い合わせボタンが画面からはみ出してる
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 再現手順
+      description: どうやったら同じ状態になるか
+      placeholder: |
+        1. スマホでトップページを開く
+        2. 一番下までスクロールする
+        3. ボタンがはみ出している
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 本来どうなってほしい？
+      placeholder: ボタンが画面内に収まっている
+    validations:
+      required: false
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: 見た端末
+      multiple: true
+      options:
+        - PC
+        - スマホ
+        - タブレット
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: ブラウザ
+      multiple: true
+      options:
+        - Chrome
+        - Safari
+        - Edge
+        - Firefox
+        - その他・分からない
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 緊急度
+      options:
+        - 高（今すぐ直したい・お客さんに見えて困る）
+        - 中（今週中くらい）
+        - 低（手が空いたときでOK）
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: スクリーンショット
+      description: 画像はここにドラッグ＆ドロップで貼れるで
+    validations:
+      required: false
