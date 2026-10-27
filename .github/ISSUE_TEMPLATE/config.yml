@@ -1,0 +1,2 @@
+# テンプレに当てはまらない相談用に、白紙のIssueも作れるようにしておく
+blank_issues_enabled: true

@@ -1,0 +1,62 @@
+name: ✨ 機能追加・改善
+description: 新しいページ・フォーム・デザイン改善などの提案
+title: "[機能] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: why
+    attributes:
+      label: なぜやりたい？（目的）
+      description: 一番大事なところ。困っていること・実現したいこと
+      placeholder: 問い合わせ前に料金の目安を知りたいという声が多いので、料金ページがほしい
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: 何をする？（内容）
+      placeholder: |
+        - 料金ページ（/pricing）を新規作成
+        - ヘッダーのメニューに「料金」を追加
+    validations:
+      required: true
+
+  - type: input
+    id: page
+    attributes:
+      label: 対象ページ（既存ページの改善なら）
+      placeholder: https://example.com/service
+    validations:
+      required: false
+
+  - type: textarea
+    id: done
+    attributes:
+      label: 完了条件
+      description: 何ができたら「完成」とするか。チェックリストで書くと進み具合が見えるで
+      placeholder: |
+        - [ ] 料金ページが表示される
+        - [ ] スマホでも崩れない
+        - [ ] ヘッダーからリンクされている
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 優先度
+      options:
+        - 高
+        - 中
+        - 低
+    validations:
+      required: true
+
+  - type: textarea
+    id: reference
+    attributes:
+      label: 参考（他社サイト・デザイン案など）
+      description: URLや画像があれば
+    validations:
+      required: false
