@@ -3,7 +3,7 @@
 export const promises = [
   { title: "① 無料・オンライン可", description: "現場の昼休みでも、夜でも。30分で終わります。" },
   { title: "② 売り込みません", description: "相談したら契約、みたいな空気は出しません。" },
-  { title: "③ 正直に言います", description: "自動化できないものは「できない」と言います。" },
+  { title: "③ 手間とリスクも先に話します", description: "慣れるまでの手間、確かめる手間、費用、AI に入れない方がいい情報。良い所と一緒にお伝えします。" },
 ];
 
 /** 送信先（Google Apps Script） */
