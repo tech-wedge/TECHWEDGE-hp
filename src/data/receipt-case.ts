@@ -1,18 +1,21 @@
-// 領収書仕分けの実測（自社・2026年1月〜6月・400件）。
+// 領収書仕分けの前と後（自社・2026年1月〜6月・400件）。前は手作業の工程ごとの見積もり、後は実際に回した時間。
 // 導入事例・建設業ページ・コラム2本が同じ内訳を出しているので、数字はここ1箇所で持つ。
 
 export interface BeforeAfterColumn {
   /** BEFORE — 手作業 のような見出し */
   heading: string;
-  /** 月平均 170分 のような大きな数字 */
+  /** 月約 170分 のような大きな数字 */
   total: string;
+  /** 大きな数字の下に小さく添える補足（見積もりか実際か） */
+  note?: string;
   /** 工程ごとの内訳 */
   items: string[];
 }
 
 export const receiptBefore: BeforeAfterColumn = {
   heading: "BEFORE — 手作業",
-  total: "月約 170分（工程ごとの見積もり）",
+  total: "月約 170分",
+  note: "工程ごとの見積もり",
   items: [
     "紙の整理・確認 — 30分",
     "日付・金額・取引先の読み取り — 40分",
@@ -26,7 +29,8 @@ export const receiptBefore: BeforeAfterColumn = {
 
 export const receiptAfter: BeforeAfterColumn = {
   heading: "AFTER — 自動化",
-  total: "月約 20分（実際に回した結果）",
+  total: "月約 20分",
+  note: "実際に回した結果",
   items: [
     "スキャン（1枚5秒×約70枚） — 7分",
     "AI処理 — 0分（待つだけ・作業なし）",
