@@ -14,8 +14,8 @@ export const works: WorkCard[] = [
   {
     href: "/",
     image: "/assets/results/result_techwedge.png",
-    imageAlt: "TechWedge HPのスクリーンショット",
-    title: "TechWedge HP",
+    imageAlt: "TECHWEDGE HPのスクリーンショット",
+    title: "TECHWEDGE HP",
     description: "今ご覧いただいているこのサイト自体が制作実績です。「現場を動かす人に、テクノロジーを。」がコンセプト。",
   },
   {
