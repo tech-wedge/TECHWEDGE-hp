@@ -55,7 +55,7 @@ export const columns: Column[] = [
   },
   {
     slug: "jimu-jidoka-jissoku",
-    title: "月約170分の領収書仕分けが約20分になった記録",
+    title: "手作業なら月約170分（見積もり）の領収書仕分けが約20分になった記録",
     excerpt: "建設業の事務をAIで自動化した、私たち自身が実際に回した結果を公開します。",
     category: "howto",
     related: ["mitsumori-jidoka", "nyujo-shorui-koritsuka"],
