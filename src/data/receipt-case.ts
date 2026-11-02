@@ -12,7 +12,7 @@ export interface BeforeAfterColumn {
 
 export const receiptBefore: BeforeAfterColumn = {
   heading: "BEFORE — 手作業",
-  total: "月平均 170分",
+  total: "月約 170分（工程ごとの見積もり）",
   items: [
     "紙の整理・確認 — 30分",
     "日付・金額・取引先の読み取り — 40分",
@@ -26,7 +26,7 @@ export const receiptBefore: BeforeAfterColumn = {
 
 export const receiptAfter: BeforeAfterColumn = {
   heading: "AFTER — 自動化",
-  total: "月平均 20分",
+  total: "月約 20分（実際に回した結果）",
   items: [
     "スキャン（1枚5秒×約70枚） — 7分",
     "AI処理 — 0分（待つだけ・作業なし）",
