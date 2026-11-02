@@ -55,7 +55,7 @@ import { formAction, industries, issues, lineUrl, promises } from "../data/conta
       {promises.map((promise) => (
         <div class="card rv" style="padding:20px 22px">
           <h3 style="margin-top:0;font-size:15px">{promise.title}</h3>
-          <p class="desc" style="min-height:auto">{promise.description}</p>
+          <p class="desc" style="min-height:auto;text-wrap:pretty">{promise.description}</p>
         </div>
       ))}
     </div>
