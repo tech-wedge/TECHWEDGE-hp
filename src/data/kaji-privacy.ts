@@ -50,6 +50,6 @@ export const sections: PolicySection[] = [
   },
   {
     title: "7. お問い合わせ",
-    body: `<p>開発者：TechWedge（代表者：中芝 悠太）<br>連絡先：TechWedge の無料相談フォーム（<a href="/contact" style="color:var(--laser)">https://tech-wedge.com/contact</a>）</p>`,
+    body: `<p>開発者：TECHWEDGE（代表者：中芝 悠太）<br>連絡先：TECHWEDGE の無料相談フォーム（<a href="/contact" style="color:var(--laser)">https://tech-wedge.com/contact</a>）</p>`,
   },
 ];
