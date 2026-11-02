@@ -44,14 +44,12 @@ import { receiptBefore, receiptAfter } from "../data/receipt-case";
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">02</span><h2>領収書仕分け、工程別の内訳</h2></div>
     <p class="sec-lead">では、領収書仕分けのどの工程が変わったのでしょうか。自動化前後の作業時間の内訳を比べます。</p>
-    <svg class="ba-chart rv" viewBox="0 0 600 140" role="img" aria-label="領収書仕分けの1か月あたりの作業時間、手作業なら約170分（見積もり）から約20分へ">
-      <text x="0" y="20" fill="var(--sub)" font-size="14" font-family="var(--sans)">BEFORE — 月約170分（見積もり）</text>
-      <rect x="0" y="30" width="453" height="28" rx="4" fill="var(--sub)"/>
-      <text x="463" y="50" fill="var(--sub)" font-size="14" font-family="var(--mono)">170min</text>
-      <text x="0" y="94" fill="var(--laser)" font-size="14" font-family="var(--sans)" font-weight="700">AFTER — 月約20分</text>
-      <rect x="0" y="104" width="53" height="28" rx="4" fill="var(--laser)"/>
-      <text x="63" y="124" fill="var(--laser)" font-size="14" font-family="var(--mono)" font-weight="700">20min</text>
-    </svg>
+    <div class="ba-chart rv" role="img" aria-label="領収書仕分けの1か月あたりの作業時間、手作業なら約170分（見積もり）から約20分へ">
+      <div style="font-size:14px;color:var(--sub);font-family:var(--sans)">BEFORE — 月約170分（見積もり）</div>
+      <div style="display:flex;align-items:center;gap:10px;margin:6px 0 16px"><span style="display:block;height:28px;width:75.5%;border-radius:4px;background:var(--sub)"></span><span style="font-size:14px;color:var(--sub);font-family:var(--mono)">170min</span></div>
+      <div style="font-size:14px;color:var(--laser);font-family:var(--sans);font-weight:700">AFTER — 月約20分</div>
+      <div style="display:flex;align-items:center;gap:10px;margin:6px 0 0"><span style="display:block;height:28px;width:8.9%;border-radius:4px;background:var(--laser)"></span><span style="font-size:14px;color:var(--laser);font-family:var(--mono);font-weight:700">20min</span></div>
+    </div>
     <BeforeAfter before={receiptBefore} after={receiptAfter} />
     <p class="src-note">AIの処理中は人の作業が発生しません。ただし、仕分け結果は人が確認して承認する工程を残しています——完全放置の自動化ではなく、最後は人が承認する設計です。詳細は<a href="/cases" style="color:var(--laser)">導入事例ページ</a>もご覧ください。</p>
   </div>
