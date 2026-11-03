@@ -6,7 +6,7 @@ import { formAction, industries, issues, lineUrl, promises } from "../data/conta
 ---
 <Layout
   title="無料相談 — 30分だけ、事務作業の話を。 | TECHWEDGE"
-  description="無料・オンライン可・売り込みません。事務作業の棚卸しから一緒に。自動化できないものは「できない」と言います。"
+  description="無料・オンライン可・売り込みません。事務作業の棚卸しから一緒に。自動化で効く箇所と効かない箇所をその場でお伝えします。"
   path="/contact"
 >
   <style is:inline slot="head">
@@ -55,7 +55,7 @@ import { formAction, industries, issues, lineUrl, promises } from "../data/conta
       {promises.map((promise) => (
         <div class="card rv" style="padding:20px 22px">
           <h3 style="margin-top:0;font-size:15px">{promise.title}</h3>
-          <p class="desc" style="min-height:auto">{promise.description}</p>
+          <p class="desc" style="min-height:auto">{promise.nowrapTail && promise.description.endsWith(promise.nowrapTail) ? <>{promise.description.slice(0, -promise.nowrapTail.length)}<span style="white-space:nowrap">{promise.nowrapTail}</span></> : promise.description}</p>
         </div>
       ))}
     </div>
