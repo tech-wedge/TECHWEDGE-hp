@@ -55,8 +55,17 @@ export default function sitemapLastmod() {
         if (!existsSync(out)) return;
         try {
           if (git(root, ["rev-parse", "--is-shallow-repository"]) !== "false") {
-            logger.warn("git の履歴が浅いので lastmod を付けない");
-            return;
+            // Cloudflare Pages は履歴を浅く取ってくる（2026-11-05 の PR のプレビューで lastmod 0）。取り直せた時だけ付ける
+            try {
+              git(root, ["fetch", "--unshallow", "--quiet"]);
+            } catch {
+              // 取り直せなければ下で止まる
+            }
+            if (git(root, ["rev-parse", "--is-shallow-repository"]) !== "false") {
+              logger.warn("git の履歴が浅いので lastmod を付けない");
+              return;
+            }
+            logger.info("浅い履歴を取り直した");
           }
         } catch {
           logger.warn("git が使えないので lastmod を付けない");
