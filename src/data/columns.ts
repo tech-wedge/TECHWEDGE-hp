@@ -56,7 +56,7 @@ export const columns: Column[] = [
   {
     slug: "jimu-jidoka-jissoku",
     title: "月平均170分の領収書仕分けが20分になった実測記録",
-    excerpt: "建設業の事務をAIで自動化した、私たち自身の実測データを公開します。",
+    excerpt: "建設業の事務作業をAIで自動化した、私たち自身の実測データを公開します。",
     category: "howto",
     related: ["mitsumori-jidoka", "nyujo-shorui-koritsuka"],
   },
