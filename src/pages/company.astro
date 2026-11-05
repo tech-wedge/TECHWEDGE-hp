@@ -7,9 +7,18 @@ import { members } from "../data/members";
 ---
 <Layout
   title="運営者情報 — 現場を知ってる3人です。 | TECHWEDGE"
-  description="TECHWEDGEの運営チーム。発起人は内装金物の現役職人。自社の領収書の仕分けの時間をAIで約9割短縮した実体験がこのチームの原点です。"
+  description="TECHWEDGEの運営チーム。発起人は内装金物の現役職人。手作業なら月約170分（見積もり）の領収書の仕分けが、自社で約20分になった実体験がこのチームの原点です。"
   path="/company"
 >
+  <style is:inline slot="head">
+    .spec-table .cmp{white-space:nowrap}
+    @media (max-width:480px){
+      .spec-table .cmp{white-space:normal}
+      .spec-table th,.spec-table td{padding:12px;line-height:22px;font-size:14px}
+      .spec-table th{width:80px;white-space:normal;letter-spacing:.04em}
+      .spec-table td{word-break:auto-phrase}
+    }
+  </style>
 
 <Header current="company" />
 
@@ -28,7 +37,7 @@ import { members } from "../data/members";
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">01</span><h2>原点</h2><span class="sec-en">Story</span></div>
     <div class="story rv">
-      発起人の中芝は、今も内装金物の職人です。<b>昼は現場に立ち、夜は自社の事務をAIで自動化してきました。</b>月平均170分かかっていた領収書の仕分けが20分になった——この実体験が、チームの原点です。<br><br>
+      発起人の中芝は、今も内装金物の職人です。<b>昼は現場に立ち、夜は自社の事務をAIで自動化してきました。</b>手作業なら月約170分かかる領収書の仕分けが、約20分になった——この実体験が、チームの原点です。<br><br>
       だから私たちの提案は「ツールの説明」ではなく「<b>現場の人間が実際に使って残った仕組み</b>」の話です。使えなかったものは、自分たちの段階で捨てています。
     </div>
   </div>
@@ -70,7 +79,7 @@ import { members } from "../data/members";
       <tr><th>名称</th><td>TECHWEDGE</td></tr>
       <tr><th>拠点</th><td>大阪 — オンラインで全国対応</td></tr>
       <tr><th>事業内容</th><td>中小企業向け 業務自動化ツールの提供 / AI導入サポート / AI研修</td></tr>
-      <tr><th>実績</th><td class="num">自社実運用 400件・6ヶ月 / 領収書の仕分け 約88%削減</td></tr>
+      <tr><th>実績</th><td>自社実運用 400件・6ヶ月<br>領収書の仕分け：<span class="cmp"><span class="nw">手作業なら月約170分</span><span class="nw">（工程ごとの見積もり）</span><span class="nw">→約20分</span></span></td></tr>
       <tr><th>連絡先</th><td><a href="/contact" style="color:var(--laser)">無料相談フォーム</a> / <span style="white-space:nowrap">X <a href="https://x.com/jidoka_yudai" target="_blank" rel="noopener" style="color:var(--laser)">@jidoka_yudai</a></span></td></tr>
     </table>
   </div>
