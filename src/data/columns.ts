@@ -32,7 +32,7 @@ export const columns: Column[] = [
   {
     slug: "ai-jimu-koritsuka",
     title: "建設業の事務、AIに任せやすいのは「型がある仕事」",
-    excerpt: "内装系金物の施工会社の実例（400件・月平均170分→20分）で、AIに任せやすい仕事と人が最終判断すべき仕事の違いを解説します。",
+    excerpt: "内装系金物の施工会社の実例（2026年1〜6月の400件・手作業なら月約170分→月約20分）で、AIに任せやすい仕事と人が最終判断すべき仕事の違いを解説します。",
     category: "intro",
     badge: "1本目",
     related: ["ai-muki-fumuki", "ai-saisho-1gyoumu", "ai-jimu-dounyu-shippai"],
@@ -55,8 +55,8 @@ export const columns: Column[] = [
   },
   {
     slug: "jimu-jidoka-jissoku",
-    title: "月平均170分の領収書仕分けが20分になった実測記録",
-    excerpt: "建設業の事務作業をAIで自動化した、私たち自身の実測データを公開します。",
+    title: "手作業なら月約170分（見積もり）の領収書仕分けが約20分になった記録",
+    excerpt: "建設業の事務作業をAIで自動化した、私たち自身が実際に回した結果を公開します。",
     category: "howto",
     related: ["mitsumori-jidoka", "nyujo-shorui-koritsuka"],
   },

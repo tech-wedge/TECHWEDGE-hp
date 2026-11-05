@@ -1,5 +1,5 @@
 ---
-// 手作業→自動化の2列比較。領収書仕分けの実測を出す4ページで共通。
+// 手作業→自動化の2列比較。領収書仕分けの前と後を出す4ページで共通。
 import type { BeforeAfterColumn } from "../data/receipt-case";
 
 interface Props {
@@ -13,6 +13,7 @@ const { before, after } = Astro.props;
   <div class="ba-col rv">
     <div class="h">{before.heading}</div>
     <div class="big">{before.total}</div>
+    {before.note && <p style="margin:6px 0 0;font-size:13px;color:var(--sub)">{before.note}</p>}
     <ul>
       {before.items.map((item) => <li>{item}</li>)}
     </ul>
@@ -21,6 +22,7 @@ const { before, after } = Astro.props;
   <div class="ba-col after rv">
     <div class="h">{after.heading}</div>
     <div class="big">{after.total}</div>
+    {after.note && <p style="margin:6px 0 0;font-size:13px;color:var(--sub)">{after.note}</p>}
     <ul>
       {after.items.map((item) => <li>{item}</li>)}
     </ul>
