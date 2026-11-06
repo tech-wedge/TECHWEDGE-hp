@@ -23,7 +23,7 @@ export interface Column {
 
 export const columnCategories: { key: ColumnCategory; num: string; title: string; lead?: string }[] = [
   { key: "intro", num: "01", title: "AI入門3部作", lead: "「AIって何ができるん？」から「最初の1業務」まで、3本で一気に。" },
-  { key: "howto", num: "02", title: "実測記録・ハウツー" },
+  { key: "howto", num: "02", title: "実践記録・ハウツー" },
   { key: "people", num: "03", title: "人材育成・組織", lead: "社内でAIを使える人が1人もいない状態から、最初の1人が生まれるまで。" },
   { key: "ops", num: "04", title: "運用の実例", lead: "AIや自動化を入れたあとに、私たちの会社で実際に起きたことと、そこから決めたルールです。" },
 ];
