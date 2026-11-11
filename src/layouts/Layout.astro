@@ -10,6 +10,8 @@ interface Props {
   ogDescription?: string;
   /** 検索結果に出したくないページ（404・プライバシーポリシーなど） */
   noindex?: boolean;
+  /** サービスの頁だけ true：構造化データに Service を足す（名前＝題から「 | TECHWEDGE」を除いた物・説明＝説明文。新しい文言は作らない） */
+  service?: boolean;
 }
 
 const {
@@ -20,11 +22,32 @@ const {
   ogImage = "/assets/ogp.png",
   ogDescription = description,
   noindex = false,
+  service = false,
 } = Astro.props;
 
 // "/tax" → "https://tech-wedge.com/tax" に変換
 const pageUrl = new URL(path, Astro.site).href;
 const ogImageUrl = new URL(ogImage, Astro.site).href;
+
+// 構造化データ（JSON-LD）：全部の頁に会社（Organization）、サービスの頁にはサービス（Service）も。
+// 社名は TECHWEDGE（悠太 2026-11-02 の大文字の統一）。前の表記で探された時のために alternateName に TechWedge。
+const siteUrl = new URL("/", Astro.site).href;
+const orgId = `${siteUrl}#organization`;
+const organization = {
+  "@type": "Organization",
+  "@id": orgId,
+  name: "TECHWEDGE",
+  alternateName: "TechWedge",
+  url: siteUrl,
+  logo: new URL("/assets/favicon-192.png", Astro.site).href,
+  contactPoint: { "@type": "ContactPoint", contactType: "customer support", url: new URL("/contact", Astro.site).href },
+};
+const graph: Record<string, unknown>[] = [organization];
+if (service) {
+  graph.push({ "@type": "Service", name: title.replace(/\s*\|\s*TECHWEDGE$/, ""), description, url: pageUrl, provider: { "@id": orgId } });
+}
+// </script> などで閉じられないように < を < にする
+const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": graph }).replace(/</g, "\\u003c");
 ---
 <!DOCTYPE html>
 <html lang="ja">
@@ -52,6 +75,7 @@ const ogImageUrl = new URL(ogImage, Astro.site).href;
     <meta property="og:description" content={ogDescription}>
     <meta property="og:image" content={ogImageUrl}>
     <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json" is:inline set:html={jsonLd}></script>
 
     <!-- ファビコン（ブラウザのタブのアイコン） -->
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
