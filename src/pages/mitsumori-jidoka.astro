@@ -2,74 +2,128 @@
 import ColumnLayout from "../layouts/ColumnLayout.astro";
 import RelatedColumns from "../components/RelatedColumns.astro";
 
-const options = [
-  { title: "表計算の型化", description: "Excel・スプレッドシートに単価マスタを作り、関数で自動計算する方法。低コストで始められる一方、担当者が異動すると属人化しやすい。" },
-  { title: "専用SaaS", description: "建設業向けの見積・原価管理サービスを導入する方法。機能は豊富だが、自社の商習慣に合わせたカスタマイズが難しい場合がある。" },
-  { title: "自社フローに合わせた自動化", description: "フォーム入力から過去単価を自動照合し、見積書を生成する仕組みを個別に構築する方法。初期費用はかかるが、自社の商習慣にそのまま合わせられる。" },
+// 以前と今の比べ（下書き v3 の表をそのまま）
+const compare = [
+  { label: "作り方", before: "会計ソフトの画面で、1件ずつ作る", now: "AI がたたき台を作り、自分が直す" },
+  { label: "品番", before: "自分で調べる", now: "AI が調べ、自分が確かめる" },
+  { label: "単価", before: "過去の見積を見て、自分で決める", now: "自分で決める" },
+  { label: "かかる時間", before: "15分から30分ほど", now: "たたき台が出るまで1分ほど、確かめて直すのに5分ほど" },
 ];
 ---
 <ColumnLayout
   slug="mitsumori-jidoka"
-  title="建設業の見積書、まだ手作業で作ってませんか？ 自動化の考え方 | TECHWEDGE"
-  description="建設業の見積書作成を自動化する3つの選択肢と、導入前に確認すべきポイントを整理。過去単価の参照・数量計算・体裁整形——パターン化できる工程から自動化を検討する方法を解説します。"
-  ogDescription="建設業の見積書作成を自動化する3つの選択肢と、導入前に確認すべきポイントを整理。"
+  title="見積書は、AIにたたき台まで作ってもらっています | TECHWEDGE"
+  description="建設業の見積書を AI にどこまで任せるか。メンバーの施工会社では、たたき台までを AI に作らせ、単価は自分で決めています。頼み方と、任せていない所をまとめました。"
+  ogDescription="建設業の見積書を AI にどこまで任せるか。メンバーの施工会社では、たたき台までを AI に作らせ、単価は自分で決めています。頼み方と、任せていない所をまとめました。"
   kicker="COLUMN — 建設業の方へ"
   ctaLabel="無料相談へ →"
   author={false}
 >
-  <h1 slot="h1">建設業の見積書、<br><span class="laser-under">まだ手作業で作ってませんか？</span></h1>
+  <style is:inline slot="head">
+  /* 以前と今の比較表（このページだけ）: スマホで3列が潰れないように詰める */
+  @media(max-width:560px){.spec-compare th,.spec-compare td{padding:10px 8px;font-size:12.5px;line-height:1.6}}
+  </style>
+  <h1 slot="h1">見積書は、<br>AIにたたき台まで<br><span class="laser-under">作ってもらっています</span></h1>
 
 <!-- ═══ 本文 ═══ -->
 <section class="band">
   <div class="wrap">
     <div class="story rv">
-      見積書の作成に、1件あたりどれくらい時間をかけていますか。過去の単価を探し、転記し、体裁を整える——この作業を「当たり前」だと思っている会社ほど、実は自動化の余地が大きい業務です。<br><br>
-      <b>この記事で分かること</b><br>
-      ・建設業の見積書作成が自動化しにくいと言われる理由<br>
-      ・自動化を検討する際の3つの選択肢（表計算の型化／専用SaaS／自社開発）<br>
-      ・導入前に確認すべきポイント
+      <p>私たちが見積書づくりで AI に任せているのは、たたき台までです。単価は、今も自分で決めています。このページでは、その分け方と頼み方をお伝えします。</p>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">01</span><h2>なぜ見積書の自動化は後回しにされがちか</h2></div>
+    <div class="sec-head"><span class="sec-num">01</span><h2><span class="nw">この記事は、</span><span class="nw">メンバーの</span><span class="nw">施工会社の話です</span></h2></div>
     <div class="story rv">
-      見積書は案件ごとに条件が異なり、「毎回パターンが違うから自動化できない」と思われがちです。しかし実際には、①過去単価の参照 ②数量×単価の計算 ③体裁の整形——という3つの工程のうち、①と②は多くの現場でパターン化できます。個別性が高いのは最終的な調整部分だけ、というケースが少なくありません。
+      <p>TECHWEDGE のメンバーが父親と営む、内装系金物の施工会社での話です。</p>
+      <p>以前は、会計ソフトの見積書の画面で、1件ずつ作っていました。手間だったのは、品番を調べる所と、過去の見積を開いて単価を見直す所でした。</p>
+      <p>以前と今を並べると、次のようになります。</p>
+    </div>
+    <table class="spec-table spec-compare rv" style="margin-top:24px">
+      <thead>
+        <tr><th></th><th>以前</th><th>今</th></tr>
+      </thead>
+      <tbody>
+        {compare.map((row) => (
+          <tr>
+            <td style="white-space:nowrap">{row.label}</td>
+            <td>{row.before}</td>
+            <td>{row.now}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <div class="story rv" style="margin-top:20px">
+      <p>時間は、案件によって変わります。どちらも測った数字ではなく、体感の目安です。</p>
     </div>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">02</span><h2>自動化の3つの選択肢</h2></div>
-    <div class="grid">
-      {options.map((option) => (
-        <div class="card rv"><h3 style="margin-top:0">{option.title}</h3><p class="desc">{option.description}</p></div>
-      ))}
+    <div class="sec-head"><span class="sec-num">02</span><h2>頼み方は2つです</h2></div>
+    <div class="story rv">
+      <p>今は、AI に次のどちらかで頼んでいます。</p>
     </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="sec-head"><span class="sec-num">03</span><h2><span class="nw">導入前に</span><span class="nw">確認したい</span><span class="nw">3つの</span><span class="nw">ポイント</span></h2></div>
     <ul class="checklist rv">
-      <li><span><b>単価マスタは誰が更新するか</b> — 自動化しても、更新を怠れば古い金額のまま出てしまいます。更新担当と頻度を決めてから導入するのが安全です。</span></li>
-      <li><span><b>見積から請求までの一気通貫を想定するか</b> — 見積だけでなく請求書への変換まで自動化すると、二重入力が無くなり効果が大きくなります。</span></li>
-      <li><span><b>現場のITリテラシーに合わせた設計か</b> — 高機能でも現場で使われなければ意味がありません。入力項目を絞ったフォーム形式など、現場が迷わない設計を優先すべきです。</span></li>
+      <li><span>品目を挙げて、「これとこれで、見積のたたき台を作って」と頼む</span></li>
+      <li><span>お客さんから届いた依頼の文を、そのまま渡す</span></li>
     </ul>
+    <div class="story rv" style="margin-top:20px">
+      <p>どちらの時も、たたき台として頼みます。出てきた物をそのままお客さんに出す事はしません。自分で見て直す前提で受け取ります。</p>
+      <p>始める前に、過去の見積書と請求書のデータ、それに商品のカタログを AI に読ませました。そのためか、使い始めた時から、困ったと感じる事はありませんでした。単価は、はじめから自分で直すつもりでした。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2><span class="nw">品番は AI が調べ、</span><span class="nw">自分が確かめます</span></h2></div>
+    <div class="story rv">
+      <p>以前は手間だった品番調べは、今は AI に任せています。出てきた品番は、自分でも確かめてから使います。</p>
+    </div>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">04</span><h2>私たちの取り組み</h2></div>
+    <div class="sec-head"><span class="sec-num">04</span><h2><span class="nw">単価は、</span><span class="nw">最後に自分で決めます</span></h2></div>
     <div class="story rv">
-      TECHWEDGEは建設業（内装系金物の施工）の現場に実際に立つメンバーが中心となり、自社の事務作業を自動化する中で得た知見をもとに、見積書・請求書の自動作成を提供しています。できていないことを、できていると言わない——これが私たちの方針です。<br><br>
-      すでに提供中の<a href="/cases" style="color:var(--laser)">領収書仕分け自動化</a>では、自社で回した結果、手作業なら月約170分の作業が約20分になりました（2026年1月〜6月・400件）。見積・請求まわりの自動化も、同じ考え方（現場の実作業を測って、効くところから自動化する）で進めています。<br><br>
-      まずは自社の見積作成フローのどこに時間がかかっているか、棚卸しから始めてみてください。無料相談では、その棚卸しを一緒に行い、自動化で効く箇所・効かない箇所をお伝えしています。
+      <p>AI が出す単価は、精度が良くありません。これは今も変わっていません。</p>
+      <p>値段は、いろいろな事を考え合わせて決めています。その判断を AI に完全に出させるのは難しそうだと感じているので、単価の欄は、最初から自分で直すつもりで見ています。</p>
+      <p>たたき台までは AI に任せ、値段は自分で決める。この分け方で続けています。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">05</span><h2><span class="nw">図面から数を拾う所は、</span><span class="nw">別の記事にまとめています</span></h2></div>
+    <div class="story rv">
+      <p>見積の前には、図面から長さや数を読み取る拾い出しがあります。ここを AI に任せる時に確かめる事は、〈<a href="/zumen-hiroidashi-ai" style="color:var(--laser)">図面の拾い出しを AI に任せる前に、確かめておくことが3つあります</a>〉にまとめました。</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">06</span><h2><span class="nw">事務の負担が軽くなれば、</span><span class="nw">気持ちも楽になると</span><span class="nw">考えています</span></h2></div>
+    <div class="story rv">
+      <p>現場に出ていると、事務の作業は負担に感じやすいものです。AI を使ってその負担を軽くできるだけでも、気持ちは楽になるはずです。</p>
+      <p>事務に取られていた時間は、営業など、ほかの事に回せます。事務を担当している方なら、作業そのものが軽くなり、残業も減らしやすくなると考えています。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">07</span><h2>私たちの取り組み</h2></div>
+    <div class="story rv">
+      <p>TECHWEDGE は、見積書と請求書の作成を自動にする仕組みを提供しています。建設業の現場に立つメンバーが、自分たちの事務で試した形をもとにしています。</p>
+      <p>まずは、見積書づくりのどこに時間がかかっているかを洗い出す所から始めてみてください。</p>
     </div>
     <RelatedColumns slug="mitsumori-jidoka" />
   </div>
