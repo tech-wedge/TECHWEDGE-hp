@@ -32,7 +32,7 @@ export const works: WorkCard[] = [
     image: "/assets/results/result_myshia.png",
     imageAlt: "myshia HPのスクリーンショット",
     title: "myshia HP",
-    description: "内装金物業myshiaのコーポレートサイト。施工会社向けの信頼要件を意識した構成。",
+    description: "内装系金物の施工会社myshiaのコーポレートサイト。施工会社向けの信頼要件を意識した構成。",
   },
 ];
 
@@ -117,7 +117,7 @@ export const flowSteps: FlowStep[] = [
   {
     no: "STEP 3",
     title: "修正",
-    description: "気になる箇所を修正。納得いただけるまでやり取りします。",
+    description: "気になる所を伺って直します。",
   },
   {
     no: "STEP 4",
