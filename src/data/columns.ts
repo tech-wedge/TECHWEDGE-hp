@@ -62,9 +62,8 @@ export const columns: Column[] = [
   },
   {
     slug: "mitsumori-jidoka",
-    title: "建設業の見積書、まだ手作業で作ってませんか？",
-    cardTitle: "見積書、まだ手作業で作ってませんか？",
-    excerpt: "見積書作成の自動化を検討する際の考え方を整理します。",
+    title: "見積書は、AIにたたき台まで作ってもらっています",
+    excerpt: "建設業の見積書を AI にどこまで任せるか。メンバーの施工会社では、たたき台までを AI に作らせ、単価は自分で決めています。頼み方と、任せていない所をまとめました。",
     category: "howto",
     related: ["nyujo-shorui-koritsuka", "jimu-jidoka-jissoku"],
   },
