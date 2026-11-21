@@ -24,7 +24,7 @@ export const curriculum: CurriculumStep[] = [
   },
   {
     no: "STEP 2 — 第3回",
-    title: "事務作業を半分に",
+    title: "事務作業に当てはめる",
     description: "見積メモの清書・安全書類の下書き・報告書の定型化。明日から使える実務編。",
     format: "業務活用",
   },
