@@ -30,14 +30,16 @@ const pageUrl = new URL(path, Astro.site).href;
 const ogImageUrl = new URL(ogImage, Astro.site).href;
 
 // 構造化データ（JSON-LD）：全部の頁に会社（Organization）、サービスの頁にはサービス（Service）も。
-// 社名は TECHWEDGE（悠太 2026-11-02 の大文字の統一）。前の表記で探された時のために alternateName に TechWedge。
+// 社名は TECHWEDGE（悠太 2026-11-02 の大文字の統一）。前の表記とカタカナの読みで探された時のために alternateName に TechWedge とテックウェッジ。
+// sameAs は同じ会社の別の場所＝note と公式 LINE（X は悠太の個人名義なので入れない・代行の決め 2026-11-16 番の表853）。
 const siteUrl = new URL("/", Astro.site).href;
 const orgId = `${siteUrl}#organization`;
 const organization = {
   "@type": "Organization",
   "@id": orgId,
   name: "TECHWEDGE",
-  alternateName: "TechWedge",
+  alternateName: ["TechWedge", "テックウェッジ"],
+  sameAs: ["https://note.com/jidoka_yudai", "https://lin.ee/w5M30q7"],
   url: siteUrl,
   logo: new URL("/assets/favicon-192.png", Astro.site).href,
   contactPoint: { "@type": "ContactPoint", contactType: "customer support", url: new URL("/contact", Astro.site).href },
