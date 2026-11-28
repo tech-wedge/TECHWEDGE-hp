@@ -41,7 +41,7 @@ const organization = {
   alternateName: ["TechWedge", "テックウェッジ"],
   sameAs: ["https://note.com/jidoka_yudai", "https://lin.ee/w5M30q7"],
   url: siteUrl,
-  logo: new URL("/assets/favicon-192.png", Astro.site).href,
+  logo: new URL("/assets/icon-512.png", Astro.site).href,
   contactPoint: { "@type": "ContactPoint", contactType: "customer support", url: new URL("/contact", Astro.site).href },
 };
 const graph: Record<string, unknown>[] = [organization];
@@ -81,7 +81,7 @@ const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": grap
 
     <!-- ファビコン（ブラウザのタブのアイコン） -->
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-    <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
     <!-- フォント -->
